@@ -1,0 +1,143 @@
+metadata:
+    name: minecraft-bedrock
+    namespace: minecraft-bedrock
+spec:
+    interval: 15m
+    chart:
+        spec:
+            chart: minecraft-bedrock
+            version: 9.0.10
+            sourceRef:
+                kind: HelmRepository
+                name: truecharts
+                namespace: flux-system
+    releaseName: minecraft-bedrock
+    values:
+        TZ: Europe/London
+        addons:
+            codeserver:
+                enabled: false
+            netshoot:
+                enabled: false
+            vpn:
+                type: disabled
+        credentials:
+            backblaze:
+                accessKey: REPLACED
+                bucket: Pluto-JTM
+                encrKey: REPLACED
+                name: backblaze
+                path: ""
+                secretKey: REPLACED
+                type: s3
+                url: https://s3.us-west-001.backblazeb2.com
+        persistence:
+            config:
+                enabled: true
+                mountPath: /data
+                readOnly: false
+                storageClass: ""
+                volsync:
+                    - credentials: backblaze
+                      dest:
+                        enabled: false
+                      name: config
+                      src:
+                        enabled: true
+                      type: restic
+        release_name: minecraft-bedrock
+        resources:
+            limits:
+                cpu: 8000m
+                memory: 15Gi
+        securityContext:
+            container:
+                UMASK: "0022"
+                runAsGroup: 568
+                runAsUser: 568
+            pod:
+                fsGroupChangePolicy: OnRootMismatch
+        service:
+            main:
+                enabled: true
+                loadBalancerIP: ""
+                ports:
+                    main:
+                        port: 19132
+                        protocol: udp
+                type: LoadBalancer
+        workload:
+            main:
+                podSpec:
+                    containers:
+                        main:
+                            env:
+                                ALLOW_CHEATS: true
+                                CORRECT_PLAYER_MOVEMENT: false
+                                DEFAULT_PLAYER_PERMISSION_LEVEL: member
+                                DIFFICULTY: peaceful
+                                ENABLE_LAN_VISIBILITY: true
+                                EULA: true
+                                GAMEMODE: creative
+                                LEVEL_NAME: 71YC-Server
+                                LEVEL_SEED: ""
+                                LEVEL_TYPE: DEFAULT
+                                MAX_PLAYERS: 10
+                                MAX_THREADS: 8
+                                ONLINE_MODE: true
+                                OPS: 2535459371911077,2535416055063734,2535438270490294,2535449515083727,2535423942775632
+                                PLAYER_IDLE_TIMEOUT: 30
+                                PLAYER_MOVEMENT_DISTANCE_THRESHOLD: "0.3"
+                                PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS: 500
+                                PLAYER_MOVEMENT_SCORE_THRESHOLD: 20
+                                SERVER_AUTHORITATIVE_MOVEMENT: server-auth
+                                SERVER_NAME: 71YC Server
+                                SERVER_PORT: '{{ .Values.service.main.ports.main.port }}'
+                                SERVER_PORT_V6: 19133
+                                TEXTUREPACK_REQUIRED: true
+                                TICK_DISTANCE: 4
+                                VERSION: 1.21.30.03
+                                VIEW_DISTANCE: 64
+                                WHITE_LIST: true
+                                WHITE_LIST_USERS: jtmusson:2535459371911077,DuckiestRacer73:2535438270490294,PopulousZoo1938:2535416055063734,Stovora:2535449515083727,Captain Bezalel:2535423942775632
+                            probes:
+                                liveness:
+                                    command:
+                                        - /usr/local/bin/mc-monitor
+                                        - status-bedrock
+                                        - --host
+                                        - 127.0.0.1
+                                        - --port
+                                        - '{{ .Values.service.main.ports.main.port }}'
+                                    enabled: true
+                                    spec:
+                                        periodSeconds: 60
+                                    type: exec
+                                readiness:
+                                    command:
+                                        - /usr/local/bin/mc-monitor
+                                        - status-bedrock
+                                        - --host
+                                        - 127.0.0.1
+                                        - --port
+                                        - '{{ .Values.service.main.ports.main.port }}'
+                                    enabled: true
+                                    spec:
+                                        periodSeconds: 60
+                                    type: exec
+                                startup:
+                                    command:
+                                        - /usr/local/bin/mc-monitor
+                                        - status-bedrock
+                                        - --host
+                                        - 127.0.0.1
+                                        - --port
+                                        - '{{ .Values.service.main.ports.main.port }}'
+                                    enabled: true
+                                    spec:
+                                        periodSeconds: 60
+                                    type: exec
+                            stdin: true
+                            tty: true
+                replicas: 1
+                type: Deployment

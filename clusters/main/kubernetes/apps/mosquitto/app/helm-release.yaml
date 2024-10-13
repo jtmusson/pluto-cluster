@@ -1,0 +1,138 @@
+metadata:
+    name: mosquitto
+    namespace: mosquitto
+spec:
+    interval: 15m
+    chart:
+        spec:
+            chart: mosquitto
+            version: 15.0.10
+            sourceRef:
+                kind: HelmRepository
+                name: truecharts
+                namespace: flux-system
+    releaseName: mosquitto
+    values:
+        TZ: Europe/London
+        addons:
+            codeserver:
+                enabled: false
+            netshoot:
+                enabled: false
+            vpn:
+                type: disabled
+        auth:
+            enabled: false
+        configmap:
+            config:
+                data:
+                    mosquitto.conf: |
+                        listener {{ .Values.service.main.ports.main.targetPort }}
+                        {{- if .Values.websockets.enabled }}
+                        listener {{ .Values.service.websockets.ports.websockets.targetPort }}
+                        protocol websockets
+                        {{- end }}
+                        {{- if .Values.auth.enabled }}
+                        allow_anonymous false
+                        {{- else }}
+                        allow_anonymous true
+                        {{- end }}
+                        {{- if .Values.persistence.data.enabled }}
+                        persistence true
+                        persistence_location {{ .Values.persistence.data.mountPath }}
+                        autosave_interval 1800
+                        {{- end }}
+                        {{- if .Values.persistence.configinc.enabled }}
+                        include_dir {{ .Values.persistence.configinc.mountPath }}
+                        {{- end }}
+                enabled: true
+        credentials:
+            backblaze:
+                accessKey: REPLACED
+                bucket: Pluto-JTM
+                encrKey: REPLACED
+                name: backblaze
+                path: ""
+                secretKey: REPLACED
+                type: s3
+                url: https://s3.us-west-001.backblazeb2.com
+        ingress:
+            main:
+                enabled: false
+            websockets:
+                enabled: false
+                targetSelector:
+                    websockets: websockets
+        persistence:
+            configinc:
+                enabled: true
+                mountPath: /mosquitto/configinc
+                readOnly: false
+                storageClass: ""
+            data:
+                enabled: true
+                mountPath: /mosquitto/data
+                readOnly: false
+                storageClass: ""
+                volsync:
+                    - credentials: backblaze
+                      dest:
+                        enabled: false
+                      name: config
+                      src:
+                        enabled: true
+                      type: restic
+            mosquitto-config:
+                enabled: true
+                mountPath: /mosquitto/config/mosquitto.conf
+                objectName: config
+                subPath: mosquitto.conf
+                type: configmap
+        release_name: mosquitto
+        resources: {}
+        securityContext:
+            container:
+                UMASK: "0022"
+                runAsGroup: 568
+                runAsUser: 568
+            pod:
+                fsGroupChangePolicy: OnRootMismatch
+        service:
+            main:
+                enabled: true
+                loadBalancerIP: ""
+                ports:
+                    main:
+                        port: 1883
+                        targetPort: 1883
+                type: LoadBalancer
+            websockets:
+                enabled: true
+                ports:
+                    websockets:
+                        enabled: true
+                        port: 9001
+                        targetPort: 9001
+                type: ClusterIP
+        websockets:
+            enabled: false
+        workload:
+            main:
+                podSpec:
+                    containers:
+                        main:
+                            probes:
+                                liveness:
+                                    enabled: true
+                                    port: 1883
+                                    type: tcp
+                                readiness:
+                                    enabled: true
+                                    port: 1883
+                                    type: tcp
+                                startup:
+                                    enabled: true
+                                    port: 1883
+                                    type: tcp
+                replicas: 1
+                type: Deployment
