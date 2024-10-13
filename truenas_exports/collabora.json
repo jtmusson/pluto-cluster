@@ -1,0 +1,316 @@
+{
+  "catalog": "TRUECHARTS",
+  "catalog_train": "stable",
+  "chart_metadata": {
+    "annotations": {
+      "max_scale_version": "24.04.1",
+      "min_scale_version": "24.04.0",
+      "truecharts.org/SCALE-support": "true",
+      "truecharts.org/category": "office",
+      "truecharts.org/max_helm_version": "3.14",
+      "truecharts.org/min_helm_version": "3.11",
+      "truecharts.org/train": "stable"
+    },
+    "apiVersion": "v2",
+    "appVersion": "24.04.3.1.1",
+    "dependencies": [
+      {
+        "enabled": true,
+        "name": "common",
+        "repository": "oci://tccr.io/truecharts",
+        "version": "23.0.10"
+      }
+    ],
+    "description": "An awesome, Online Office suite image suitable for home use.",
+    "home": "https://truecharts.org/charts/stable/collabora",
+    "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/collabora.webp",
+    "keywords": [
+      "office",
+      "document"
+    ],
+    "kubeVersion": "\u003e=1.24.0-0",
+    "latest_chart_version": "6.0.12",
+    "maintainers": [
+      {
+        "email": "info@truecharts.org",
+        "name": "TrueCharts",
+        "url": "https://truecharts.org"
+      }
+    ],
+    "name": "collabora",
+    "sources": [
+      "https://github.com/CollaboraOnline/online",
+      "https://github.com/truecharts/charts/tree/master/charts/stable/collabora",
+      "https://hub.docker.com/r/collabora/code"
+    ],
+    "type": "application",
+    "version": "6.0.12"
+  },
+  "config": {
+    "TZ": "Europe/London",
+    "addons": {
+      "codeserver": {
+        "enabled": false
+      },
+      "netshoot": {
+        "enabled": false
+      },
+      "vpn": {
+        "type": "disabled"
+      }
+    },
+    "collabora": {
+      "aliasgroup1": [],
+      "dictionaries": [
+        "de_DE",
+        "en_GB",
+        "en_US",
+        "el_GR",
+        "es_ES",
+        "fr_FR",
+        "pt_BR",
+        "pt_PT",
+        "it",
+        "nl",
+        "ru"
+      ],
+      "extra_params": [
+        "--o:welcome.enable=false"
+      ],
+      "interface": "default",
+      "no_gen_ssl": true,
+      "password": "REPLACED",
+      "server_name": "collabora.musson-serv.uk",
+      "ssl_enable": false,
+      "ssl_termination": true,
+      "username": "admin"
+    },
+    "credentialsList": [],
+    "deviceList": [],
+    "docs": {
+      "confirmDocs": true
+    },
+    "donateNag": {
+      "confirmDonate": true
+    },
+    "global": {
+      "ixChartContext": {
+        "addNvidiaRuntimeClass": false,
+        "hasNFSCSI": true,
+        "hasSMBCSI": true,
+        "isInstall": false,
+        "isStopped": false,
+        "isUpdate": false,
+        "isUpgrade": true,
+        "kubernetes_config": {
+          "cluster_cidr": "172.16.0.0/16",
+          "cluster_dns_ip": "172.17.0.10",
+          "service_cidr": "172.17.0.0/16"
+        },
+        "nfsProvisioner": "nfs.csi.k8s.io",
+        "nvidiaRuntimeClassName": "nvidia",
+        "operation": "UPGRADE",
+        "smbProvisioner": "smb.csi.k8s.io",
+        "storageClassName": "ix-storage-class-collabora",
+        "upgradeMetadata": {
+          "newChartVersion": "6.0.12",
+          "oldChartVersion": "6.0.10",
+          "preUpgradeRevision": 9
+        }
+      },
+      "stopAll": false
+    },
+    "image": {
+      "pullPolicy": "IfNotPresent",
+      "repository": "collabora/code",
+      "tag": "24.04.3.1.1@sha256:8d4759b5dc9ac6a7c943caf20765fafa8519a8a91579a29a02bad28b8ab35fcd"
+    },
+    "imagePullSecretList": [],
+    "ingress": {
+      "main": {
+        "advanced": false,
+        "enabled": true,
+        "hosts": [
+          {
+            "host": "collabora.musson-serv.uk",
+            "paths": [
+              {
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        ],
+        "ingressClassName": "",
+        "integrations": {
+          "certManager": {
+            "certificateIssuer": "cloudflare-prod",
+            "enabled": true
+          },
+          "homepage": {
+            "enabled": false
+          },
+          "traefik": {
+            "allowCors": false,
+            "enabled": true,
+            "entrypoints": [
+              "websecure"
+            ],
+            "middlewares": []
+          }
+        },
+        "tls": []
+      }
+    },
+    "ingressList": [],
+    "ixCertificateAuthorities": {},
+    "ixCertificates": {},
+    "ixChartContext": {
+      "addNvidiaRuntimeClass": false,
+      "hasNFSCSI": true,
+      "hasSMBCSI": true,
+      "isInstall": false,
+      "isStopped": false,
+      "isUpdate": false,
+      "isUpgrade": true,
+      "kubernetes_config": {
+        "cluster_cidr": "172.16.0.0/16",
+        "cluster_dns_ip": "172.17.0.10",
+        "service_cidr": "172.17.0.0/16"
+      },
+      "nfsProvisioner": "nfs.csi.k8s.io",
+      "nvidiaRuntimeClassName": "nvidia",
+      "operation": "UPGRADE",
+      "smbProvisioner": "smb.csi.k8s.io",
+      "storageClassName": "ix-storage-class-collabora",
+      "upgradeMetadata": {
+        "newChartVersion": "6.0.12",
+        "oldChartVersion": "6.0.10",
+        "preUpgradeRevision": 9
+      }
+    },
+    "ixExternalInterfacesConfiguration": [],
+    "ixExternalInterfacesConfigurationNames": [],
+    "ixVolumes": [],
+    "networkPolicy": [],
+    "persistenceList": [],
+    "podOptions": {
+      "expertPodOpts": false
+    },
+    "portal": {
+      "open": {
+        "enabled": true
+      }
+    },
+    "release_name": "collabora",
+    "resources": {
+      "limits": {
+        "amd.com/gpu": 0,
+        "cpu": "8000m",
+        "gpu.intel.com/i915": 0,
+        "memory": "8Gi",
+        "nvidia.com/gpu": 0
+      },
+      "requests": {
+        "cpu": "10m",
+        "memory": "50Mi"
+      }
+    },
+    "scaleExternalInterface": [],
+    "securityContext": {
+      "container": {
+        "UMASK": "0022",
+        "advanced": false,
+        "runAsGroup": 568,
+        "runAsUser": 568
+      },
+      "pod": {
+        "fsGroup": 568,
+        "fsGroupChangePolicy": "OnRootMismatch",
+        "supplementalGroups": []
+      }
+    },
+    "service": {
+      "main": {
+        "enabled": true,
+        "ports": {
+          "main": {
+            "port": 9980,
+            "protocol": "http",
+            "targetPort": 9980
+          }
+        },
+        "type": "ClusterIP"
+      }
+    },
+    "serviceList": [],
+    "workload": {
+      "main": {
+        "podSpec": {
+          "containers": {
+            "main": {
+              "advanced": false,
+              "envFrom": [
+                {
+                  "configMapRef": {
+                    "name": "collabora-config"
+                  }
+                }
+              ],
+              "envList": [],
+              "extraArgs": [],
+              "securityContext": {
+                "allowPrivilegeEscalation": true,
+                "capabilities": {
+                  "add": [
+                    "CHOWN",
+                    "FOWNER",
+                    "SYS_CHROOT",
+                    "MKNOD"
+                  ]
+                },
+                "readOnlyRootFilesystem": false,
+                "runAsGroup": 102,
+                "runAsUser": 100
+              }
+            }
+          }
+        },
+        "replicas": 1,
+        "type": "Deployment"
+      }
+    }
+  },
+  "container_images_update_available": false,
+  "dataset": "pool1/ix-applications/releases/collabora",
+  "human_latest_version": "6.0.12",
+  "human_version": "24.04.3.1.1_6.0.12",
+  "id": "collabora",
+  "info": {
+    "deleted": "",
+    "description": "Upgrade complete",
+    "first_deployed": "2024-04-28T10:31:45.434425174+01:00",
+    "last_deployed": "2024-05-29T04:05:53.216538461+01:00",
+    "notes": "\n# Thank you for installing collabora by TrueCharts.\n\n\n## Connecting externally\nYou can use this Chart by opening one of the following links in your browser:\n- host: collabora.musson-serv.uk\npath: /\nport: \"443\"\nportalName: open\nprotocol: https\nurl: https://collabora.musson-serv.uk:443/\nuseNodeIP: false\n## Sources for collabora\n- https://github.com/CollaboraOnline/online\n- https://github.com/truecharts/charts/tree/master/charts/stable/collabora\n- https://hub.docker.com/r/collabora/code\n\nSee more for **collabora** at (https://truecharts.org/charts/stable/collabora)\n\n## Documentation\nPlease check out the TrueCharts documentation on:\nhttps://truecharts.org\n\nOpenSource can only exist with your help, please consider supporting TrueCharts:\nhttps://truecharts.org/sponsor\n",
+    "status": "deployed"
+  },
+  "name": "collabora",
+  "namespace": "ix-collabora",
+  "path": "/mnt/pool1/ix-applications/releases/collabora",
+  "pod_status": {
+    "available": 1,
+    "desired": 1
+  },
+  "portals": {
+    "admin": [
+      "https://collabora.musson-serv.uk:443/browser/dist/admin/admin.html"
+    ],
+    "open": [
+      "https://collabora.musson-serv.uk:443/"
+    ]
+  },
+  "status": "ACTIVE",
+  "update_available": false,
+  "used_ports": [],
+  "version": 10
+}

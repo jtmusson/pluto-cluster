@@ -1,0 +1,350 @@
+{
+  "catalog": "TRUECHARTS",
+  "catalog_train": "stable",
+  "chart_metadata": {
+    "annotations": {
+      "max_scale_version": "24.04.1",
+      "min_scale_version": "24.04.0",
+      "truecharts.org/SCALE-support": "true",
+      "truecharts.org/category": "games",
+      "truecharts.org/max_helm_version": "3.14",
+      "truecharts.org/min_helm_version": "3.11",
+      "truecharts.org/train": "stable"
+    },
+    "apiVersion": "v2",
+    "appVersion": "latest",
+    "dependencies": [
+      {
+        "enabled": true,
+        "name": "common",
+        "repository": "oci://tccr.io/truecharts",
+        "version": "23.0.10"
+      }
+    ],
+    "description": "Minecraft Bedrock Dedicated Server",
+    "home": "https://truecharts.org/charts/stable/minecraft-bedrock",
+    "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/minecraft-bedrock.webp",
+    "keywords": [
+      "minecraft"
+    ],
+    "kubeVersion": "\u003e=1.24.0-0",
+    "latest_chart_version": "9.0.10",
+    "maintainers": [
+      {
+        "email": "info@truecharts.org",
+        "name": "TrueCharts",
+        "url": "https://truecharts.org"
+      }
+    ],
+    "name": "minecraft-bedrock",
+    "sources": [
+      "https://github.com/itzg/docker-minecraft-server",
+      "https://github.com/truecharts/charts/tree/master/charts/stable/minecraft-bedrock",
+      "https://hub.docker.com/r/itzg/minecraft-bedrock-server"
+    ],
+    "type": "application",
+    "version": "9.0.10"
+  },
+  "config": {
+    "TZ": "Europe/London",
+    "addons": {
+      "codeserver": {
+        "enabled": false
+      },
+      "netshoot": {
+        "enabled": false
+      },
+      "vpn": {
+        "type": "disabled"
+      }
+    },
+    "credentialsList": [
+      {
+        "accessKey": "REPLACED",
+        "bucket": "Pluto-JTM",
+        "encrKey": "REPLACED",
+        "name": "backblaze",
+        "path": "",
+        "secretKey": "REPLACED",
+        "type": "s3",
+        "url": "https://s3.us-west-001.backblazeb2.com"
+      }
+    ],
+    "deviceList": [],
+    "docs": {
+      "confirmDocs": true
+    },
+    "donateNag": {
+      "confirmDonate": true
+    },
+    "global": {
+      "ixChartContext": {
+        "addNvidiaRuntimeClass": false,
+        "hasNFSCSI": true,
+        "hasSMBCSI": true,
+        "isInstall": false,
+        "isStopped": false,
+        "isUpdate": true,
+        "isUpgrade": false,
+        "kubernetes_config": {
+          "cluster_cidr": "172.16.0.0/16",
+          "cluster_dns_ip": "172.17.0.10",
+          "service_cidr": "172.17.0.0/16"
+        },
+        "nfsProvisioner": "nfs.csi.k8s.io",
+        "nvidiaRuntimeClassName": "nvidia",
+        "operation": "UPDATE",
+        "smbProvisioner": "smb.csi.k8s.io",
+        "storageClassName": "ix-storage-class-minecraft-bedrock",
+        "upgradeMetadata": {}
+      },
+      "stopAll": false
+    },
+    "image": {
+      "pullPolicy": "Always",
+      "repository": "itzg/minecraft-bedrock-server",
+      "tag": "latest@sha256:420d4182d67ab8030a920930c8d7a8dd6dafaa0054d69fc0e2a11f1afe0c0fd0"
+    },
+    "imagePullSecretList": [],
+    "ixCertificateAuthorities": {},
+    "ixCertificates": {},
+    "ixChartContext": {
+      "addNvidiaRuntimeClass": false,
+      "hasNFSCSI": true,
+      "hasSMBCSI": true,
+      "isInstall": false,
+      "isStopped": false,
+      "isUpdate": true,
+      "isUpgrade": false,
+      "kubernetes_config": {
+        "cluster_cidr": "172.16.0.0/16",
+        "cluster_dns_ip": "172.17.0.10",
+        "service_cidr": "172.17.0.0/16"
+      },
+      "nfsProvisioner": "nfs.csi.k8s.io",
+      "nvidiaRuntimeClassName": "nvidia",
+      "operation": "UPDATE",
+      "smbProvisioner": "smb.csi.k8s.io",
+      "storageClassName": "ix-storage-class-minecraft-bedrock",
+      "upgradeMetadata": {}
+    },
+    "ixExternalInterfacesConfiguration": [],
+    "ixExternalInterfacesConfigurationNames": [],
+    "ixVolumes": [],
+    "networkPolicy": [],
+    "persistence": {
+      "config": {
+        "enabled": true,
+        "mountPath": "/data",
+        "readOnly": false,
+        "size": "256Gi",
+        "static": {
+          "mode": "disabled"
+        },
+        "storageClass": "",
+        "type": "pvc",
+        "volsync": [
+          {
+            "credentials": "backblaze",
+            "dest": {
+              "enabled": false
+            },
+            "name": "config",
+            "src": {
+              "enabled": true
+            },
+            "type": "restic"
+          }
+        ],
+        "volumeSnapshots": []
+      }
+    },
+    "persistenceList": [
+      {
+        "autoPermissions": {
+          "enabled": false
+        },
+        "enabled": true,
+        "mountPath": "/data/worlds",
+        "path": "/mnt/pool1/minecraft-bedrock/minecraft-bedrock-worlds",
+        "readOnly": false,
+        "server": "10.242.1.242",
+        "type": "nfs"
+      }
+    ],
+    "podOptions": {
+      "expertPodOpts": false
+    },
+    "portal": {
+      "open": {
+        "enabled": false
+      }
+    },
+    "release_name": "minecraft-bedrock",
+    "resources": {
+      "limits": {
+        "amd.com/gpu": 0,
+        "cpu": "8000m",
+        "gpu.intel.com/i915": 0,
+        "memory": "15Gi",
+        "nvidia.com/gpu": 0
+      },
+      "requests": {
+        "cpu": "10m",
+        "memory": "50Mi"
+      }
+    },
+    "scaleExternalInterface": [],
+    "securityContext": {
+      "container": {
+        "UMASK": "0022",
+        "advanced": false,
+        "runAsGroup": 568,
+        "runAsUser": 568
+      },
+      "pod": {
+        "fsGroup": 568,
+        "fsGroupChangePolicy": "OnRootMismatch",
+        "supplementalGroups": []
+      }
+    },
+    "service": {
+      "main": {
+        "enabled": true,
+        "loadBalancerIP": "",
+        "ports": {
+          "main": {
+            "port": 19132,
+            "protocol": "udp"
+          }
+        },
+        "type": "LoadBalancer"
+      }
+    },
+    "serviceList": [],
+    "workload": {
+      "main": {
+        "podSpec": {
+          "containers": {
+            "main": {
+              "advanced": false,
+              "env": {
+                "ALLOW_CHEATS": true,
+                "CORRECT_PLAYER_MOVEMENT": false,
+                "DEFAULT_PLAYER_PERMISSION_LEVEL": "member",
+                "DIFFICULTY": "peaceful",
+                "ENABLE_LAN_VISIBILITY": true,
+                "EULA": true,
+                "GAMEMODE": "creative",
+                "LEVEL_NAME": "71YC-Server",
+                "LEVEL_SEED": "",
+                "LEVEL_TYPE": "DEFAULT",
+                "MAX_PLAYERS": 10,
+                "MAX_THREADS": 8,
+                "ONLINE_MODE": true,
+                "OPS": "2535459371911077,2535416055063734,2535438270490294,2535449515083727,2535423942775632",
+                "PLAYER_IDLE_TIMEOUT": 30,
+                "PLAYER_MOVEMENT_DISTANCE_THRESHOLD": "0.3",
+                "PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS": 500,
+                "PLAYER_MOVEMENT_SCORE_THRESHOLD": 20,
+                "SERVER_AUTHORITATIVE_MOVEMENT": "server-auth",
+                "SERVER_NAME": "71YC Server",
+                "SERVER_PORT": "{{ .Values.service.main.ports.main.port }}",
+                "SERVER_PORT_V6": 19133,
+                "TEXTUREPACK_REQUIRED": true,
+                "TICK_DISTANCE": 4,
+                "VERSION": "1.21.30.03",
+                "VIEW_DISTANCE": 64,
+                "WHITE_LIST": true,
+                "WHITE_LIST_USERS": "jtmusson:2535459371911077,DuckiestRacer73:2535438270490294,PopulousZoo1938:2535416055063734,Stovora:2535449515083727,Captain Bezalel:2535423942775632"
+              },
+              "envList": [],
+              "extraArgs": [],
+              "probes": {
+                "liveness": {
+                  "command": [
+                    "/usr/local/bin/mc-monitor",
+                    "status-bedrock",
+                    "--host",
+                    "127.0.0.1",
+                    "--port",
+                    "{{ .Values.service.main.ports.main.port }}"
+                  ],
+                  "enabled": true,
+                  "spec": {
+                    "periodSeconds": 60
+                  },
+                  "type": "exec"
+                },
+                "readiness": {
+                  "command": [
+                    "/usr/local/bin/mc-monitor",
+                    "status-bedrock",
+                    "--host",
+                    "127.0.0.1",
+                    "--port",
+                    "{{ .Values.service.main.ports.main.port }}"
+                  ],
+                  "enabled": true,
+                  "spec": {
+                    "periodSeconds": 60
+                  },
+                  "type": "exec"
+                },
+                "startup": {
+                  "command": [
+                    "/usr/local/bin/mc-monitor",
+                    "status-bedrock",
+                    "--host",
+                    "127.0.0.1",
+                    "--port",
+                    "{{ .Values.service.main.ports.main.port }}"
+                  ],
+                  "enabled": true,
+                  "spec": {
+                    "periodSeconds": 60
+                  },
+                  "type": "exec"
+                }
+              },
+              "stdin": true,
+              "tty": true
+            }
+          }
+        },
+        "replicas": 1,
+        "type": "Deployment"
+      }
+    }
+  },
+  "container_images_update_available": false,
+  "dataset": "pool1/ix-applications/releases/minecraft-bedrock",
+  "human_latest_version": "9.0.10",
+  "human_version": "latest_9.0.10",
+  "id": "minecraft-bedrock",
+  "info": {
+    "deleted": "",
+    "description": "Upgrade complete",
+    "first_deployed": "2024-04-28T11:12:29.16480043+01:00",
+    "last_deployed": "2024-09-23T14:40:56.503037695+01:00",
+    "notes": "\n# Thank you for installing minecraft-bedrock by TrueCharts.\n\n\n## Sources for minecraft-bedrock\n- https://github.com/itzg/docker-minecraft-server\n- https://github.com/truecharts/charts/tree/master/charts/stable/minecraft-bedrock\n- https://hub.docker.com/r/itzg/minecraft-bedrock-server\n\nSee more for **minecraft-bedrock** at (https://truecharts.org/charts/stable/minecraft-bedrock)\n\n## Documentation\nPlease check out the TrueCharts documentation on:\nhttps://truecharts.org\n\nOpenSource can only exist with your help, please consider supporting TrueCharts:\nhttps://truecharts.org/sponsor\n",
+    "status": "deployed"
+  },
+  "name": "minecraft-bedrock",
+  "namespace": "ix-minecraft-bedrock",
+  "path": "/mnt/pool1/ix-applications/releases/minecraft-bedrock",
+  "pod_status": {
+    "available": 1,
+    "desired": 1
+  },
+  "portals": {},
+  "status": "ACTIVE",
+  "update_available": false,
+  "used_ports": [
+    {
+      "port": 19132,
+      "protocol": "UDP"
+    }
+  ],
+  "version": 27
+}

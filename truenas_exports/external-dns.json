@@ -1,0 +1,604 @@
+{
+  "catalog": "TRUECHARTS",
+  "catalog_train": "stable",
+  "chart_metadata": {
+    "annotations": {
+      "max_scale_version": "24.04.1",
+      "min_scale_version": "24.04.0",
+      "truecharts.org/SCALE-support": "true",
+      "truecharts.org/category": "networking",
+      "truecharts.org/max_helm_version": "3.14",
+      "truecharts.org/min_helm_version": "3.11",
+      "truecharts.org/train": "stable"
+    },
+    "apiVersion": "v2",
+    "appVersion": "0.14.2",
+    "dependencies": [
+      {
+        "enabled": true,
+        "name": "common",
+        "repository": "oci://tccr.io/truecharts",
+        "version": "23.0.10"
+      }
+    ],
+    "description": "ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with DNS providers.",
+    "home": "https://truecharts.org/charts/stable/external-dns",
+    "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/external-dns.webp",
+    "keywords": [
+      "external-dns",
+      "k8s",
+      "kubernetes"
+    ],
+    "kubeVersion": "\u003e=1.24.0-0",
+    "latest_chart_version": "5.0.10",
+    "maintainers": [
+      {
+        "email": "info@truecharts.org",
+        "name": "TrueCharts",
+        "url": "https://truecharts.org"
+      }
+    ],
+    "name": "external-dns",
+    "sources": [
+      "https://github.com/kubernetes-sigs/external-dns",
+      "https://github.com/truecharts/charts/tree/master/charts/stable/external-dns"
+    ],
+    "type": "application",
+    "version": "5.0.10"
+  },
+  "config": {
+    "TZ": "Europe/London",
+    "addons": {
+      "codeserver": {
+        "enabled": false
+      },
+      "netshoot": {
+        "enabled": false
+      },
+      "vpn": {
+        "type": "disabled"
+      }
+    },
+    "credentialsList": [],
+    "deviceList": [],
+    "docs": {
+      "confirmDocs": true
+    },
+    "donateNag": {
+      "confirmDonate": true
+    },
+    "externaldns": {
+      "cloudflareProxied": "",
+      "domainFilters": [],
+      "interval": "10m",
+      "logFormat": "text",
+      "logLevel": "info",
+      "piholePassword": "REPLACED",
+      "piholeServer": "https://valledan.musson-lan.uk",
+      "policy": "upsert-only",
+      "provider": "pihole",
+      "registry": "noop",
+      "sources": [
+        "ingress",
+        "service"
+      ],
+      "triggerLoopOnEvent": "false",
+      "txtOwnerId": "",
+      "txtPrefix": "",
+      "txtSuffix": "",
+      "zoneidFilters": []
+    },
+    "global": {
+      "ixChartContext": {
+        "addNvidiaRuntimeClass": false,
+        "hasNFSCSI": true,
+        "hasSMBCSI": true,
+        "isInstall": false,
+        "isStopped": false,
+        "isUpdate": false,
+        "isUpgrade": true,
+        "kubernetes_config": {
+          "cluster_cidr": "172.16.0.0/16",
+          "cluster_dns_ip": "172.17.0.10",
+          "service_cidr": "172.17.0.0/16"
+        },
+        "nfsProvisioner": "nfs.csi.k8s.io",
+        "nvidiaRuntimeClassName": "nvidia",
+        "operation": "UPGRADE",
+        "smbProvisioner": "smb.csi.k8s.io",
+        "storageClassName": "ix-storage-class-external-dns",
+        "upgradeMetadata": {
+          "newChartVersion": "5.0.10",
+          "oldChartVersion": "5.0.8",
+          "preUpgradeRevision": 7
+        }
+      },
+      "stopAll": false
+    },
+    "image": {
+      "pullPolicy": "IfNotPresent",
+      "repository": "registry.k8s.io/external-dns/external-dns",
+      "tag": "v0.14.2@sha256:3fcad62c4a9a8a72cb2db5ce7adeb121be66cac5f7f5ddad43684c2b20c72aa5"
+    },
+    "imagePullSecretList": [],
+    "ingressList": [],
+    "ixCertificateAuthorities": {},
+    "ixCertificates": {},
+    "ixChartContext": {
+      "addNvidiaRuntimeClass": false,
+      "hasNFSCSI": true,
+      "hasSMBCSI": true,
+      "isInstall": false,
+      "isStopped": false,
+      "isUpdate": false,
+      "isUpgrade": true,
+      "kubernetes_config": {
+        "cluster_cidr": "172.16.0.0/16",
+        "cluster_dns_ip": "172.17.0.10",
+        "service_cidr": "172.17.0.0/16"
+      },
+      "nfsProvisioner": "nfs.csi.k8s.io",
+      "nvidiaRuntimeClassName": "nvidia",
+      "operation": "UPGRADE",
+      "smbProvisioner": "smb.csi.k8s.io",
+      "storageClassName": "ix-storage-class-external-dns",
+      "upgradeMetadata": {
+        "newChartVersion": "5.0.10",
+        "oldChartVersion": "5.0.8",
+        "preUpgradeRevision": 7
+      }
+    },
+    "ixExternalInterfacesConfiguration": [],
+    "ixExternalInterfacesConfigurationNames": [],
+    "ixVolumes": [],
+    "networkPolicy": [],
+    "persistenceList": [],
+    "podOptions": {
+      "automountServiceAccountToken": true,
+      "expertPodOpts": false
+    },
+    "portal": {
+      "open": {
+        "enabled": false
+      }
+    },
+    "rbac": {
+      "main": {
+        "clusterWide": true,
+        "enabled": true,
+        "primary": true,
+        "rules": [
+          {
+            "apiGroups": [
+              ""
+            ],
+            "resources": [
+              "nodes"
+            ],
+            "verbs": [
+              "list",
+              "watch"
+            ]
+          },
+          {
+            "apiGroups": [
+              ""
+            ],
+            "resources": [
+              "pods"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              ""
+            ],
+            "resources": [
+              "services",
+              "endpoints"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "extensions",
+              "networking.k8s.io"
+            ],
+            "resources": [
+              "ingresses"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "networking.istio.io"
+            ],
+            "resources": [
+              "gateways"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "networking.istio.io"
+            ],
+            "resources": [
+              "virtualservices"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "getambassador.io"
+            ],
+            "resources": [
+              "hosts",
+              "ingresses"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "projectcontour.io"
+            ],
+            "resources": [
+              "httpproxies"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "externaldns.k8s.io"
+            ],
+            "resources": [
+              "dnsendpoints"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "externaldns.k8s.io"
+            ],
+            "resources": [
+              "dnsendpoints/status"
+            ],
+            "verbs": [
+              "*"
+            ]
+          },
+          {
+            "apiGroups": [
+              "gateway.networking.k8s.io"
+            ],
+            "resources": [
+              "gateways"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "gateway.networking.k8s.io"
+            ],
+            "resources": [
+              "httproutes"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              ""
+            ],
+            "resources": [
+              "namespaces"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "gateway.networking.k8s.io"
+            ],
+            "resources": [
+              "grpcroutes"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "gateway.networking.k8s.io"
+            ],
+            "resources": [
+              "tlsroutes"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "gateway.networking.k8s.io"
+            ],
+            "resources": [
+              "tcproutes"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "gateway.networking.k8s.io"
+            ],
+            "resources": [
+              "udproutes"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "gloo.solo.io",
+              "gateway.solo.io"
+            ],
+            "resources": [
+              "proxies",
+              "virtualservices"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "configuration.konghq.com"
+            ],
+            "resources": [
+              "tcpingresses"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "traefik.containo.us",
+              "traefik.io"
+            ],
+            "resources": [
+              "ingressroutes",
+              "ingressroutetcps",
+              "ingressrouteudps"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "route.openshift.io"
+            ],
+            "resources": [
+              "routes"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "zalando.org"
+            ],
+            "resources": [
+              "routegroups"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          },
+          {
+            "apiGroups": [
+              "zalando.org"
+            ],
+            "resources": [
+              "routegroups/status"
+            ],
+            "verbs": [
+              "patch",
+              "update"
+            ]
+          },
+          {
+            "apiGroups": [
+              "cis.f5.com"
+            ],
+            "resources": [
+              "virtualservers"
+            ],
+            "verbs": [
+              "get",
+              "watch",
+              "list"
+            ]
+          }
+        ]
+      }
+    },
+    "release_name": "external-dns",
+    "resources": {
+      "limits": {
+        "amd.com/gpu": 0,
+        "cpu": "4000m",
+        "gpu.intel.com/i915": 0,
+        "memory": "8Gi",
+        "nvidia.com/gpu": 0
+      },
+      "requests": {
+        "cpu": "10m",
+        "memory": "50Mi"
+      }
+    },
+    "scaleExternalInterface": [],
+    "securityContext": {
+      "container": {
+        "UMASK": "0022",
+        "advanced": false,
+        "runAsGroup": 568,
+        "runAsUser": 568
+      },
+      "pod": {
+        "fsGroup": 568,
+        "fsGroupChangePolicy": "OnRootMismatch",
+        "supplementalGroups": []
+      }
+    },
+    "service": {
+      "main": {
+        "ports": {
+          "main": {
+            "port": 7979,
+            "protocol": "http",
+            "targetPort": 7979
+          }
+        }
+      }
+    },
+    "serviceAccount": {
+      "main": {
+        "enabled": true,
+        "primary": true
+      }
+    },
+    "serviceList": [],
+    "workload": {
+      "main": {
+        "podSpec": {
+          "containers": {
+            "main": {
+              "advanced": false,
+              "env": {
+                "CF_API_EMAIL": "",
+                "CF_API_KEY": "",
+                "CF_API_TOKEN": "",
+                "DNSIMPLE_OAUTH": "",
+                "DNSSIMPLE_OAUTH": "",
+                "DO_TOKEN": "",
+                "LINODE_TOKEN": "",
+                "OVH_APPLICATION_KEY": "",
+                "OVH_APPLICATION_SECRET": "",
+                "OVH_CONSUMER_KEY": "",
+                "SCW_ACCESS_KEY": "",
+                "SCW_SECRET_KEY": ""
+              },
+              "envList": [],
+              "extraArgs": [],
+              "probes": {
+                "liveness": {
+                  "path": "/healthz"
+                },
+                "readiness": {
+                  "path": "/healthz"
+                },
+                "startup": {
+                  "path": "/healthz"
+                }
+              }
+            }
+          }
+        },
+        "replicas": 1,
+        "type": "Deployment"
+      }
+    }
+  },
+  "container_images_update_available": false,
+  "dataset": "pool1/ix-applications/releases/external-dns",
+  "human_latest_version": "5.0.10",
+  "human_version": "0.14.2_5.0.10",
+  "id": "external-dns",
+  "info": {
+    "deleted": "",
+    "description": "Upgrade complete",
+    "first_deployed": "2024-04-28T10:45:32.742810794+01:00",
+    "last_deployed": "2024-05-29T04:06:10.499494943+01:00",
+    "notes": "\n# Thank you for installing external-dns by TrueCharts.\n\n\n## Sources for external-dns\n- https://github.com/kubernetes-sigs/external-dns\n- https://github.com/truecharts/charts/tree/master/charts/stable/external-dns\n\nSee more for **external-dns** at (https://truecharts.org/charts/stable/external-dns)\n\n## Documentation\nPlease check out the TrueCharts documentation on:\nhttps://truecharts.org\n\nOpenSource can only exist with your help, please consider supporting TrueCharts:\nhttps://truecharts.org/sponsor\n",
+    "status": "deployed"
+  },
+  "name": "external-dns",
+  "namespace": "ix-external-dns",
+  "path": "/mnt/pool1/ix-applications/releases/external-dns",
+  "pod_status": {
+    "available": 1,
+    "desired": 1
+  },
+  "portals": {
+    "open": []
+  },
+  "status": "ACTIVE",
+  "update_available": false,
+  "used_ports": [],
+  "version": 8
+}

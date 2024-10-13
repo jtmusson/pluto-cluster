@@ -1,0 +1,337 @@
+{
+  "catalog": "TRUECHARTS",
+  "catalog_train": "stable",
+  "chart_metadata": {
+    "annotations": {
+      "max_scale_version": "24.04.1",
+      "min_scale_version": "24.04.0",
+      "truecharts.org/SCALE-support": "true",
+      "truecharts.org/category": "monitoring",
+      "truecharts.org/max_helm_version": "3.14",
+      "truecharts.org/min_helm_version": "3.11",
+      "truecharts.org/train": "stable"
+    },
+    "apiVersion": "v2",
+    "appVersion": "1.23.13",
+    "dependencies": [
+      {
+        "enabled": true,
+        "name": "common",
+        "repository": "oci://tccr.io/truecharts",
+        "version": "23.0.10"
+      }
+    ],
+    "description": "A fancy self-hosted monitoring tool",
+    "home": "https://truecharts.org/charts/stable/uptime-kuma",
+    "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/uptime-kuma.webp",
+    "keywords": [
+      "monitoring",
+      "uptime"
+    ],
+    "kubeVersion": "\u003e=1.24.0-0",
+    "latest_chart_version": "11.0.8",
+    "maintainers": [
+      {
+        "email": "info@truecharts.org",
+        "name": "TrueCharts",
+        "url": "https://truecharts.org"
+      }
+    ],
+    "name": "uptime-kuma",
+    "sources": [
+      "https://github.com/louislam/uptime-kuma",
+      "https://github.com/truecharts/charts/tree/master/charts/stable/uptime-kuma",
+      "https://hub.docker.com/r/louislam/uptime-kuma"
+    ],
+    "type": "application",
+    "version": "11.0.8"
+  },
+  "config": {
+    "TZ": "Europe/London",
+    "addons": {
+      "codeserver": {
+        "enabled": false
+      },
+      "netshoot": {
+        "enabled": false
+      },
+      "vpn": {
+        "type": "disabled"
+      }
+    },
+    "credentialsList": [
+      {
+        "accessKey": "REPLACED",
+        "bucket": "Pluto-JTM",
+        "encrKey": "REPLACED",
+        "name": "backblaze",
+        "path": "",
+        "secretKey": "REPLACED",
+        "type": "s3",
+        "url": "https://s3.us-west-001.backblazeb2.com"
+      }
+    ],
+    "deviceList": [],
+    "docs": {
+      "confirmDocs": true
+    },
+    "donateNag": {
+      "confirmDonate": true
+    },
+    "global": {
+      "ixChartContext": {
+        "addNvidiaRuntimeClass": false,
+        "hasNFSCSI": true,
+        "hasSMBCSI": true,
+        "isInstall": false,
+        "isStopped": false,
+        "isUpdate": true,
+        "isUpgrade": false,
+        "kubernetes_config": {
+          "cluster_cidr": "172.16.0.0/16",
+          "cluster_dns_ip": "172.17.0.10",
+          "service_cidr": "172.17.0.0/16"
+        },
+        "nfsProvisioner": "nfs.csi.k8s.io",
+        "nvidiaRuntimeClassName": "nvidia",
+        "operation": "UPDATE",
+        "smbProvisioner": "smb.csi.k8s.io",
+        "storageClassName": "ix-storage-class-uptime-kuma",
+        "upgradeMetadata": {}
+      },
+      "stopAll": false
+    },
+    "image": {
+      "pullPolicy": "IfNotPresent",
+      "repository": "louislam/uptime-kuma",
+      "tag": "1.23.13-debian@sha256:96510915e6be539b76bcba2e6873591c67aca8a6075ff09f5b4723ae47f333fc"
+    },
+    "imagePullSecretList": [],
+    "ingress": {
+      "main": {
+        "advanced": false,
+        "enabled": true,
+        "hosts": [
+          {
+            "host": "uptime-kuma.musson-lan.uk",
+            "paths": [
+              {
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          },
+          {
+            "host": "status.musson-serv.uk",
+            "paths": [
+              {
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        ],
+        "ingressClassName": "",
+        "integrations": {
+          "certManager": {
+            "certificateIssuer": "cloudflare-prod",
+            "enabled": true
+          },
+          "homepage": {
+            "description": "",
+            "enabled": true,
+            "group": "Monitoring",
+            "icon": "",
+            "name": "",
+            "widget": {
+              "custom": {
+                "key": ""
+              },
+              "customkv": [],
+              "enabled": false
+            }
+          },
+          "traefik": {
+            "allowCors": false,
+            "enabled": true,
+            "entrypoints": [
+              "websecure"
+            ],
+            "middlewares": []
+          }
+        },
+        "tls": []
+      }
+    },
+    "ingressList": [],
+    "ixCertificateAuthorities": {},
+    "ixCertificates": {},
+    "ixChartContext": {
+      "addNvidiaRuntimeClass": false,
+      "hasNFSCSI": true,
+      "hasSMBCSI": true,
+      "isInstall": false,
+      "isStopped": false,
+      "isUpdate": true,
+      "isUpgrade": false,
+      "kubernetes_config": {
+        "cluster_cidr": "172.16.0.0/16",
+        "cluster_dns_ip": "172.17.0.10",
+        "service_cidr": "172.17.0.0/16"
+      },
+      "nfsProvisioner": "nfs.csi.k8s.io",
+      "nvidiaRuntimeClassName": "nvidia",
+      "operation": "UPDATE",
+      "smbProvisioner": "smb.csi.k8s.io",
+      "storageClassName": "ix-storage-class-uptime-kuma",
+      "upgradeMetadata": {}
+    },
+    "ixExternalInterfacesConfiguration": [],
+    "ixExternalInterfacesConfigurationNames": [],
+    "ixVolumes": [],
+    "metrics": {
+      "main": {
+        "enabled": true,
+        "endpoints": [
+          {
+            "path": "/metrics",
+            "port": "main"
+          }
+        ],
+        "prometheusRule": {
+          "enabled": true
+        },
+        "type": "servicemonitor"
+      }
+    },
+    "networkPolicy": [],
+    "persistence": {
+      "config": {
+        "enabled": true,
+        "mountPath": "/app/data",
+        "readOnly": false,
+        "size": "256Gi",
+        "static": {
+          "mode": "disabled"
+        },
+        "storageClass": "",
+        "type": "pvc",
+        "volsync": [
+          {
+            "credentials": "backblaze",
+            "dest": {
+              "enabled": false
+            },
+            "name": "config",
+            "src": {
+              "enabled": true
+            },
+            "type": "restic"
+          }
+        ],
+        "volumeSnapshots": []
+      }
+    },
+    "persistenceList": [],
+    "podOptions": {
+      "expertPodOpts": false
+    },
+    "portal": {
+      "open": {
+        "enabled": true
+      }
+    },
+    "release_name": "uptime-kuma",
+    "resources": {
+      "limits": {
+        "amd.com/gpu": 0,
+        "cpu": "8000m",
+        "gpu.intel.com/i915": 0,
+        "memory": "10Gi",
+        "nvidia.com/gpu": 0
+      },
+      "requests": {
+        "cpu": "10m",
+        "memory": "50Mi"
+      }
+    },
+    "scaleExternalInterface": [],
+    "security": {
+      "PUID": 0
+    },
+    "securityContext": {
+      "container": {
+        "PUID": 568,
+        "UMASK": "0022",
+        "advanced": false,
+        "runAsGroup": 0,
+        "runAsNonRoot": false,
+        "runAsUser": 0
+      },
+      "pod": {
+        "fsGroup": 568,
+        "fsGroupChangePolicy": "OnRootMismatch",
+        "supplementalGroups": []
+      }
+    },
+    "service": {
+      "main": {
+        "enabled": true,
+        "ports": {
+          "main": {
+            "port": 3001
+          }
+        },
+        "type": "ClusterIP"
+      }
+    },
+    "serviceList": [],
+    "workload": {
+      "main": {
+        "podSpec": {
+          "containers": {
+            "main": {
+              "advanced": false,
+              "env": {
+                "UPTIME_KUMA_PORT": "{{ .Values.service.main.ports.main.port }}"
+              },
+              "envList": [],
+              "extraArgs": []
+            }
+          }
+        },
+        "replicas": 1,
+        "type": "Deployment"
+      }
+    }
+  },
+  "container_images_update_available": false,
+  "dataset": "pool1/ix-applications/releases/uptime-kuma",
+  "human_latest_version": "11.0.8",
+  "human_version": "1.23.13_11.0.8",
+  "id": "uptime-kuma",
+  "info": {
+    "deleted": "",
+    "description": "Upgrade complete",
+    "first_deployed": "2024-04-28T11:39:55.20530796+01:00",
+    "last_deployed": "2024-06-02T23:43:18.519862294+01:00",
+    "notes": "\n# Thank you for installing uptime-kuma by TrueCharts.\n\n\n## Connecting externally\nYou can use this Chart by opening one of the following links in your browser:\n- host: uptime-kuma.musson-lan.uk\npath: /\nport: \"443\"\nportalName: open\nprotocol: https\nurl: https://uptime-kuma.musson-lan.uk:443/\nuseNodeIP: false\n## Sources for uptime-kuma\n- https://github.com/louislam/uptime-kuma\n- https://github.com/truecharts/charts/tree/master/charts/stable/uptime-kuma\n- https://hub.docker.com/r/louislam/uptime-kuma\n\nSee more for **uptime-kuma** at (https://truecharts.org/charts/stable/uptime-kuma)\n\n## Documentation\nPlease check out the TrueCharts documentation on:\nhttps://truecharts.org\n\nOpenSource can only exist with your help, please consider supporting TrueCharts:\nhttps://truecharts.org/sponsor\n",
+    "status": "deployed"
+  },
+  "name": "uptime-kuma",
+  "namespace": "ix-uptime-kuma",
+  "path": "/mnt/pool1/ix-applications/releases/uptime-kuma",
+  "pod_status": {
+    "available": 1,
+    "desired": 1
+  },
+  "portals": {
+    "open": [
+      "https://uptime-kuma.musson-lan.uk:443/"
+    ]
+  },
+  "status": "ACTIVE",
+  "update_available": false,
+  "used_ports": [],
+  "version": 9
+}

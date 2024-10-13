@@ -1,0 +1,438 @@
+{
+  "catalog": "TRUECHARTS",
+  "catalog_train": "stable",
+  "chart_metadata": {
+    "annotations": {
+      "max_scale_version": "24.04.1",
+      "min_scale_version": "24.04.0",
+      "truecharts.org/SCALE-support": "true",
+      "truecharts.org/category": "media",
+      "truecharts.org/max_helm_version": "3.14",
+      "truecharts.org/min_helm_version": "3.11",
+      "truecharts.org/train": "stable"
+    },
+    "apiVersion": "v2",
+    "appVersion": "24.01.1",
+    "dependencies": [
+      {
+        "enabled": true,
+        "name": "common",
+        "repository": "oci://tccr.io/truecharts",
+        "version": "23.0.10"
+      }
+    ],
+    "description": "MakeMKV is your one-click solution to convert video that you own into free and patents-unencumbered format that can be played everywhere.",
+    "home": "https://truecharts.org/charts/stable/makemkv",
+    "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/makemkv.webp",
+    "keywords": [
+      "mkv"
+    ],
+    "kubeVersion": "\u003e=1.24.0-0",
+    "latest_chart_version": "11.0.9",
+    "maintainers": [
+      {
+        "email": "info@truecharts.org",
+        "name": "TrueCharts",
+        "url": "https://truecharts.org"
+      }
+    ],
+    "name": "makemkv",
+    "sources": [
+      "https://github.com/jlesage/docker-makemkv",
+      "https://github.com/truecharts/charts/tree/master/charts/stable/makemkv",
+      "https://hub.docker.com/r/jlesage/makemkv"
+    ],
+    "type": "application",
+    "version": "11.0.9"
+  },
+  "config": {
+    "TZ": "Europe/London",
+    "addons": {
+      "codeserver": {
+        "enabled": false
+      },
+      "netshoot": {
+        "enabled": false
+      },
+      "vpn": {
+        "type": "disabled"
+      }
+    },
+    "configmap": {
+      "makemkv": {
+        "data": {
+          "AUTO_DISC_RIPPER": "{{ ternary \"1\" \"0\" .Values.makemkv.AUTO_DISC_RIPPER }}",
+          "AUTO_DISC_RIPPER_BD_MODE": "{{ .Values.makemkv.AUTO_DISC_RIPPER_BD_MODE }}",
+          "AUTO_DISC_RIPPER_EJECT": "{{ ternary \"1\" \"0\" .Values.makemkv.AUTO_DISC_RIPPER_EJECT }}",
+          "AUTO_DISC_RIPPER_FORCE_UNIQUE_OUTPUT_DIR": "{{ ternary \"1\" \"0\" .Values.makemkv.AUTO_DISC_RIPPER_FORCE_UNIQUE_OUTPUT_DIR }}",
+          "AUTO_DISC_RIPPER_INTERVAL": "{{ .Values.makemkv.AUTO_DISC_RIPPER_INTERVAL }}",
+          "AUTO_DISC_RIPPER_MAKEMKV_PROFILE": "{{ .Values.makemkv.AUTO_DISC_RIPPER_MAKEMKV_PROFILE }}",
+          "AUTO_DISC_RIPPER_NO_GUI_PROGRESS": "{{ ternary \"1\" \"0\" .Values.makemkv.AUTO_DISC_RIPPER_NO_GUI_PROGRESS }}",
+          "AUTO_DISC_RIPPER_PARALLEL_RIP": "{{ ternary \"1\" \"0\" .Values.makemkv.AUTO_DISC_RIPPER_PARALLEL_RIP }}",
+          "DARK_MODE": "{{ ternary \"1\" \"0\" .Values.makemkv.DARK_MODE }}",
+          "DISPLAY_HEIGHT": "{{ .Values.makemkv.DISPLAY_HEIGHT }}",
+          "DISPLAY_WIDTH": "{{ .Values.makemkv.DISPLAY_WIDTH }}",
+          "ENABLE_CJK_FONT": "{{ ternary \"1\" \"0\" .Values.makemkv.ENABLE_CJK_FONT }}",
+          "KEEP_APP_RUNNING": "{{ ternary \"1\" \"0\" .Values.makemkv.KEEP_APP_RUNNING }}",
+          "MAKEMKV_KEY": "{{ .Values.makemkv.MAKEMKV_KEY }}",
+          "SECURE_CONNECTION": "{{ ternary \"1\" \"0\" .Values.makemkv.SECURE_CONNECTION }}"
+        },
+        "enabled": true
+      }
+    },
+    "credentialsList": [
+      {
+        "accessKey": "REPLACED",
+        "bucket": "Pluto-JTM",
+        "encrKey": "REPLACED",
+        "name": "backblaze",
+        "path": "",
+        "secretKey": "REPLACED",
+        "type": "s3",
+        "url": "https://s3.us-west-001.backblazeb2.com"
+      }
+    ],
+    "deviceList": [
+      {
+        "enabled": true,
+        "hostPath": "/dev/disk/by-id/ata-MATSHITABD-MLT_UJ265_WR54_035519",
+        "mountPath": "/dev/dvd",
+        "readOnly": false,
+        "type": "device"
+      }
+    ],
+    "docs": {
+      "confirmDocs": true
+    },
+    "donateNag": {
+      "confirmDonate": true
+    },
+    "global": {
+      "ixChartContext": {
+        "addNvidiaRuntimeClass": false,
+        "hasNFSCSI": true,
+        "hasSMBCSI": true,
+        "isInstall": false,
+        "isStopped": false,
+        "isUpdate": true,
+        "isUpgrade": false,
+        "kubernetes_config": {
+          "cluster_cidr": "172.16.0.0/16",
+          "cluster_dns_ip": "172.17.0.10",
+          "service_cidr": "172.17.0.0/16"
+        },
+        "nfsProvisioner": "nfs.csi.k8s.io",
+        "nvidiaRuntimeClassName": "nvidia",
+        "operation": "UPDATE",
+        "smbProvisioner": "smb.csi.k8s.io",
+        "storageClassName": "ix-storage-class-makemkv",
+        "upgradeMetadata": {}
+      },
+      "stopAll": false
+    },
+    "image": {
+      "pullPolicy": "IfNotPresent",
+      "repository": "jlesage/makemkv",
+      "tag": "v24.01.1@sha256:7e7e6a00431d0247dd61ed714b7ea51a3d36db6837c7bbc5c0f6cac119a1548b"
+    },
+    "imagePullSecretList": [],
+    "ingress": {
+      "main": {
+        "advanced": false,
+        "enabled": true,
+        "hosts": [
+          {
+            "host": "makemkv.musson-lan.uk",
+            "paths": [
+              {
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        ],
+        "ingressClassName": "",
+        "integrations": {
+          "certManager": {
+            "certificateIssuer": "cloudflare-prod",
+            "enabled": true
+          },
+          "homepage": {
+            "description": "",
+            "enabled": true,
+            "group": "Ripping",
+            "icon": "",
+            "name": "",
+            "widget": {
+              "custom": {
+                "key": ""
+              },
+              "customkv": [],
+              "enabled": false
+            }
+          },
+          "traefik": {
+            "allowCors": false,
+            "enabled": true,
+            "entrypoints": [
+              "websecure"
+            ],
+            "middlewares": [
+              {
+                "name": "allowlist-private",
+                "namespace": ""
+              }
+            ]
+          }
+        },
+        "tls": []
+      }
+    },
+    "ingressList": [],
+    "ixCertificateAuthorities": {},
+    "ixCertificates": {},
+    "ixChartContext": {
+      "addNvidiaRuntimeClass": false,
+      "hasNFSCSI": true,
+      "hasSMBCSI": true,
+      "isInstall": false,
+      "isStopped": false,
+      "isUpdate": true,
+      "isUpgrade": false,
+      "kubernetes_config": {
+        "cluster_cidr": "172.16.0.0/16",
+        "cluster_dns_ip": "172.17.0.10",
+        "service_cidr": "172.17.0.0/16"
+      },
+      "nfsProvisioner": "nfs.csi.k8s.io",
+      "nvidiaRuntimeClassName": "nvidia",
+      "operation": "UPDATE",
+      "smbProvisioner": "smb.csi.k8s.io",
+      "storageClassName": "ix-storage-class-makemkv",
+      "upgradeMetadata": {}
+    },
+    "ixExternalInterfacesConfiguration": [],
+    "ixExternalInterfacesConfigurationNames": [],
+    "ixVolumes": [],
+    "makemkv": {
+      "AUTO_DISC_RIPPER": false,
+      "AUTO_DISC_RIPPER_BD_MODE": "mkv",
+      "AUTO_DISC_RIPPER_EJECT": false,
+      "AUTO_DISC_RIPPER_FORCE_UNIQUE_OUTPUT_DIR": false,
+      "AUTO_DISC_RIPPER_INTERVAL": 5,
+      "AUTO_DISC_RIPPER_MAKEMKV_PROFILE": "",
+      "AUTO_DISC_RIPPER_NO_GUI_PROGRESS": false,
+      "AUTO_DISC_RIPPER_PARALLEL_RIP": false,
+      "DARK_MODE": true,
+      "DISPLAY_HEIGHT": 768,
+      "DISPLAY_WIDTH": 1280,
+      "ENABLE_CJK_FONT": false,
+      "KEEP_APP_RUNNING": true,
+      "MAKEMKV_KEY": "REPLACED",
+      "SECURE_CONNECTION": false
+    },
+    "networkPolicy": [],
+    "persistence": {
+      "config": {
+        "enabled": true,
+        "mountPath": "/config",
+        "readOnly": false,
+        "size": "256Gi",
+        "static": {
+          "mode": "disabled"
+        },
+        "storageClass": "",
+        "type": "pvc",
+        "volsync": [
+          {
+            "credentials": "backblaze",
+            "dest": {
+              "enabled": false
+            },
+            "name": "config",
+            "src": {
+              "enabled": true
+            },
+            "type": "restic"
+          }
+        ],
+        "volumeSnapshots": []
+      },
+      "output": {
+        "enabled": true,
+        "mountPath": "/output",
+        "readOnly": false,
+        "size": "256Gi",
+        "static": {
+          "mode": "disabled"
+        },
+        "storageClass": "",
+        "type": "pvc",
+        "volsync": [],
+        "volumeSnapshots": []
+      },
+      "storage": {
+        "enabled": true,
+        "mountPath": "/storage",
+        "readOnly": false,
+        "size": "256Gi",
+        "static": {
+          "mode": "disabled"
+        },
+        "storageClass": "",
+        "type": "pvc",
+        "volsync": [],
+        "volumeSnapshots": []
+      }
+    },
+    "persistenceList": [
+      {
+        "autoPermissions": {
+          "enabled": false
+        },
+        "enabled": true,
+        "mountPath": "/mnt/movies/",
+        "path": "/mnt/pool0/movies/",
+        "readOnly": false,
+        "server": "10.242.1.242",
+        "type": "nfs"
+      }
+    ],
+    "podOptions": {
+      "expertPodOpts": false
+    },
+    "portal": {
+      "open": {
+        "enabled": true
+      }
+    },
+    "release_name": "makemkv",
+    "resources": {
+      "limits": {
+        "amd.com/gpu": 0,
+        "cpu": "7000m",
+        "gpu.intel.com/i915": 0,
+        "memory": "10Gi",
+        "nvidia.com/gpu": 0
+      },
+      "requests": {
+        "cpu": "10m",
+        "memory": "50Mi"
+      }
+    },
+    "scaleExternalInterface": [],
+    "securityContext": {
+      "container": {
+        "PUID": 568,
+        "UMASK": "0022",
+        "advanced": false,
+        "readOnlyRootFilesystem": false,
+        "runAsGroup": 0,
+        "runAsNonRoot": false,
+        "runAsUser": 0
+      },
+      "pod": {
+        "fsGroup": 568,
+        "fsGroupChangePolicy": "OnRootMismatch",
+        "supplementalGroups": []
+      }
+    },
+    "service": {
+      "main": {
+        "enabled": true,
+        "ports": {
+          "main": {
+            "port": 10180,
+            "targetPort": 5800
+          }
+        },
+        "type": "ClusterIP"
+      },
+      "vnc": {
+        "enabled": true,
+        "ports": {
+          "vnc": {
+            "enabled": true,
+            "port": 10181,
+            "targetPort": 5900
+          }
+        },
+        "type": "ClusterIP"
+      }
+    },
+    "serviceList": [],
+    "workload": {
+      "main": {
+        "podSpec": {
+          "containers": {
+            "main": {
+              "advanced": false,
+              "env": {
+                "VNC_PASSWORD": ""
+              },
+              "envFrom": [
+                {
+                  "configMapRef": {
+                    "name": "makemkv"
+                  }
+                }
+              ],
+              "envList": [],
+              "extraArgs": [],
+              "probes": {
+                "liveness": {
+                  "type": "tcp"
+                },
+                "readiness": {
+                  "type": "tcp"
+                },
+                "startup": {
+                  "type": "tcp"
+                }
+              },
+              "securityContext": {
+                "capabilities": {
+                  "add": [
+                    "NET_BIND_SERVICE",
+                    "KILL"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "replicas": 1,
+        "type": "Deployment"
+      }
+    }
+  },
+  "container_images_update_available": false,
+  "dataset": "pool1/ix-applications/releases/makemkv",
+  "human_latest_version": "11.0.9",
+  "human_version": "24.01.1_11.0.9",
+  "id": "makemkv",
+  "info": {
+    "deleted": "",
+    "description": "Upgrade complete",
+    "first_deployed": "2024-04-28T11:08:00.67601477+01:00",
+    "last_deployed": "2024-07-07T12:01:50.063627503+01:00",
+    "notes": "\n# Thank you for installing makemkv by TrueCharts.\n\n\n## Connecting externally\nYou can use this Chart by opening one of the following links in your browser:\n- host: makemkv.musson-lan.uk\npath: /\nport: \"443\"\nportalName: open\nprotocol: https\nurl: https://makemkv.musson-lan.uk:443/\nuseNodeIP: false\n## Sources for makemkv\n- https://github.com/jlesage/docker-makemkv\n- https://github.com/truecharts/charts/tree/master/charts/stable/makemkv\n- https://hub.docker.com/r/jlesage/makemkv\n\nSee more for **makemkv** at (https://truecharts.org/charts/stable/makemkv)\n\n## Documentation\nPlease check out the TrueCharts documentation on:\nhttps://truecharts.org\n\nOpenSource can only exist with your help, please consider supporting TrueCharts:\nhttps://truecharts.org/sponsor\n",
+    "status": "deployed"
+  },
+  "name": "makemkv",
+  "namespace": "ix-makemkv",
+  "path": "/mnt/pool1/ix-applications/releases/makemkv",
+  "pod_status": {
+    "available": 1,
+    "desired": 1
+  },
+  "portals": {
+    "open": [
+      "https://makemkv.musson-lan.uk:443/"
+    ]
+  },
+  "status": "ACTIVE",
+  "update_available": false,
+  "used_ports": [],
+  "version": 15
+}

@@ -1,0 +1,289 @@
+{
+  "catalog": "TRUECHARTS",
+  "catalog_train": "stable",
+  "chart_metadata": {
+    "annotations": {
+      "max_scale_version": "24.04.1",
+      "min_scale_version": "24.04.0",
+      "truecharts.org/SCALE-support": "true",
+      "truecharts.org/category": "system",
+      "truecharts.org/max_helm_version": "3.14",
+      "truecharts.org/min_helm_version": "3.11",
+      "truecharts.org/train": "stable"
+    },
+    "apiVersion": "v2",
+    "appVersion": "2.5.2",
+    "dependencies": [
+      {
+        "enabled": true,
+        "name": "common",
+        "repository": "oci://tccr.io/truecharts",
+        "version": "23.0.10"
+      }
+    ],
+    "description": "A Tiny Dashboard for Network UPS Tools.",
+    "home": "https://truecharts.org/charts/stable/peanut",
+    "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/peanut.webp",
+    "keywords": [
+      "peanut",
+      "ups"
+    ],
+    "kubeVersion": "\u003e=1.24.0-0",
+    "latest_chart_version": "2.0.11",
+    "maintainers": [
+      {
+        "email": "info@truecharts.org",
+        "name": "TrueCharts",
+        "url": "https://truecharts.org"
+      }
+    ],
+    "name": "peanut",
+    "sources": [
+      "https://github.com/Brandawg93/PeaNUT",
+      "https://github.com/truecharts/charts/tree/master/charts/stable/peanut",
+      "https://hub.docker.com/r/brandawg93/peanut"
+    ],
+    "type": "application",
+    "version": "2.0.11"
+  },
+  "config": {
+    "TZ": "Europe/London",
+    "addons": {
+      "codeserver": {
+        "enabled": false
+      },
+      "netshoot": {
+        "enabled": false
+      },
+      "vpn": {
+        "type": "disabled"
+      }
+    },
+    "credentialsList": [],
+    "deviceList": [],
+    "docs": {
+      "confirmDocs": true
+    },
+    "donateNag": {
+      "confirmDonate": true
+    },
+    "global": {
+      "ixChartContext": {
+        "addNvidiaRuntimeClass": false,
+        "hasNFSCSI": true,
+        "hasSMBCSI": true,
+        "isInstall": false,
+        "isStopped": false,
+        "isUpdate": false,
+        "isUpgrade": true,
+        "kubernetes_config": {
+          "cluster_cidr": "172.16.0.0/16",
+          "cluster_dns_ip": "172.17.0.10",
+          "service_cidr": "172.17.0.0/16"
+        },
+        "nfsProvisioner": "nfs.csi.k8s.io",
+        "nvidiaRuntimeClassName": "nvidia",
+        "operation": "UPGRADE",
+        "smbProvisioner": "smb.csi.k8s.io",
+        "storageClassName": "ix-storage-class-peanut-downstairs",
+        "upgradeMetadata": {
+          "newChartVersion": "2.0.11",
+          "oldChartVersion": "2.0.9",
+          "preUpgradeRevision": 8
+        }
+      },
+      "stopAll": false
+    },
+    "image": {
+      "pullPolicy": "IfNotPresent",
+      "repository": "brandawg93/peanut",
+      "tag": "2.5.2@sha256:49087fb9707ac8b3835ebfdf03aee4b0b723c35fe342b7b261a1030aa77f438e"
+    },
+    "imagePullSecretList": [],
+    "ingress": {
+      "main": {
+        "advanced": false,
+        "enabled": true,
+        "hosts": [
+          {
+            "host": "peanut-downstairs.musson-lan.uk",
+            "paths": [
+              {
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        ],
+        "ingressClassName": "",
+        "integrations": {
+          "certManager": {
+            "certificateIssuer": "cloudflare-prod",
+            "enabled": true
+          },
+          "homepage": {
+            "description": "",
+            "enabled": true,
+            "group": "Network - UPS",
+            "icon": "",
+            "name": "",
+            "widget": {
+              "custom": {
+                "key": "downstairs"
+              },
+              "customkv": [],
+              "enabled": true
+            }
+          },
+          "traefik": {
+            "allowCors": false,
+            "enabled": true,
+            "entrypoints": [
+              "websecure"
+            ],
+            "middlewares": [
+              {
+                "name": "allowlist-private",
+                "namespace": ""
+              }
+            ]
+          }
+        },
+        "tls": []
+      }
+    },
+    "ingressList": [],
+    "ixCertificateAuthorities": {},
+    "ixCertificates": {},
+    "ixChartContext": {
+      "addNvidiaRuntimeClass": false,
+      "hasNFSCSI": true,
+      "hasSMBCSI": true,
+      "isInstall": false,
+      "isStopped": false,
+      "isUpdate": false,
+      "isUpgrade": true,
+      "kubernetes_config": {
+        "cluster_cidr": "172.16.0.0/16",
+        "cluster_dns_ip": "172.17.0.10",
+        "service_cidr": "172.17.0.0/16"
+      },
+      "nfsProvisioner": "nfs.csi.k8s.io",
+      "nvidiaRuntimeClassName": "nvidia",
+      "operation": "UPGRADE",
+      "smbProvisioner": "smb.csi.k8s.io",
+      "storageClassName": "ix-storage-class-peanut-downstairs",
+      "upgradeMetadata": {
+        "newChartVersion": "2.0.11",
+        "oldChartVersion": "2.0.9",
+        "preUpgradeRevision": 8
+      }
+    },
+    "ixExternalInterfacesConfiguration": [],
+    "ixExternalInterfacesConfigurationNames": [],
+    "ixVolumes": [],
+    "networkPolicy": [],
+    "persistenceList": [],
+    "podOptions": {
+      "expertPodOpts": false
+    },
+    "portal": {
+      "open": {
+        "enabled": true
+      }
+    },
+    "release_name": "peanut-downstairs",
+    "resources": {
+      "limits": {
+        "amd.com/gpu": 0,
+        "cpu": "4000m",
+        "gpu.intel.com/i915": 0,
+        "memory": "8Gi",
+        "nvidia.com/gpu": 0
+      },
+      "requests": {
+        "cpu": "10m",
+        "memory": "50Mi"
+      }
+    },
+    "scaleExternalInterface": [],
+    "securityContext": {
+      "container": {
+        "PUID": 568,
+        "UMASK": "0022",
+        "advanced": false,
+        "readOnlyRootFilesystem": false,
+        "runAsGroup": 0,
+        "runAsUser": 0
+      },
+      "pod": {
+        "fsGroup": 568,
+        "fsGroupChangePolicy": "OnRootMismatch",
+        "supplementalGroups": []
+      }
+    },
+    "service": {
+      "main": {
+        "enabled": true,
+        "ports": {
+          "main": {
+            "port": 10688
+          }
+        },
+        "type": "ClusterIP"
+      }
+    },
+    "serviceList": [],
+    "workload": {
+      "main": {
+        "podSpec": {
+          "containers": {
+            "main": {
+              "advanced": false,
+              "env": {
+                "NUT_HOST": "10.242.1.4",
+                "NUT_PORT": 3493,
+                "PASSWORD": "REPLACED",
+                "USERNAME": "monuser",
+                "WEB_PORT": "{{ .Values.service.main.ports.main.port }}"
+              },
+              "envList": [],
+              "extraArgs": []
+            }
+          }
+        },
+        "replicas": 1,
+        "type": "Deployment"
+      }
+    }
+  },
+  "container_images_update_available": false,
+  "dataset": "pool1/ix-applications/releases/peanut-downstairs",
+  "human_latest_version": "2.0.11",
+  "human_version": "2.5.2_2.0.11",
+  "id": "peanut-downstairs",
+  "info": {
+    "deleted": "",
+    "description": "Upgrade complete",
+    "first_deployed": "2024-04-28T11:23:19.316644268+01:00",
+    "last_deployed": "2024-05-29T04:07:28.373501917+01:00",
+    "notes": "\n# Thank you for installing peanut by TrueCharts.\n\n\n## Connecting externally\nYou can use this Chart by opening one of the following links in your browser:\n- host: peanut-downstairs.musson-lan.uk\npath: /\nport: \"443\"\nportalName: open\nprotocol: https\nurl: https://peanut-downstairs.musson-lan.uk:443/\nuseNodeIP: false\n## Sources for peanut\n- https://github.com/Brandawg93/PeaNUT\n- https://github.com/truecharts/charts/tree/master/charts/stable/peanut\n- https://hub.docker.com/r/brandawg93/peanut\n\nSee more for **peanut** at (https://truecharts.org/charts/stable/peanut)\n\n## Documentation\nPlease check out the TrueCharts documentation on:\nhttps://truecharts.org\n\nOpenSource can only exist with your help, please consider supporting TrueCharts:\nhttps://truecharts.org/sponsor\n",
+    "status": "deployed"
+  },
+  "name": "peanut-downstairs",
+  "namespace": "ix-peanut-downstairs",
+  "path": "/mnt/pool1/ix-applications/releases/peanut-downstairs",
+  "pod_status": {
+    "available": 1,
+    "desired": 1
+  },
+  "portals": {
+    "open": [
+      "https://peanut-downstairs.musson-lan.uk:443/"
+    ]
+  },
+  "status": "ACTIVE",
+  "update_available": false,
+  "used_ports": [],
+  "version": 9
+}
