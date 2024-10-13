@@ -1,1 +1,11 @@
 .DS_Store
+age.agekey
+*talconfig.json
+talconfig.json
+patches/sopssecret.yaml
+*patches/sopssecret.yaml
+clustertool.exe
+kubeconfig
+*kubeconfig
+clustertool
+sopssecret.yaml
