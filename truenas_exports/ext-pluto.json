@@ -1,0 +1,220 @@
+{
+  "catalog": "TRUECHARTS",
+  "catalog_train": "stable",
+  "chart_metadata": {
+    "annotations": {
+      "max_scale_version": "24.04.1",
+      "min_scale_version": "24.04.0",
+      "truecharts.org/SCALE-support": "true",
+      "truecharts.org/category": "networking",
+      "truecharts.org/max_helm_version": "3.14",
+      "truecharts.org/min_helm_version": "3.11",
+      "truecharts.org/train": "stable"
+    },
+    "apiVersion": "v2",
+    "appVersion": "3.20.0",
+    "dependencies": [
+      {
+        "enabled": true,
+        "name": "common",
+        "repository": "oci://tccr.io/truecharts",
+        "version": "23.0.10"
+      }
+    ],
+    "description": "Allow external services to be used like Apps.",
+    "home": "https://truecharts.org/charts/stable/external-service",
+    "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/external-service.webp",
+    "keywords": [
+      "external-service",
+      "reverse-proxy"
+    ],
+    "kubeVersion": "\u003e=1.24.0-0",
+    "latest_chart_version": "14.1.2",
+    "maintainers": [
+      {
+        "email": "info@truecharts.org",
+        "name": "TrueCharts",
+        "url": "https://truecharts.org"
+      }
+    ],
+    "name": "external-service",
+    "sources": [
+      "https://github.com/truecharts/charts/tree/master/charts/stable/external-service",
+      "https://hub.docker.com/_/alpine"
+    ],
+    "type": "application",
+    "version": "14.1.2"
+  },
+  "config": {
+    "credentialsList": [],
+    "global": {
+      "ignoreIsStopped": true,
+      "ixChartContext": {
+        "addNvidiaRuntimeClass": false,
+        "hasNFSCSI": true,
+        "hasSMBCSI": true,
+        "isInstall": false,
+        "isStopped": true,
+        "isUpdate": false,
+        "isUpgrade": true,
+        "kubernetes_config": {
+          "cluster_cidr": "172.16.0.0/16",
+          "cluster_dns_ip": "172.17.0.10",
+          "service_cidr": "172.17.0.0/16"
+        },
+        "nfsProvisioner": "nfs.csi.k8s.io",
+        "nvidiaRuntimeClassName": "nvidia",
+        "operation": "UPGRADE",
+        "smbProvisioner": "smb.csi.k8s.io",
+        "storageClassName": "ix-storage-class-ext-pluto",
+        "upgradeMetadata": {
+          "newChartVersion": "14.1.2",
+          "oldChartVersion": "14.1.0",
+          "preUpgradeRevision": 7
+        }
+      },
+      "stopAll": false
+    },
+    "image": {
+      "pullPolicy": "IfNotPresent",
+      "repository": "alpine",
+      "tag": "3.20.0@sha256:77726ef6b57ddf65bb551896826ec38bc3e53f75cdde31354fbffb4f25238ebd"
+    },
+    "ingress": {
+      "main": {
+        "advanced": false,
+        "annotations": {
+          "traefik.frontend.passHostHeader": "false"
+        },
+        "enabled": true,
+        "hosts": [
+          {
+            "host": "pluto.musson-lan.uk",
+            "paths": [
+              {
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        ],
+        "ingressClassName": "",
+        "integrations": {
+          "certManager": {
+            "certificateIssuer": "cloudflare-prod",
+            "enabled": true
+          },
+          "homepage": {
+            "enabled": false
+          },
+          "traefik": {
+            "allowCors": false,
+            "enabled": true,
+            "entrypoints": [
+              "websecure"
+            ],
+            "middlewares": [
+              {
+                "name": "allowlist-private",
+                "namespace": ""
+              }
+            ]
+          }
+        },
+        "tls": []
+      }
+    },
+    "ingressList": [],
+    "ixCertificateAuthorities": {},
+    "ixCertificates": {},
+    "ixChartContext": {
+      "addNvidiaRuntimeClass": false,
+      "hasNFSCSI": true,
+      "hasSMBCSI": true,
+      "isInstall": false,
+      "isStopped": true,
+      "isUpdate": false,
+      "isUpgrade": true,
+      "kubernetes_config": {
+        "cluster_cidr": "172.16.0.0/16",
+        "cluster_dns_ip": "172.17.0.10",
+        "service_cidr": "172.17.0.0/16"
+      },
+      "nfsProvisioner": "nfs.csi.k8s.io",
+      "nvidiaRuntimeClassName": "nvidia",
+      "operation": "UPGRADE",
+      "smbProvisioner": "smb.csi.k8s.io",
+      "storageClassName": "ix-storage-class-ext-pluto",
+      "upgradeMetadata": {
+        "newChartVersion": "14.1.2",
+        "oldChartVersion": "14.1.0",
+        "preUpgradeRevision": 7
+      }
+    },
+    "ixExternalInterfacesConfiguration": [],
+    "ixExternalInterfacesConfigurationNames": [],
+    "ixVolumes": [],
+    "portal": {
+      "open": {
+        "enabled": true
+      }
+    },
+    "release_name": "ext-pluto",
+    "service": {
+      "main": {
+        "enabled": true,
+        "externalIP": "10.242.1.242",
+        "ports": {
+          "main": {
+            "enabled": true,
+            "port": 444,
+            "protocol": "https"
+          }
+        },
+        "type": "ExternalIP",
+        "useSlice": false
+      }
+    },
+    "workload": {
+      "main": {
+        "enabled": false,
+        "podSpec": {
+          "containers": {
+            "main": {
+              "env": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "container_images_update_available": false,
+  "dataset": "pool1/ix-applications/releases/ext-pluto",
+  "human_latest_version": "14.1.2",
+  "human_version": "3.20.0_14.1.2",
+  "id": "ext-pluto",
+  "info": {
+    "deleted": "",
+    "description": "Upgrade complete",
+    "first_deployed": "2024-04-28T10:40:47.48219897+01:00",
+    "last_deployed": "2024-05-29T04:06:08.2188129+01:00",
+    "notes": "\n# Thank you for installing external-service by TrueCharts.\n\n\n## Connecting externally\nYou can use this Chart by opening one of the following links in your browser:\n- host: pluto.musson-lan.uk\npath: /\nport: \"443\"\nportalName: open\nprotocol: https\nurl: https://pluto.musson-lan.uk:443/\nuseNodeIP: false\n## Sources for external-service\n- https://github.com/truecharts/charts/tree/master/charts/stable/external-service\n- https://hub.docker.com/_/alpine\n\nSee more for **external-service** at (https://truecharts.org/charts/stable/external-service)\n\n## Documentation\nPlease check out the TrueCharts documentation on:\nhttps://truecharts.org\n\nOpenSource can only exist with your help, please consider supporting TrueCharts:\nhttps://truecharts.org/sponsor\n",
+    "status": "deployed"
+  },
+  "name": "ext-pluto",
+  "namespace": "ix-ext-pluto",
+  "path": "/mnt/pool1/ix-applications/releases/ext-pluto",
+  "pod_status": {
+    "available": 0,
+    "desired": 0
+  },
+  "portals": {
+    "open": [
+      "https://pluto.musson-lan.uk:443/"
+    ]
+  },
+  "status": "STOPPED",
+  "update_available": false,
+  "used_ports": [],
+  "version": 8
+}
