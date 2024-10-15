@@ -27,12 +27,3 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
-
-  values:
-    service:
-      main:
-        type: LoadBalancer
-        loadBalancerIP: ${SPEEDTEST_IP}
-        ports:
-          main:
-            port: 80
