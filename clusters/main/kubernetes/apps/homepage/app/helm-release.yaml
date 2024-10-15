@@ -42,20 +42,20 @@ spec:
         bucket: "${B2_BUCKET}"
         encrKey: "${B2_ENCRKEY}"
         name: backblaze
-        path: ""
+#       path: ""
         secretKey: "${B2_SECRETKEY}"
         type: s3
         url: "${B2_URL}"
     persistence:
-      bookmarks-config:
-        enabled: '{{ not .Values.forceConfigFromValues }}'
-        mountPath: /dummy-config/bookmarks.yaml
-        objectName: config
-        readOnly: true
-        subPath: bookmarks.yaml
-        targetSelector:
-          main: {}
-        type: configmap
+#      bookmarks-config:
+#        enabled: '{{ not .Values.forceConfigFromValues }}'
+#        mountPath: /dummy-config/bookmarks.yaml
+#        objectName: config
+#        readOnly: true
+#        subPath: bookmarks.yaml
+#        targetSelector:
+#          main: {}
+#        type: configmap
       config:
         enabled: true
         mountPath: /app/config
