@@ -7,7 +7,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 30m
-  url: "ssh://git@git@github.com/jtmusson/pluto-cluster.git"
+  url: "ssh://git@github.com/jtmusson/pluto-cluster.git"
   ref:
     branch: main
   secretRef:
