@@ -84,8 +84,7 @@ spec:
     persistence:
       config:
         enabled: true
-        mountPath: /config
-        readOnly: false
+        mountPath: "/config"
         volsync:
           - name: config
             type: restic
