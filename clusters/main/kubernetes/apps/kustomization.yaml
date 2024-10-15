@@ -4,3 +4,4 @@ resources:
   - kubernetes-dashboard/ks.yaml
   - firefox/ks.yaml
   - speedtest-tracker/ks.yaml
+  - homepage/ks.yaml
