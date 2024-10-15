@@ -50,11 +50,11 @@ spec:
             type: restic
     service:
       main:
-        enabled: true
+        type: LoadBalancer
+        loadBalancerIP: ${NTFY_IP}
         ports:
           main:
-            port: 10222
-        type: ClusterIP
+            port: 80
 
 #        ingress:
 #            main:
