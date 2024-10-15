@@ -31,14 +31,14 @@ spec:
                 enabled: true
         credentials:
             backblaze:
-                accessKey: REPLACED
-                bucket: Pluto-JTM
-                encrKey: REPLACED
+                accessKey: "${B2_ACCESSKEY}"
+                bucket: "${B2_BUCKET}"
+                encrKey: "${B2_ENCRKEY}"
                 name: backblaze
                 path: ""
-                secretKey: REPLACED
+                secretKey: "${B2_SECRETKEY}"
                 type: s3
-                url: https://s3.us-west-001.backblazeb2.com
+                url: "${B2_URL}"
         ingress:
             main:
                 enabled: true
