@@ -37,6 +37,7 @@ spec:
           enabled: true
         recovery:
           method: object_store
+          revision: 
           credentials: backblaze
     credentials:
       backblaze:
