@@ -41,7 +41,7 @@ spec:
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
-        bucket: "${B2_BUCKET}"
+        bucket: "${B2_BUCKET}-speedtest"
         encrKey: "${B2_ENCRKEY}"
         name: backblaze
 #       path: ""
