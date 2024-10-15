@@ -70,13 +70,19 @@ spec:
               enabled: true
     service:
       main:
-        enabled: true
+        type: LoadBalancer
+        loadBalancerIP: ${HOMEPAGE_IP}
         ports:
           main:
-            port: 10352
-            protocol: http
-            targetPort: 3000
-        type: ClusterIP
+            port: 80
+#      main:
+#        enabled: true
+#        ports:
+#          main:
+#            port: 10352
+#            protocol: http
+#            targetPort: 3000
+#        type: ClusterIP
 
 # TODO -- enable ingress
 #        ingress:
