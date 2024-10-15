@@ -33,7 +33,7 @@ spec:
         mode: recovery
         backups:
           credentials: backblaze
-          revision:
+          revision: "1"
           enabled: true
         recovery:
           method: object_store
