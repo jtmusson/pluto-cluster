@@ -39,7 +39,7 @@ spec:
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
-        bucket: "${B2_BUCKET}-homepage"
+        bucket: "${B2_BUCKET}"
         encrKey: "${B2_ENCRKEY}"
         name: backblaze
 #       path: ""
