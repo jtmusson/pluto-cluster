@@ -39,6 +39,10 @@ spec:
           method: object_store
           revision: 
           credentials: backblaze
+        database: "speedtest-tracker"
+        password: "PLACEHOLDERPASSWORD"
+        pgVersion: 16
+        user: "speedtest-tracker"
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
