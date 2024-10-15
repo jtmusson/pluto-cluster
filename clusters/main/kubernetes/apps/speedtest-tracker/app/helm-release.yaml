@@ -33,7 +33,7 @@ spec:
         mode: recovery
         backups:
           credentials: backblaze
-          revision: "1"
+          revision: 1
           enabled: true
         recovery:
           method: object_store
@@ -44,7 +44,7 @@ spec:
         bucket: "${B2_BUCKET}"
         encrKey: "${B2_ENCRKEY}"
         name: backblaze
-        path: ""
+#       path: ""
         secretKey: "${B2_SECRETKEY}"
         type: s3
         url: "${B2_URL}"
@@ -83,8 +83,6 @@ spec:
         type: speedtest
     persistence:
       config:
-        enabled: true
-        mountPath: "/config"
         volsync:
           - name: config
             type: restic
