@@ -5,3 +5,4 @@ resources:
   - homepage/ks.yaml
   - speedtest-tracker/ks.yaml
   - ntfy/ks.yaml
+  - traefik/ks.yaml
