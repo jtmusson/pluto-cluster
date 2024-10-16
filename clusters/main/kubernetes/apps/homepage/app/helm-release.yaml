@@ -42,7 +42,6 @@ spec:
         bucket: "${B2_BUCKET}"
         encrKey: "${B2_ENCRKEY}"
         name: backblaze
-#       path: ""
         secretKey: "${B2_SECRETKEY}"
         type: s3
         url: "${B2_URL}"
@@ -58,8 +57,7 @@ spec:
 #        type: configmap
       config:
         enabled: true
-        mountPath: /app/config
-        readOnly: false
+        mountPath: "/app/config"
         volsync:
           - name: config
             type: restic

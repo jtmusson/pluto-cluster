@@ -4,4 +4,3 @@ resources:
   - kubernetes-dashboard/ks.yaml
   - homepage/ks.yaml
   - speedtest-tracker/ks.yaml
-  - traefik/ks.yaml
