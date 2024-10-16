@@ -63,6 +63,7 @@ spec:
         server: 10.242.1.242
         type: nfs
       watch:
+        enabled: true
         path: /mnt/pool0/movies/_MKV
         server: 10.242.1.242
         type: nfs
