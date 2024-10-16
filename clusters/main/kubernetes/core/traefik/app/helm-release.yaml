@@ -30,7 +30,7 @@ spec:
   values:
     ingress:
       main:
-        enabled: false
+        enabled: true
         integrations:
           traefik:
             enabled: true
@@ -57,7 +57,8 @@ spec:
             - 192.168.0.0/16
     service:
       main:
-        type: ClusterIP
+        type: loadBalancer
+        loadBalancerIP: ${TRAEFIK_IP}
       tcp:
         loadBalancerIP: ${TRAEFIK_IP}
         externalTrafficPolicy: Local
