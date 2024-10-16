@@ -59,14 +59,29 @@ spec:
             src:
               enabled: false
       output:
-        autoPermissions:
-          enabled: false
         path: /mnt/pool0/movies/_Pending
         server: 10.242.1.242
         type: nfs
-
-
-
+      watch:
+        path: /mnt/pool0/movies/_MKV
+        server: 10.242.1.242
+        type: nfs
+        mountPath: "/watch"
+    service:
+      main:
+        ports:
+          main:
+            port: 10053
+            targetPort: 5800
+        type: LoadBalance
+        loadBalancerIP: ${HANDBAKE_IP}
+      vnc:
+        ports:
+          vnc:
+            port: 10055
+            targetPort: 5900
+        type: LoadBalance
+        loadBalancerIP: ${HANDBRAKE_IP}
 
 # TODO - Enable ingress
 #         ingress:
@@ -100,19 +115,3 @@ spec:
 #                        middlewares:
 #                            - name: allowlist-private
 #                              namespace: ""
-
-    service:
-      main:
-        ports:
-          main:
-            port: 10053
-            targetPort: 5800
-        type: LoadBalance
-        loadBalancerIP: ${HANDBAKE_IP}
-      vnc:
-        ports:
-          vnc:
-            port: 10055
-            targetPort: 5900
-        type: LoadBalance
-        loadBalancerIP: ${HANDBRAKE_IP}
