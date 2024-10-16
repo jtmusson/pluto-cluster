@@ -35,7 +35,8 @@ spec:
         ports:
           codeserver:
             port: 36107
-        type: ClusterIP
+        type: LoadBalancer
+        loadBalancerIP: ${HOMEPAGE_IP}
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
