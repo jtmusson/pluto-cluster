@@ -57,7 +57,7 @@ spec:
             - 192.168.0.0/16
     service:
       main:
-        type: loadBalancer
+        type: LoadBalancer
         loadBalancerIP: ${TRAEFIK_IP}
       tcp:
         loadBalancerIP: ${TRAEFIK_IP}
