@@ -31,12 +31,12 @@ spec:
     addons:
       codeserver:
         enabled: true
-      service:
-        ports:
-          codeserver:
-            port: 12321
-        type: LoadBalancer
-        loadBalancerIP: ${HOMEPAGE_IP}
+        service:
+          ports:
+            codeserver:
+              port: 12321
+          type: LoadBalancer
+          loadBalancerIP: ${HOMEPAGE_IP}
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
