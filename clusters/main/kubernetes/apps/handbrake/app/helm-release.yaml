@@ -68,6 +68,18 @@ spec:
         server: 10.242.1.242
         type: nfs
         mountPath: "/watch"
+    securityContext:
+      container:
+        PUID: 568
+        UMASK: "0022"
+        runAsUser: 0
+        runAsGroup: 0
+        readOnlyRootFilesystem: false
+        allowPrivilegeEscalation: false
+        privileged: true
+      pod:
+        fsGroup: 3010
+        fsGroupChangePolicy: OnRootMismatch        
     service:
       main:
         ports:
@@ -83,7 +95,7 @@ spec:
             targetPort: 5900
         type: LoadBalancer
         loadBalancerIP: ${HANDBRAKE_IP}
-
+    
 # TODO - Enable ingress
 #         ingress:
 #            main:
