@@ -94,6 +94,18 @@ spec:
               enabled: true
             src:
               enabled: false
+    securityContext:
+      container:
+        PUID: 568
+        UMASK: "0022"
+        runAsUser: 0
+        runAsGroup: 0
+        readOnlyRootFilesystem: false
+        allowPrivilegeEscalation: false
+        privileged: false
+      pod:
+        fsGroup: 568
+        fsGroupChangePolicy: OnRootMismatch
     service:
       main:
         type: LoadBalancer
