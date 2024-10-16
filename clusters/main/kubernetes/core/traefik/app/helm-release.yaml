@@ -28,23 +28,23 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    ingress:
-      main:
-        enabled: true
-        integrations:
-          traefik:
-            enabled: true
-            middlewares:
-              - name: allowlist-private
-                namespace: traefik
-          certManager:
-            enabled: true
-            certificateIssuer: cloudflare-prod
-        hosts:
-          - host: traefik.musson-lan.uk
-            paths:
-              - path: /
-                pathType: Prefix 
+#    ingress:
+#      main:
+#        enabled: true
+#        integrations:
+#          traefik:
+#            enabled: true
+#            middlewares:
+#              - name: allowlist-private
+#                namespace: traefik
+#          certManager:
+#            enabled: true
+#            certificateIssuer: cloudflare-prod
+#        hosts:
+#          - host: traefik.musson-lan.uk
+#            paths:
+#              - path: /
+#                pathType: Prefix 
 
     middlewares:
       ipWhiteList:
@@ -58,7 +58,6 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: ${TRAEFIK_IP}
       tcp:
         loadBalancerIP: ${TRAEFIK_IP}
         externalTrafficPolicy: Local
