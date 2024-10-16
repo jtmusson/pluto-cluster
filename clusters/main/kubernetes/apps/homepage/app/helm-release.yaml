@@ -45,16 +45,8 @@ spec:
         secretKey: "${B2_SECRETKEY}"
         type: s3
         url: "${B2_URL}"
+    forceConfigFromValues: false
     persistence:
-#      bookmarks-config:
-#        enabled: '{{ not .Values.forceConfigFromValues }}'
-#        mountPath: /dummy-config/bookmarks.yaml
-#        objectName: config
-#        readOnly: true
-#        subPath: bookmarks.yaml
-#        targetSelector:
-#          main: {}
-#        type: configmap
       config:
         volsync:
           - name: b2
@@ -71,7 +63,6 @@ spec:
         ports:
           main:
             port: 80
-    forceConfigFromValues: true
 #      main:
 #        enabled: true
 #        ports:
