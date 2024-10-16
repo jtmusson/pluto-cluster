@@ -28,13 +28,21 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    credentials:
+      backblaze:
+        accessKey: "${B2_ACCESSKEY}"
+        bucket: "${B2_BUCKET}"
+        encrKey: "${B2_ENCRKEY}"
+        name: backblaze
+        secretKey: "${B2_SECRETKEY}"
+        type: s3
+        url: "${B2_URL}"
     cnpg:
       main:
         mode: recovery
         backups:
           credentials: backblaze
           revision: "1"
-          enabled: true
         recovery:
           method: object_store
           revision: 
@@ -43,16 +51,6 @@ spec:
         password: "PLACEHOLDERPASSWORD"
         pgVersion: 16
         user: "speedtest-tracker"
-    credentials:
-      backblaze:
-        accessKey: "${B2_ACCESSKEY}"
-        bucket: "${B2_BUCKET}"
-        encrKey: "${B2_ENCRKEY}"
-        name: backblaze
-#       path: ""
-        secretKey: "${B2_SECRETKEY}"
-        type: s3
-        url: "${B2_URL}"
 # TODO - Enable ingress
 #    ingress:
 #     main:
@@ -89,7 +87,7 @@ spec:
     persistence:
       config:
         volsync:
-          - name: config
+          - name: b2
             type: restic
             credentials: backblaze
             dest:
