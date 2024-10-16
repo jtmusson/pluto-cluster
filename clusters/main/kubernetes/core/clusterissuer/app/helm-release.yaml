@@ -30,10 +30,9 @@ spec:
   values:
     clusterIssuer:
       ACME:
-        - cfapikey: ""
+        - name: cloudflare-prod
           cfapitoken: "${CF_API_TOKEN}"
           email: "${EMAIL1}"
-          name: cloudflare-prod
           server: https://acme-v02.api.letsencrypt.org/directory
           type: cloudflare
       selfSigned:
