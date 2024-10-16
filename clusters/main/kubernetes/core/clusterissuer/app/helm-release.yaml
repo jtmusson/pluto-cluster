@@ -38,6 +38,3 @@ spec:
       selfSigned:
         enabled: false
         name: selfsigned
-      operator:
-        cert-manager:
-          namespace: cert-manager
