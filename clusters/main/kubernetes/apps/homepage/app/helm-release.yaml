@@ -71,6 +71,7 @@ spec:
         ports:
           main:
             port: 80
+    forceConfigFromValues: true
 #      main:
 #        enabled: true
 #        ports:
