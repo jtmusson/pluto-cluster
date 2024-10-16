@@ -74,14 +74,14 @@ spec:
           main:
             port: 10053
             targetPort: 5800
-        type: LoadBalance
+        type: LoadBalancer
         loadBalancerIP: ${HANDBAKE_IP}
       vnc:
         ports:
           vnc:
             port: 10055
             targetPort: 5900
-        type: LoadBalance
+        type: LoadBalancer
         loadBalancerIP: ${HANDBRAKE_IP}
 
 # TODO - Enable ingress
