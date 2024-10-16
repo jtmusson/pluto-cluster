@@ -34,7 +34,7 @@ spec:
       service:
         ports:
           codeserver:
-            port: 36107
+            port: 12321
         type: LoadBalancer
         loadBalancerIP: ${HOMEPAGE_IP}
     credentials:
