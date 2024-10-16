@@ -96,9 +96,8 @@ spec:
               enabled: false
     service:
       main:
-        enabled: true
+        type: LoadBalancer
+        loadBalancerIP: ${SPEEDTEST_IP}
         ports:
           main:
-            port: 9004
-            targetPort: 80
-        type: ClusterIP
+            port: 80
