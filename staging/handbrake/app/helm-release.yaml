@@ -79,7 +79,7 @@ spec:
         privileged: true
       pod:
         fsGroup: 3010
-        fsGroupChangePolicy: Always
+        fsGroupChangePolicy: OnRootMismatch
     service:
       main:
         ports:
