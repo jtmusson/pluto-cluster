@@ -105,7 +105,7 @@ spec:
         privileged: false
       pod:
         fsGroup: 568
-        fsGroupChangePolicy: Always
+        fsGroupChangePolicy: OnRootMismatch
     service:
       main:
         type: LoadBalancer
