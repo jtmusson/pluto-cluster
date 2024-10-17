@@ -5,4 +5,4 @@ metadata:
     labels:
         pod-security.kubernetes.io/enforce: privileged
         topolvm.io/webhook: ignore
-        volsync.backube/privileged-movers: privileged
+        volsync.backube/privileged-movers: true
