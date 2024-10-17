@@ -70,15 +70,15 @@ spec:
         mountPath: "/watch"
     securityContext:
       container:
-        PUID: 0
+        PUID: 568
         UMASK: "0022"
         runAsUser: 0
         runAsGroup: 0
         readOnlyRootFilesystem: false
-        allowPrivilegeEscalation: false
+        allowPrivilegeEscalation: true
         privileged: true
       pod:
-        fsGroup: 0
+        fsGroup: 3010
         fsGroupChangePolicy: OnRootMismatch        
     service:
       main:
