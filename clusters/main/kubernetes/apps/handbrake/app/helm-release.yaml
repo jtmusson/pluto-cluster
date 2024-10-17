@@ -75,11 +75,11 @@ spec:
         runAsUser: 0
         runAsGroup: 0
         readOnlyRootFilesystem: false
-        allowPrivilegeEscalation: true
+        allowPrivilegeEscalation: false
         privileged: true
       pod:
         fsGroup: 3010
-        fsGroupChangePolicy: OnRootMismatch        
+        fsGroupChangePolicy: Always
     service:
       main:
         ports:
