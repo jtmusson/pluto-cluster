@@ -78,7 +78,7 @@ spec:
         allowPrivilegeEscalation: false
         privileged: true
       pod:
-        fsGroup: 3010
+        fsGroup: 0
         fsGroupChangePolicy: OnRootMismatch        
     service:
       main:
