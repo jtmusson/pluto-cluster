@@ -74,7 +74,7 @@ spec:
         UMASK: "0022"
         runAsUser: 0
         runAsGroup: 0
-        runAsNonRoot: true
+        runAsNonRoot: false
         readOnlyRootFilesystem: false
         allowPrivilegeEscalation: true
         privileged: true
