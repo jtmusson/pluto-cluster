@@ -74,12 +74,14 @@ spec:
         UMASK: "0022"
         runAsUser: 0
         runAsGroup: 0
+        runAsNonRoot: true
         readOnlyRootFilesystem: false
-        allowPrivilegeEscalation: false
+        allowPrivilegeEscalation: true
         privileged: true
       pod:
         fsGroup: 3010
         fsGroupChangePolicy: OnRootMismatch
+        supplementalGroups: []
     service:
       main:
         ports:
