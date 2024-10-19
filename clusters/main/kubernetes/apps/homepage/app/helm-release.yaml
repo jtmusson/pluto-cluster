@@ -62,9 +62,8 @@ spec:
         UMASK: "0022"
         runAsUser: 568
         runAsGroup: 568
-        readOnlyRootFilesystem: false
-        allowPrivilegeEscalation: false
-        privileged: false
+        allowPrivilegeEscalation: true
+        privileged: true
       pod:
         fsGroup: 568
         fsGroupChangePolicy: OnRootMismatch
