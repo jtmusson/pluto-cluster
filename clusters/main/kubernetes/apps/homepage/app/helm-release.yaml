@@ -70,7 +70,7 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: ${HOMEPAGE_IP}
+#        loadBalancerIP: ${HOMEPAGE_IP}
         ports:
           main:
             port: 80
