@@ -58,8 +58,8 @@ controlPlane:
                     # - siderolabs/bnx2-bnx2x
                     # - siderolabs/drbd
                     # - siderolabs/gasket-driver
-                    - siderolabs/i915-ucode
-                    - siderolabs/intel-ucode
+                    # - siderolabs/i915-ucode
+                    # - siderolabs/intel-ucode
                     # - siderolabs/thunderbolt
 worker:
     patches:
@@ -77,6 +77,6 @@ worker:
                     # - siderolabs/bnx2-bnx2x
                     # - siderolabs/drbd
                     # - siderolabs/gasket-driver
-                    - siderolabs/i915-ucode
-                    - siderolabs/intel-ucode
+                    # - siderolabs/i915-ucode
+                    # - siderolabs/intel-ucode
                     # - siderolabs/thunderbolt
