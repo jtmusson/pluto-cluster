@@ -24,7 +24,8 @@ nodes:
       ipAddress: ${MASTER1IP_IP}
       controlPlane: true
       nameservers:
-        - 10.242.1.53
+        - 1.1.1.1
+        - 8.8.8.8
       installDiskSelector:
         size: <= 1600GB
       networkInterfaces:
@@ -57,8 +58,8 @@ controlPlane:
                     # - siderolabs/bnx2-bnx2x
                     # - siderolabs/drbd
                     # - siderolabs/gasket-driver
-                    - siderolabs/i915-ucode
-                    - siderolabs/intel-ucode
+                    # - siderolabs/i915-ucode
+                    # - siderolabs/intel-ucode
                     # - siderolabs/thunderbolt
 worker:
     patches:
@@ -76,6 +77,6 @@ worker:
                     # - siderolabs/bnx2-bnx2x
                     # - siderolabs/drbd
                     # - siderolabs/gasket-driver
-                    - siderolabs/i915-ucode
-                    - siderolabs/intel-ucode
+                    # - siderolabs/i915-ucode
+                    # - siderolabs/intel-ucode
                     # - siderolabs/thunderbolt
