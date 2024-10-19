@@ -15,7 +15,7 @@ spec:
         name: truecharts
         namespace: flux-system
       interval: 15m
-  timeout: 20m
+  timeout: 30m
   maxHistory: 3
   install:
     createNamespace: true
@@ -100,9 +100,8 @@ spec:
         UMASK: "0022"
         runAsUser: 0
         runAsGroup: 0
-        readOnlyRootFilesystem: false
-        allowPrivilegeEscalation: false
-        privileged: false
+        allowPrivilegeEscalation: true
+        privileged: true
       pod:
         fsGroup: 568
         fsGroupChangePolicy: OnRootMismatch
