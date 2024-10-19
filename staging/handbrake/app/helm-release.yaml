@@ -70,7 +70,7 @@ spec:
         mountPath: "/watch"
     securityContext:
       container:
-        PUID: 0
+        PUID: 568
         UMASK: "0022"
         runAsUser: 0
         runAsGroup: 0
