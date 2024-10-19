@@ -108,7 +108,7 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: ${SPEEDTEST_IP}
+#        loadBalancerIP: ${SPEEDTEST_IP}
         ports:
           main:
             port: 80

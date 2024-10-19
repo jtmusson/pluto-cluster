@@ -88,7 +88,7 @@ spec:
             port: 10053
             targetPort: 5800
         type: LoadBalancer
-        loadBalancerIP: ${HANDBAKE_IP}
+#        loadBalancerIP: ${HANDBAKE_IP}
 #      vnc:
 #        ports:
 #          vnc:
