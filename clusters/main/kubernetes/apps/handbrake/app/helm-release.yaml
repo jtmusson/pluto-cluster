@@ -116,5 +116,3 @@ spec:
             homepage:
               enabled: true
               group: Ripping
-              widget:
-                enabled: false
