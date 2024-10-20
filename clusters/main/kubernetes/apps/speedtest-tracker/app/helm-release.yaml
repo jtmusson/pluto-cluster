@@ -51,38 +51,30 @@ spec:
         password: "PLACEHOLDERPASSWORD"
         pgVersion: 16
         user: "speedtest-tracker"
-#    ingress:
-#      main:
-#         enabled: true
-#           hosts:
-#                  - host: speed.musson-lan.uk
-#                      paths:
-#                        - path: /
-#                          pathType: Prefix
-#                ingressClassName: ""
-#                integrations:
-#                    certManager:
-#                        certificateIssuer: cloudflare-prod
-#                        enabled: true
-#                    traefik:
-#                        allowCors: false
-#                        enabled: true
-#                        entrypoints:
-#                            - websecure
-#                        middlewares:
-#                            - name: allowlist-private
-#                              namespace: ""
-#            homepage:
-#              description: ""
-#              enabled: true
-#              group: Network - Performance
-#              icon: ""
-#              name: ""
-#              widget:
-#                custom:
-#                  key: ""
-#                enabled: true
-#                type: speedtest
+    ingress:
+      main:
+        enabled: true
+        hosts:
+          - host: "speed-hydra.musson-lan.uk"
+            paths:
+              - path: /
+                pathType: Prefix
+        integrations:
+          certManager:
+            certificateIssuer: "cloudflare-prod"
+            enabled: true
+          traefik:
+            enabled: true
+            entrypoints:
+              - websecure
+            middlewares:
+              - name: "allowlist-private"
+                namespace: "traefik"
+          homepage:
+            enabled: true
+            group: "Network - Performance"
+            widget:
+              type: "speedtest"
     persistence:
       config:
         volsync:
@@ -118,5 +110,5 @@ spec:
               env:
                 APP_NAME: "71YC"
                 PUBLIC_DASHBOARD: "false"
-                SPEEDTEST_SCHEDULE: "57 */2 * * *"
+                SPEEDTEST_SCHEDULE: "27 */2 * * *"
                 PRUNE_RESULTS_OLDER_THAN: "14"
