@@ -6,7 +6,8 @@ metadata:
   name: cluster
   namespace: flux-system
 spec:
-  interval: 30m
+  interval: 5m
+  timeout: 120s
   url: ssh://git@github.com/jtmusson/pluto-cluster.git
   ref:
     branch: main
