@@ -37,16 +37,16 @@ spec:
         type: s3
         url: "${B2_URL}"
     handbrake:
-#      AUTOMATED_CONVERSION_FORMAT: mkv
-#      AUTOMATED_CONVERSION_KEEP_SOURCE: false
-#      AUTOMATED_CONVERSION_NON_VIDEO_FILE_ACTION: ignore
-#      AUTOMATED_CONVERSION_PRESET: General/HQ 1080p30 Surround Subtitles QSV
+      AUTOMATED_CONVERSION_FORMAT: mkv
+      AUTOMATED_CONVERSION_KEEP_SOURCE: false
+      AUTOMATED_CONVERSION_NON_VIDEO_FILE_ACTION: ignore
+      AUTOMATED_CONVERSION_PRESET: General/HQ 1080p30 Surround Subtitles QSV
       DISPLAY_HEIGHT: 768
       DISPLAY_WIDTH: 1280
       ENABLE_CJK_FONT: false
       KEEP_APP_RUNNING: true
       SECURE_CONNECTION: false
-      autoconv: false
+      autoconv: true
       gui: false
     persistence:
       config:
@@ -62,12 +62,12 @@ spec:
         path: /mnt/pool0/movies/_Pending
         server: 10.242.1.242
         type: nfs
-      watch:
-        enabled: true
-        path: /mnt/pool0/movies/_MKV
-        server: 10.242.1.242
-        type: nfs
-        mountPath: "/watch"
+#      watch:
+#        enabled: true
+#        path: /mnt/pool0/movies/_MKV
+#        server: 10.242.1.242
+#        type: nfs
+#        mountPath: "/watch"
     securityContext:
       container:
         PUID: 568
