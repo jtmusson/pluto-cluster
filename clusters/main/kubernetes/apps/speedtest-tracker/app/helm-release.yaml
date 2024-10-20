@@ -98,7 +98,7 @@ spec:
         fsGroupChangePolicy: OnRootMismatch
     service:
       main:
-        type: LoadBalancer
+        type: ClusterIP
         ports:
           main:
             port: 80
