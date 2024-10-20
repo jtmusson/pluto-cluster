@@ -112,3 +112,13 @@ spec:
         ports:
           main:
             port: 80
+
+# workload:
+#            main:
+#                podSpec:
+#                    containers:
+#                        main:
+#                            env:
+#                                AUDIOBOOKSHELF_GID: '{{ .Values.securityContext.pod.fsGroup }}'
+#                                AUDIOBOOKSHELF_UID: '{{ .Values.securityContext.container.PUID }}'
+#                               
