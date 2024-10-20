@@ -74,7 +74,6 @@ spec:
         UMASK: "0022"
         runAsUser: 0
         runAsGroup: 0
-        readOnlyRootFilesystem: false
         allowPrivilegeEscalation: true
         privileged: true
       pod:
@@ -88,7 +87,6 @@ spec:
             port: 10053
             targetPort: 5800
         type: LoadBalancer
-#        loadBalancerIP: ${HANDBAKE_IP}
 #      vnc:
 #        ports:
 #          vnc:
@@ -102,11 +100,10 @@ spec:
 #            main:
 #                enabled: true
 #                hosts:
-#                    - host: handbrake.musson-lan.uk
+#                    - host: handbrake-hydra.musson-lan.uk
 #                      paths:
 #                        - path: /
 #                          pathType: Prefix
-#                ingressClassName: ""
 #                integrations:
 #                    certManager:
 #                        certificateIssuer: cloudflare-prod
