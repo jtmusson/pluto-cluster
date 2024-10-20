@@ -73,17 +73,17 @@ spec:
 #                        middlewares:
 #                            - name: allowlist-private
 #                              namespace: ""
-    homepage:
-      description: ""
-      enabled: true
-      group: Network - Performance
-      icon: ""
-      name: ""
-      widget:
-        custom:
-          key: ""
-        enabled: true
-        type: speedtest
+#            homepage:
+#              description: ""
+#              enabled: true
+#              group: Network - Performance
+#              icon: ""
+#              name: ""
+#              widget:
+#                custom:
+#                  key: ""
+#                enabled: true
+#                type: speedtest
     persistence:
       config:
         volsync:
@@ -113,12 +113,10 @@ spec:
           main:
             port: 80
 
-# workload:
-#            main:
-#                podSpec:
-#                    containers:
-#                        main:
-#                            env:
-#                                AUDIOBOOKSHELF_GID: '{{ .Values.securityContext.pod.fsGroup }}'
-#                                AUDIOBOOKSHELF_UID: '{{ .Values.securityContext.container.PUID }}'
-#                               
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                PUBLIC_DASHBOARD: "false"
