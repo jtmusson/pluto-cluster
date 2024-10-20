@@ -51,12 +51,11 @@ spec:
         password: "PLACEHOLDERPASSWORD"
         pgVersion: 16
         user: "speedtest-tracker"
-# TODO - Enable ingress
 #    ingress:
-#     main:
-#        enabled: true
-#          hosts:
-#                   - host: speed.musson-lan.uk
+#      main:
+#         enabled: true
+#           hosts:
+#                  - host: speed.musson-lan.uk
 #                      paths:
 #                        - path: /
 #                          pathType: Prefix
@@ -108,15 +107,16 @@ spec:
     service:
       main:
         type: LoadBalancer
-#        loadBalancerIP: ${SPEEDTEST_IP}
         ports:
           main:
             port: 80
-
     workload:
       main:
         podSpec:
           containers:
             main:
               env:
+                APP_NAME: "71YC"
                 PUBLIC_DASHBOARD: "false"
+                SPEEDTEST_SCHEDULE: "57 */2 * * *"
+                PRUNE_RESULTS_OLDER_THAN: "14"
