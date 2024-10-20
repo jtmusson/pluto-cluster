@@ -113,3 +113,4 @@ spec:
                 SPEEDTEST_SCHEDULE: "27 */2 * * *"
                 PRUNE_RESULTS_OLDER_THAN: "14"
                 DISPLAY_TIMEZONE: "Europe/London"
+                DATETIME_FORMAT: "Y-m-d H:i"
