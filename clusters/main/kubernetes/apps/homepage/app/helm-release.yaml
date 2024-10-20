@@ -35,7 +35,14 @@ spec:
           ports:
             codeserver:
               port: 12321
-          type: LoadBalancer
+          type: ClusterIP
+#        ingress:
+#           enabled: true
+#           certManager:
+#              enabled: true
+#              certificateIssuer: cloudflare-prod
+#          hosts:
+#            - host: homepage-hydra-vs.musson-lan.uk
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
