@@ -72,36 +72,22 @@ spec:
         ports:
           main:
             port: 80
-#      main:
-#        enabled: true
-#        ports:
-#          main:
-#            port: 10352
-#            protocol: http
-#            targetPort: 3000
-#        type: ClusterIP
-
-# TODO -- enable ingress
-#        ingress:
-#            main:
-#                enabled: true
-#                hosts:
-#                    - host: homepage.musson-lan.uk
-#                      paths:
-#                        - path: /
-#                          pathType: Prefix
-#                ingressClassName: ""
-#                integrations:
-#                    certManager:
-#                        certificateIssuer: cloudflare-prod
-#                        enabled: true
-#                    homepage:
-#                        enabled: false
-#                    traefik:
-#                        allowCors: false
-#                        enabled: true
-#                        entrypoints:
-#                            - websecure
-#                        middlewares:
-#                            - name: allowlist-private
-#                              namespace: ""
+    ingress:
+      main:
+        enabled: true
+        hosts:
+          - host: "homepage-hydra.musson-lan.uk"
+            paths:
+              - path: /
+                pathType: Prefix
+        integrations:
+          certManager:
+            certificateIssuer: "cloudflare-prod"
+            enabled: true
+          traefik:
+            enabled: true
+            entrypoints:
+              - websecure
+            middlewares:
+              - name: "allowlist-private"
+                namespace: "traefik"
