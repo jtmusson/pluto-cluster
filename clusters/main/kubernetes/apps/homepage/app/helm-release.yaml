@@ -36,13 +36,24 @@ spec:
             codeserver:
               port: 12321
           type: ClusterIP
-#        ingress:
-#           enabled: true
-#           certManager:
-#              enabled: true
-#              certificateIssuer: cloudflare-prod
-#          hosts:
-#            - host: homepage-hydra-vs.musson-lan.uk
+        ingress:
+          enabled: true
+          hosts:
+            - host: homepage-hydra-vs.musson-lan.uk
+              path:
+                - path: /
+                  pathType: Prefix
+          integrations:
+            certManager:
+              enabled: true
+              certificateIssuer: cloudflare-prod
+            traefik:
+              enabled: true
+              entrypoints:
+                - websecure
+              middlewares:
+                - name: "allowlist-private"
+                  namespace: "traefik"
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
