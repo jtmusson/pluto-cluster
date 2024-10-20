@@ -46,7 +46,7 @@ spec:
       ENABLE_CJK_FONT: false
       KEEP_APP_RUNNING: true
       SECURE_CONNECTION: false
-#      autoconv: true
+      autoconv: false
       gui: false
     persistence:
       config:
