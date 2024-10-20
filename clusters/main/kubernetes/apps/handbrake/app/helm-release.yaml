@@ -86,7 +86,7 @@ spec:
           main:
             port: 10053
             targetPort: 5800
-        type: LoadBalancer
+        type: ClusterIP
 #      vnc:
 #        ports:
 #          vnc:
@@ -94,35 +94,27 @@ spec:
 #            targetPort: 5900
 #        type: LoadBalancer
 #        loadBalancerIP: ${HANDBRAKE_IP}
-    
-# TODO - Enable ingress
-#         ingress:
-#            main:
-#                enabled: true
-#                hosts:
-#                    - host: handbrake-hydra.musson-lan.uk
-#                      paths:
-#                        - path: /
-#                          pathType: Prefix
-#                integrations:
-#                    certManager:
-#                        certificateIssuer: cloudflare-prod
-#                        enabled: true
-#                    homepage:
-#                        description: ""
-#                        enabled: true
-#                        group: Ripping
-#                        icon: ""
-#                        name: ""
-#                        widget:
-#                            custom:
-#                                key: ""
-#                            enabled: false
-#                    traefik:
-#                        allowCors: false
-#                        enabled: true
-#                        entrypoints:
-#                            - websecure
-#                        middlewares:
-#                            - name: allowlist-private
-#                              namespace: ""
+    ingress:
+      main:
+        enabled: true
+        hosts:
+          - host: "handbrake-hydra.musson-lan.uk"
+            paths:
+              - path: /
+                pathType: Prefix
+        integrations:
+          certManager:
+            certificateIssuer: "cloudflare-prod"
+            enabled: true
+          traefik:
+            enabled: true
+            entrypoints:
+              - websecure
+            middlewares:
+              - name: "allowlist-private"
+                namespace: "traefik"
+            homepage:
+              enabled: true
+              group: Ripping
+              widget:
+                enabled: false
