@@ -36,7 +36,6 @@ spec:
             codeserver:
               port: 12321
           type: LoadBalancer
-          loadBalancerIP: ${HOMEPAGE_IP}
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
@@ -70,7 +69,6 @@ spec:
     service:
       main:
         type: LoadBalancer
-#        loadBalancerIP: ${HOMEPAGE_IP}
         ports:
           main:
             port: 80
