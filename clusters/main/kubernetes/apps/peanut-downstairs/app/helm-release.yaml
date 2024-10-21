@@ -38,18 +38,18 @@ spec:
                 pathType: Prefix
       integrations:
         certManager:
-          certificateIssuer: "cloudflare-prod"
           enabled: true
+          certificateIssuer: "cloudflare-prod"
         homepage:
           enabled: true
           group: "Network - UPS"
           widget:
+            enabled: true
             custom:
               key: downstairs
-            enabled: true
         traefik:
-          allowCors: false
           enabled: true
+          allowCors: false
           entrypoints:
             - websecure
           middlewares:
