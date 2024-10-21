@@ -40,16 +40,15 @@ spec:
         certManager:
           enabled: true
           certificateIssuer: "cloudflare-prod"
-        homepage:
-          enabled: true
-          group: "Network - UPS"
-          widget:
-            enabled: true
-            custom:
-              key: downstairs
+#        homepage:
+#          enabled: true
+#          group: "Network - UPS"
+#          widget:
+#            enabled: true
+#            custom:
+#              key: downstairs
         traefik:
           enabled: true
-          allowCors: false
           entrypoints:
             - websecure
           middlewares:
