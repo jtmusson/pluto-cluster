@@ -7,3 +7,4 @@ resources:
   - speedtest-tracker/ks.yaml
   - external-dns/ks.yaml
   - audiobookshelf/ks.yaml
+  - peanut-downstairs/ks.yaml
