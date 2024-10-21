@@ -36,25 +36,25 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-      integrations:
-        enabled: true
-        certManager:
-          enabled: true
-          certificateIssuer: "cloudflare-prod"
-        homepage:
-          enabled: true
-          group: "Network - UPS"
-          widget:
+        integrations:
+#          enabled: true
+          certManager:
             enabled: true
-            custom:
-              key: downstairs
-        traefik:
-          enabled: true
-          entrypoints:
-            - websecure
-          middlewares:
-            - name: allowlist-private
-              namespace: "traefik"
+            certificateIssuer: "cloudflare-prod"
+          homepage:
+            enabled: true
+            group: "Network - UPS"
+            widget:
+              enabled: true
+              custom:
+                key: downstairs
+          traefik:
+            enabled: true
+            entrypoints:
+              - websecure
+            middlewares:
+              - name: allowlist-private
+                namespace: "traefik"
     service:
       main:
         ports:
