@@ -102,6 +102,7 @@ spec:
               - path: /
                 pathType: Prefix
         integrations:
+          enabled: true
           certManager:
             certificateIssuer: "cloudflare-prod"
             enabled: true
