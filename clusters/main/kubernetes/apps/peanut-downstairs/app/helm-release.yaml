@@ -57,7 +57,6 @@ spec:
               namespace: "traefik"
     service:
       main:
-        enabled: true
         ports:
           main:
             port: 10688
