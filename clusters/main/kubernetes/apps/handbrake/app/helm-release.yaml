@@ -94,7 +94,6 @@ spec:
 #            targetPort: 5900
 #        type: ClusterIP
     ingress:
-      enabled: true
       main:
         enabled: true
         hosts:
@@ -115,4 +114,4 @@ spec:
                 namespace: "traefik"
             homepage:
               enabled: true
-              group: Ripping
+              group: "Ripping"
