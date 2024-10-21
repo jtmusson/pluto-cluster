@@ -84,7 +84,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
     securityContext:
       container:
         PUID: 568
