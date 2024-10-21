@@ -41,12 +41,14 @@ spec:
           certificateIssuer: "cloudflare-prod"
           enabled: true
         homepage:
+          enabled: true
           group: "Network - UPS"
           widget:
             custom:
               key: downstairs
-          enabled: true
+            enabled: true
         traefik:
+          allowCors: false
           enabled: true
           entrypoints:
             - websecure
@@ -55,6 +57,10 @@ spec:
               namespace: "traefik"
     service:
       main:
+        enabled: true
+        ports:
+          main:
+            port: 10688
         type: ClusterIP
     workload:
       main:
