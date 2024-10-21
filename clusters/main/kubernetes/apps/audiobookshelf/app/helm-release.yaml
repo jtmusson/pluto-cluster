@@ -83,7 +83,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
       metadata:
         enabled: true
         mountPath: /metadata
@@ -94,7 +94,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
     securityContext:
       container:
         PID: 568
