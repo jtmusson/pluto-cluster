@@ -55,7 +55,7 @@ spec:
       main:
         enabled: true
         hosts:
-          - host: "speed-hydra.musson-lan.uk"
+          - host: "speed-hydra.${BASE_URL}"
             paths:
               - path: /
                 pathType: Prefix
