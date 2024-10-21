@@ -112,6 +112,6 @@ spec:
             middlewares:
               - name: "allowlist-private"
                 namespace: "traefik"
-            homepage:
-              enabled: true
-              group: "Ripping"
+          homepage:
+            enabled: true
+            group: "Ripping"
