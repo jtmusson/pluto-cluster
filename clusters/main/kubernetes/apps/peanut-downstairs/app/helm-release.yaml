@@ -42,7 +42,7 @@ spec:
           certificateIssuer: "cloudflare-prod"
           enabled: true
         homepage:
-          group: "Network - UPS"
+          group: Network - UPS
           widget:
             custom:
               key: downstairs
