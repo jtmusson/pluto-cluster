@@ -65,12 +65,12 @@ spec:
       audiobooks:
         mountPath: /audiobooks
         path: /mnt/pool0/audiobookshelf/audiobookshelf-audiobooks
-        server: ${PLUTO_IP}
+        server: 10.242.1.242
         type: nfs
       podcasts:
         enabled: true
         path: /mnt/pool0/audiobookshelf/audiobookshelf-podcasts
-        server: ${PLUTO_IP}
+        server: 10.242.1.242
         type: nfs
         mountPath: "/podcasts"
       config:
