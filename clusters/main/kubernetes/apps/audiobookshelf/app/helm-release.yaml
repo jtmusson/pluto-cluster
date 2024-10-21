@@ -35,7 +35,7 @@ spec:
         encrKey: "${B2_ENCRKEY}"
         secretKey: "${B2_SECRETKEY}"
         type: s3
-        url: "${B2-URL}"
+        url: "${B2_URL}"
     ingress:
       main:
         enabled: true
@@ -65,12 +65,12 @@ spec:
       audiobooks:
         mountPath: /audiobooks
         path: /mnt/pool0/audiobookshelf/audiobookshelf-audiobooks
-        server: 10.242.1.242
+        server: ${PLUTO_IP}
         type: nfs
       podcasts:
         enabled: true
         path: /mnt/pool0/audiobookshelf/audiobookshelf-podcasts
-        server: 10.242.1.242
+        server: ${PLUTO_IP}
         type: nfs
         mountPath: "/podcasts"
       config:
