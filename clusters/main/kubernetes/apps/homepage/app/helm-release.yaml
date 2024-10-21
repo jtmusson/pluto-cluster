@@ -39,7 +39,7 @@ spec:
         ingress:
           enabled: true
           hosts:
-            - host: homepage-hydra-vs.musson-lan.uk
+            - host: "homepage-hydra-vs.${BASE_URL}"
               path:
                 - path: /
                   pathType: Prefix
@@ -94,7 +94,7 @@ spec:
       main:
         enabled: true
         hosts:
-          - host: "homepage-hydra.musson-lan.uk"
+          - host: "homepage-hydra.${BASE_URL}"
             paths:
               - path: /
                 pathType: Prefix
