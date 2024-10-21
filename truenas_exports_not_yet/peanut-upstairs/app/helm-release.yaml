@@ -75,9 +75,9 @@ spec:
                     containers:
                         main:
                             env:
-                                NUT_HOST: 10.242.1.242
+                                NUT_HOST: "${NUT2_HOST}"
                                 NUT_PORT: 3493
-                                PASSWORD: 'REPLACED'
+                                PASSWORD: "${NUT2_PASSWORD}"
                                 USERNAME: monuser
                                 WEB_PORT: '{{ .Values.service.main.ports.main.port }}'
                 replicas: 1
