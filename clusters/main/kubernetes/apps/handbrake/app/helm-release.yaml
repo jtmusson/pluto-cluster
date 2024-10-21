@@ -115,4 +115,4 @@ spec:
                 namespace: "traefik"
             homepage:
               enabled: true
-              group: "Ripping"
+              group: Ripping
