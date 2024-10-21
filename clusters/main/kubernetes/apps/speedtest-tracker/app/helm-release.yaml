@@ -55,7 +55,7 @@ spec:
       main:
         enabled: true
         hosts:
-          - host: "speed-hydra.${BASE_URL}"
+          - host: speed-hydra.${BASE_DOMAIN}
             paths:
               - path: /
                 pathType: Prefix
