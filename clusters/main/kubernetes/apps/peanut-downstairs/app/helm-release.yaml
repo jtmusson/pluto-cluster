@@ -45,7 +45,7 @@ spec:
           widget:
             custom:
               key: downstairs
-            enabled: true
+          enabled: true
         traefik:
           enabled: true
           entrypoints:
