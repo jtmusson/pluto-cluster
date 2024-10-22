@@ -4,13 +4,8 @@
     "config:recommended",
     "github>truecharts/public//.github/renovate/main.json5"
   ],
-  "automerge": true,
-  "automergeType": "pr",
-  "schedule": [
-    {
-      "timezone": "Europe/London",
-      "cron": "0 4 * * *"
-    }
+  "automergeSchedule": [
+    "before 4am"
   ],
   "packageRules": [
     {
@@ -22,4 +17,5 @@
     "jtmusson"
   ],
   "assignAutomerge": true
+  "timezone": "Europe/London"
 }
