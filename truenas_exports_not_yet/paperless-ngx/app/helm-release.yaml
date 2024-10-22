@@ -81,13 +81,13 @@ spec:
     persistence:
       consume:
         enabled: true
-        mountPath: /consume
-        path: /mnt/pool0/paperless-ngx/paperless-ngx-import
+        mountPath: "/consume"
+        path: "/mnt/pool0/paperless-ngx/paperless-ngx-import"
         server: "${PLUTO_IP}"
         type: nfs
       data:
         enabled: true
-        mountPath: /data
+        mountPath: "/data"
         volsync:
           - name: data
             credentials: backblaze
@@ -98,8 +98,8 @@ spec:
               enabled: true
       media:
         enabled: true
-        mountPath: /media
-        path: /mnt/pool0/paperless-ngx/paperless-ngx-data
+        mountPath: "/media"
+        path: "/mnt/pool0/paperless-ngx/paperless-ngx-data"
         server: "${PLUTO_IP}"
         type: nfs
     service:
@@ -122,6 +122,6 @@ spec:
                 PAPERLESS_CONSUMER_POLLING:
                   name: PAPERLESS_CONSUMER_POLLING
                   value: "120"
-                PAPERLESS_OCR_LANGUAGE: eng
-                PAPERLESS_OCR_LANGUAGES: eng fra deu
-                PAPERLESS_URL: "https://{{ .Values.ingress.main.hosts.host }}"
+                PAPERLESS_OCR_LANGUAGE: "eng"
+                PAPERLESS_OCR_LANGUAGES: "eng fra deu"
+                PAPERLESS_URL: "https://paperless-ngx.${BASE_DOMAIN}"
