@@ -4,8 +4,8 @@
     "config:recommended",
     "github>truecharts/public//.github/renovate/main.json5"
   ],
-  "automerge": true,
-  "automergeType": "pr",
+#  "automerge": true,
+#  "automergeType": "pr",
   "schedule": [
     {
       "timezone": "Europe/London",
