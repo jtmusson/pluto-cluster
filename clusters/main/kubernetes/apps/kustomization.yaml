@@ -8,3 +8,4 @@ resources:
   - external-dns/ks.yaml
   - audiobookshelf/ks.yaml
   - peanut-downstairs/ks.yaml
+  - peanut-upstairs/ks.yaml
