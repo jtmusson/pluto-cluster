@@ -40,7 +40,7 @@ spec:
       main:
         enabled: true
         hosts:
-          - host: pluto.${BASE_DOMAIN}
+          - host: pluto-hydra.${BASE_DOMAIN}
             paths:
               - path: /
                 pathType: Prefix
