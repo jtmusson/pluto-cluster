@@ -1,3 +1,6 @@
+
+
+
 metadata:
     name: nextcloud
     namespace: nextcloud
@@ -14,17 +17,7 @@ spec:
     releaseName: nextcloud
     values:
         TZ: Europe/London
-        addons:
-            codeserver:
-                enabled: false
-            netshoot:
-                enabled: false
-            vpn:
-                type: disabled
-        clamavImage:
-            pullPolicy: IfNotPresent
-            repository: clamav/clamav
-            tag: 1.3.1@sha256:94ccfcc8b6f52c5279a5d01253d57595927dedb25e89a066aa7c043866ec41b4
+
         cnpg:
             main:
                 backups:
@@ -38,11 +31,11 @@ spec:
                 database: nextcloud
                 enabled: true
                 hibernate: false
-                mode: replica
+                mode: recovery
                 monitoring:
                     disableDefaultQueries: false
                     enablePodMonitor: true
-                password: 2xqhuZOcOvK1EUeuIGVdb1BmntZ8Jvto8p55FvWqH91wKYIRYtMMyRupq9ZkAE
+                password: "${NEXTCLOUD_CNPG_PASSWORD}"
                 pgVersion: 16
                 pooler:
                     enabled: false
@@ -51,10 +44,7 @@ spec:
                     revision: ""
                     serverName: ""
                 user: nextcloud
-        collaboraImage:
-            pullPolicy: IfNotPresent
-            repository: collabora/code
-            tag: 24.04.3.1.1@sha256:8d4759b5dc9ac6a7c943caf20765fafa8519a8a91579a29a02bad28b8ab35fcd
+
         credentials:
             backblaze:
                 accessKey: REPLACED
@@ -80,19 +70,13 @@ spec:
               enabled: '{{ .Values.nextcloud.previews.cron }}'
               name: preview-cron
               schedule: '{{ .Values.nextcloud.previews.schedule }}'
-        hpbImage:
-            pullPolicy: IfNotPresent
-            repository: tccr.io/tccr/nextcloud-push-notify
-            tag: v0.6.12@sha256:5c0b2fa23cce532ca2ed97abfe98287023a6d16369a7499ea8a03959969e9f10
-        imaginaryImage:
-            pullPolicy: IfNotPresent
-            repository: tccr.io/tccr/nextcloud-imaginary
-            tag: v20230401@sha256:3ee40a5bcea3266612070df7243704b35db77948494f4725595f1eb41270e266
+
+
         ingress:
             main:
                 enabled: true
                 hosts:
-                    - host: nc.musson-serv.uk
+                    - host: nc.${BASE_DOMAIN_EXT}
                       paths:
                         - path: /
                           pathType: Prefix
@@ -109,7 +93,7 @@ spec:
                         name: ""
                         widget:
                             custom:
-                                key: REPLACED
+                                key: "${NEXTCLOUD_API_KEY}"
                             enabled: true
                     traefik:
                         allowCors: true
@@ -128,25 +112,8 @@ spec:
                 file_max_size: -1
                 infected_action: only_log
                 stream_max_length: 1.048576e+08
-            collabora:
-                dictionaries:
-                    - de_DE
-                    - en_GB
-                    - en_US
-                    - el_GR
-                    - es_ES
-                    - fr_FR
-                    - pt_BR
-                    - pt_PT
-                    - it
-                    - nl
-                    - ru
-                enabled: false
-                interface_mode: default
-                password: changeme
-                username: admin
             credentials:
-                initialAdminPassword: REPLACED
+                initialAdminPassword: "${NEXTCLOUD_INITIAL_ADMIN_PASSWORD}"
                 initialAdminUser: admin
             expirations:
                 activity_expire_days: 90
@@ -156,7 +123,7 @@ spec:
                 max_chunk_size: 1.048576e+07
                 shared_folder_name: Shared
             general:
-                accessIP: 10.242.1.242
+                accessIP: 10.242.1.45
                 default_phone_region: GB
                 force_enable_allow_local_remote_servers: false
                 run_optimize: true
@@ -167,13 +134,6 @@ spec:
                 log_level: 2
             notify_push:
                 enabled: true
-            onlyoffice:
-                enabled: false
-                internal_url: ""
-                jwt: ""
-                jwt_header: Authorization
-                url: ""
-                verify_ssl: true
             opcache:
                 interned_strings_buffer: 32
                 jit_buffer_size: 128
@@ -212,10 +172,6 @@ spec:
                 schedule: '*/30 * * * *'
                 square_sizes: 32 256
                 width_sizes: 256 384
-        nginxImage:
-            pullPolicy: IfNotPresent
-            repository: nginxinc/nginx-unprivileged
-            tag: 1.26.0@sha256:2f9cdab1fb340a6c1908366654c4d6b19d58286a46635eb034a53fc61b44c34d
         persistence:
             config:
                 enabled: true
@@ -242,18 +198,18 @@ spec:
                 volsync:
                     - credentials: backblaze
                       dest:
-                        enabled: false
+                        enabled: true
                       name: config
                       src:
-                        enabled: true
+                        enabled: false
                       type: restic
             data:
                 autoPermissions:
                     enabled: false
                 enabled: true
-                path: /mnt/pool0/nextcloud/nextcloud-data
+                path: "/mnt/pool0/nextcloud/nextcloud-data"
                 readOnly: false
-                server: 10.242.1.242
+                server: "${PLUTO_IP}"
                 targetSelector:
                     main:
                         init-perms:
@@ -292,10 +248,10 @@ spec:
                 volsync:
                     - credentials: backblaze
                       dest:
-                        enabled: false
+                        enabled: true
                       name: html
                       src:
-                        enabled: true
+                        enabled: false
                       type: restic
             nginx:
                 enabled: true
@@ -348,11 +304,7 @@ spec:
             enabled: true
             includeCommon: true
             username: default
-        release_name: nextcloud
-        resources:
-            limits:
-                cpu: 8000m
-                memory: 15Gi
+
         securityContext:
             container:
                 UMASK: "0022"
@@ -370,15 +322,6 @@ spec:
                         targetPort: 3310
                         targetSelector: clamav
                 targetSelector: clamav
-            collabora:
-                enabled: true
-                ports:
-                    collabora:
-                        enabled: true
-                        port: 9980
-                        targetPort: 9980
-                        targetSelector: collabora
-                targetSelector: collabora
             imaginary:
                 enabled: true
                 ports:
@@ -452,48 +395,7 @@ spec:
                 replicas: 1
                 strategy: RollingUpdate
                 type: Deployment
-            collabora:
-                enabled: true
-                podSpec:
-                    containers:
-                        collabora:
-                            enabled: true
-                            envFrom:
-                                - configMapRef:
-                                    name: collabora-config
-                            imageSelector: collaboraImage
-                            primary: true
-                            probes:
-                                liveness:
-                                    enabled: true
-                                    path: /collabora/
-                                    port: '{{ .Values.service.collabora.ports.collabora.targetPort }}'
-                                    type: http
-                                readiness:
-                                    enabled: true
-                                    path: /collabora/
-                                    port: '{{ .Values.service.collabora.ports.collabora.targetPort }}'
-                                    type: http
-                                startup:
-                                    enabled: true
-                                    port: '{{ .Values.service.collabora.ports.collabora.targetPort }}'
-                                    type: tcp
-                            resources:
-                                excludeExtra: true
-                            securityContext:
-                                allowPrivilegeEscalation: true
-                                capabilities:
-                                    add:
-                                        - CHOWN
-                                        - FOWNER
-                                        - SYS_CHROOT
-                                        - MKNOD
-                                readOnlyRootFilesystem: false
-                                runAsGroup: 102
-                                runAsUser: 100
-                replicas: 1
-                strategy: RollingUpdate
-                type: Deployment
+
             imaginary:
                 enabled: true
                 podSpec:
@@ -538,7 +440,7 @@ spec:
                             env:
                                 OVERWRITEHOST:
                                     name: OVERWRITEHOST
-                                    value: nc.musson-serv.uk
+                                    value: "nc.${BASE_DOMAIN_EXT}"
                                 OVERWRITEPROTOCOL:
                                     name: OVERWRITEPROTOCOL
                                     value: https
