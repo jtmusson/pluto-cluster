@@ -34,7 +34,7 @@ spec:
         externalIP: "${PLUTO_IP}"
         ports:
           main:
-            protocol: http
+            protocol: https
             port: 444
     ingress:
       main:
