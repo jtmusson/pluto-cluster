@@ -40,7 +40,7 @@ spec:
       main:
         enabled: true
         hosts:
-          - host: kestra.${BASE_DOMAIN}
+          - host: "kestra.${BASE_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
