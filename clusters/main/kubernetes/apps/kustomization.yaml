@@ -10,3 +10,4 @@ resources:
   - peanut-downstairs/ks.yaml
   - peanut-upstairs/ks.yaml
   - ext-kestra/ks.yaml
+  - ext-pluto/ks.yaml
