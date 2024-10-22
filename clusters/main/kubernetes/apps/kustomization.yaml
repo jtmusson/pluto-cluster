@@ -9,3 +9,4 @@ resources:
   - audiobookshelf/ks.yaml
   - peanut-downstairs/ks.yaml
   - peanut-upstairs/ks.yaml
+  - ext-kestra/ks.yaml
