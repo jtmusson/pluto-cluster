@@ -12,3 +12,4 @@ resources:
   - ext-kestra/ks.yaml
   - ext-pluto/ks.yaml
   - collabora/ks.yaml
+  - paperless-ngx/ks.yaml
