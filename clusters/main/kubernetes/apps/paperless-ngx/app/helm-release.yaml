@@ -119,9 +119,9 @@ spec:
                 PAPERLESS_ADMIN_MAIL: "${PAPERLESS_ADMIN_MAIL}"
                 PAPERLESS_ADMIN_PASSWORD: "${PAPERLESS_ADMIN_PASSWORD}"
                 PAPERLESS_ADMIN_USER: "admin"
-                PAPERLESS_CONSUMER_POLLING:
-                  name: PAPERLESS_CONSUMER_POLLING
-                  value: "120"
+#                PAPERLESS_CONSUMER_POLLING:
+#                  name: PAPERLESS_CONSUMER_POLLING
+#                  value: "120"
                 PAPERLESS_OCR_LANGUAGE: "eng"
                 PAPERLESS_OCR_LANGUAGES: "eng fra deu"
                 PAPERLESS_URL: "https://paperless-ngx.${BASE_DOMAIN}"
