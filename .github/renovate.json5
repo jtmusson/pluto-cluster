@@ -4,6 +4,20 @@
     "config:recommended",
     "github>truecharts/public//.github/renovate/main.json5"
   ],
+  "automerge": true,
+  "automergeType": "pr",
+  "schedule": [
+    {
+      "timezone": "Europe/London",
+      "cron": "0 4 * * *"
+    }
+  ],
+  "packageRules": [
+    {
+      "updateTypes": ["patch", "minor"],
+      "automerge": true
+    }
+  ],
   "assignees": [
     "jtmusson"
   ],
