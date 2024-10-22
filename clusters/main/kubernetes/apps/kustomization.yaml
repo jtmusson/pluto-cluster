@@ -11,3 +11,4 @@ resources:
   - peanut-upstairs/ks.yaml
   - ext-kestra/ks.yaml
   - ext-pluto/ks.yaml
+  - collabora/ks.yaml
