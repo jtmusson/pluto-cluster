@@ -56,7 +56,7 @@ spec:
       main:
         enabled: true
         hosts:
-          - host: paperless-ngx.${BASE_DOMAIN}
+          - host: "paperless-ngx.${BASE_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
