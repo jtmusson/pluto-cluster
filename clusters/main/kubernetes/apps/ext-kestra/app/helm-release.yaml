@@ -31,7 +31,7 @@ spec:
     service:
       main:
         type: ExternalIP
-        externalIP: "${CHARON_IP}"
+        externalIP: ${CHARON_IP}
         ports:
           main:
             protocol: http
