@@ -11,15 +11,15 @@
   ],
   "major": {
     "enabled": true,
-    "autoApprove": false
+    "autoApprove": false,
+    "dependencyDashboardApproval": true
   },
   "packageRules": [
     {
       "matchVersion": "^\\d{4}\\.\\d{1,2}(\\.\\d{1,2})?$",
       "excludePackagePatterns": ["*"],
       "enabled": false,
-      "matchUpdateTypes": ["major"],
-      dependencyDashboardApproval: true,
+      "matchUpdateTypes": ["major"]
     }
   ],
   "packageRules": [
