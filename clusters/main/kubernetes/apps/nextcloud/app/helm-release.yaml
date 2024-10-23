@@ -128,14 +128,17 @@ spec:
           containers:
             main:
               enabled: true
-              primary: true
-              envFrom:
-                - configMapRef:
-                  name: nextcloud-config              
+              primary: true            
               env:
                 OVERWRITEHOST:
+                  envFrom:
+                    - configMapRef:
+                        name: nextcloud-config  
                   name: OVERWRITEHOST
                   value: "nc.${BASE_DOMAIN_EXT}"
                 OVERWRITEPROTOCOL:
+                  envFrom:
+                    - configMapRef:
+                        name: nextcloud-config  
                   name: OVERWRITEPROTOCOL
                   value: https
