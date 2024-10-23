@@ -129,6 +129,9 @@ spec:
             main:
               enabled: true
               primary: true
+              envFrom:
+                - configMapRef:
+                  name: nextcloud-config              
               env:
                 OVERWRITEHOST:
                   name: OVERWRITEHOST
@@ -136,6 +139,3 @@ spec:
                 OVERWRITEPROTOCOL:
                   name: OVERWRITEPROTOCOL
                   value: https
-              envFrom:
-                - configMapRef:
-                  name: nextcloud-config
