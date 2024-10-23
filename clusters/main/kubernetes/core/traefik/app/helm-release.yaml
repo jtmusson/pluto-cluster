@@ -47,7 +47,7 @@ spec:
 #                pathType: Prefix
     middlewares:
       basicAuth:
-        - name: authKubernetesDashboard
+        - name: auth-kubernetes-dashboard
           users:
             - username: "${EMAIL1}"
               password: "${KS_DASHBOARD_PASSWORD}"
