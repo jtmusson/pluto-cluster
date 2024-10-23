@@ -32,6 +32,9 @@ spec:
       - name: main
         addressPools:
           - main
+      - name: fam
+        addressPools:
+          - fam
     ipAddressPools:
       - name: main
         autoAssign: false
