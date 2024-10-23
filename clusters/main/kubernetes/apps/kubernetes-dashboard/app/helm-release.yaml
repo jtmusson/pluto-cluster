@@ -54,3 +54,5 @@ spec:
             middlewares:
               - name: "allowlist-private"
                 namespace: "traefik"
+              - name: "auth-kubernetes-dashboard"
+                namespace: "traefik"
