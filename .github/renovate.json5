@@ -13,9 +13,18 @@
     {
       "matchUpdateTypes": [
         "patch"
-      ],
-      "automerge": true
-    }
+        ],
+        "automerge": true
+    },
+    {
+      "matchUpdateTypes": [
+        "minor"
+        ],
+        "automerge": false,
+        "labels": [
+          "type/minor"
+          ]
+    },
   ],
   "separateMultipleMajor": true,
   "assignees": [
