@@ -9,6 +9,19 @@
     "after 4am",
     "before 5am"
   ],
+  "major": {
+    "enabled": true,
+    "autoApprove": false
+  },
+  "packageRules": [
+    {
+      "matchVersion": "^\\d{4}\\.\\d{1,2}(\\.\\d{1,2})?$",
+      "excludePackagePatterns": ["*"],
+      "enabled": false,
+      "matchUpdateTypes": ["major"],
+      dependencyDashboardApproval: true,
+    }
+  ],
   "packageRules": [
     {
       "matchUpdateTypes": [
