@@ -106,3 +106,8 @@ spec:
 #                        port: 8123
 #                        targetPort: 8123
 #                type: LoadBalancer
+# 
+#
+# USB device
+# Host Device Path: /dev/serial/by-id/usb-ITEAD_SONOFF_Zigbee_3.0_USB_Dongle_Plus_V2_20240124082926-if00
+# Container Device Path: /dev/ttyACM0
