@@ -1,5 +1,4 @@
 {
-  "config": {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
       "mergeConfidence:all-badges",
@@ -24,5 +23,4 @@
     ],
     "assignAutomerge": true,
     "timezone": "Europe/London"
-  }
 }
