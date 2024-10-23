@@ -17,6 +17,7 @@
       "automerge": true
     }
   ],
+  "separateMultipleMajor": true,
   "assignees": [
     "jtmusson"
   ],
