@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
+    "mergeConfidence:all-badges",
     "github>truecharts/public//.github/renovate/main.json5"
   ],
   "automergeSchedule": [
