@@ -55,4 +55,5 @@ spec:
     service:
       main:
         enabled: true
+        loadBalancerIP: "${MQTT_IP}"
         type: LoadBalancer
