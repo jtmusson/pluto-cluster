@@ -93,7 +93,7 @@ spec:
             credentials: backblaze
             type: restic
             src:
-              enabled: false
+              enabled: true
             dest:
               enabled: true
       media:

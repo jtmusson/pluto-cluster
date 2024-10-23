@@ -48,7 +48,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
       worlds:
         enabled: true
         path: "/mnt/pool1/minecraft-bedrock/minecraft-bedrock-worlds"
