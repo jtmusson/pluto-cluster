@@ -1,0 +1,103 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: minecraft-bedrock
+  namespace: minecraft-bedrock
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: minecraft-bedrock
+      version: 9.0.10
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 30m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    TZ: "Europe/London"
+    credentials:
+      backblaze:
+        accessKey: "${B2_ACCESSKEY}"
+        bucket: "${B2_BUCKET}"
+        encrKey: "${B2_ENCRKEY}"
+        name: backblaze
+        secretKey: "${B2_SECRETKEY}"
+        type: s3
+        url: "${B2_URL}"  
+    persistence:
+      config:
+        enabled: true
+        volsync:
+          - name: config
+            credentials: backblaze
+            type: restic
+            dest:
+              enabled: true
+            src:
+              enabled: false
+      worlds:
+        enabled: true
+        path: "/mnt/pool1/minecraft-bedrock/minecraft-bedrock-worlds"
+        server: "${PLUTO_IP}"
+        type: nfs
+        mountPath: "/data/worlds"
+    resources:
+      limits:
+        memory: 15Gi
+    service:
+      main:
+        enabled: true
+        loadBalancerIP: "${MINECRAFT_IP}"
+        ports:
+          main:
+            port: 19132
+            protocol: udp
+          type: LoadBalancer
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                ALLOW_CHEATS: true
+                CORRECT_PLAYER_MOVEMENT: false
+                DEFAULT_PLAYER_PERMISSION_LEVEL: member
+                DIFFICULTY: peaceful
+                ENABLE_LAN_VISIBILITY: true
+                EULA: true
+                GAMEMODE: creative
+                LEVEL_NAME: 71YC-Server
+                LEVEL_SEED: ""
+                LEVEL_TYPE: DEFAULT
+                MAX_PLAYERS: 10
+                MAX_THREADS: 8
+                ONLINE_MODE: true
+                OPS: 2535459371911077,2535416055063734,2535438270490294,2535449515083727,2535423942775632
+                PLAYER_IDLE_TIMEOUT: 30
+                PLAYER_MOVEMENT_DISTANCE_THRESHOLD: "0.3"
+                PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS: 500
+                PLAYER_MOVEMENT_SCORE_THRESHOLD: 20
+                SERVER_AUTHORITATIVE_MOVEMENT: server-auth
+                SERVER_NAME: 71YC Server
+                SERVER_PORT: '{{ .Values.service.main.ports.main.port }}'
+                SERVER_PORT_V6: 19133
+                TEXTUREPACK_REQUIRED: true
+                TICK_DISTANCE: 4
+                VERSION: 1.21.30.03
+                VIEW_DISTANCE: 64
+                WHITE_LIST: true
+                WHITE_LIST_USERS: jtmusson:2535459371911077,DuckiestRacer73:2535438270490294,PopulousZoo1938:2535416055063734,Stovora:2535449515083727,Captain Bezalel:2535423942775632

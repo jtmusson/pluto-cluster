@@ -14,3 +14,4 @@ resources:
   - collabora/ks.yaml
   - paperless-ngx/ks.yaml
   - nextcloud/ks.yaml
+  - minecraft-bedrock/ks.yaml
