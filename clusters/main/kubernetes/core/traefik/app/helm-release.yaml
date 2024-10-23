@@ -47,11 +47,11 @@ spec:
 #                pathType: Prefix 
 
     middlewares:
-#      basicAuth:
-#        - name: authKubernetesDashboard
-#          users:
-#            - username: ${EMAIL1}
-#              password: ${KS_DASHBOARD_PASSWORD}
+      basicAuth:
+        - name: authKubernetesDashboard
+          users:
+            - username: "${EMAIL1}"
+              password: "${KS_DASHBOARD_PASSWORD}"
       ipWhiteList:
         - name: allowlist-private
           ipStrategy:
