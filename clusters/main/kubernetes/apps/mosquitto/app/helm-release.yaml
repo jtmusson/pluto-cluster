@@ -52,3 +52,7 @@ spec:
               enabled: false
     websockets:
       enabled: false
+    service:
+      main:
+        enabled: true
+        type: LoadBalancer
