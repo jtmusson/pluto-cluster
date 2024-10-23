@@ -1,16 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
+    "mergeConfidence:all-badges",
     "config:recommended",
     "github>truecharts/public//.github/renovate/main.json5"
   ],
   "automergeSchedule": [
-    "after 1am",
-    "before 4am"
+    "after 4am",
+    "before 5am"
   ],
   "packageRules": [
     {
-      "updateTypes": ["patch", "minor"],
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
       "automerge": true
     }
   ],
