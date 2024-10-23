@@ -62,11 +62,7 @@ spec:
       main:
         enabled: true
         loadBalancerIP: "${MINECRAFT_IP}"
-        ports:
-          main:
-            port: 19132
-            protocol: udp
-          type: LoadBalancer
+        type: LoadBalancer
     workload:
       main:
         podSpec:
