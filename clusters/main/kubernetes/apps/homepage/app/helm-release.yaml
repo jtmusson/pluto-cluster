@@ -39,7 +39,7 @@ spec:
         ingress:
           enabled: true
           hosts:
-            - host: homepage-hydra-vs.${BASE_DOMAIN}
+            - host: homepage-vs.${BASE_DOMAIN}
               path:
                 - path: /
                   pathType: Prefix
@@ -79,8 +79,6 @@ spec:
         UMASK: "0022"
         runAsUser: 568
         runAsGroup: 568
-#        allowPrivilegeEscalation: true
-#        privileged: true
       pod:
         fsGroup: 568
         fsGroupChangePolicy: OnRootMismatch
@@ -94,7 +92,7 @@ spec:
       main:
         enabled: true
         hosts:
-          - host: homepage-hydra.${BASE_DOMAIN}
+          - host: homepage.${BASE_DOMAIN}
             paths:
               - path: /
                 pathType: Prefix
