@@ -44,8 +44,7 @@ spec:
 #          - host: traefik.${BASE_DOMAIN}
 #            paths:
 #              - path: /
-#                pathType: Prefix 
-
+#                pathType: Prefix
     middlewares:
       basicAuth:
         - name: authKubernetesDashboard
