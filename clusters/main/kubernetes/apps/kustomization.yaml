@@ -15,4 +15,4 @@ resources:
   - paperless-ngx/ks.yaml
   - nextcloud/ks.yaml
   - minecraft-bedrock/ks.yaml
-  - uptime-kuma/ks.yaml
+#  - uptime-kuma/ks.yaml

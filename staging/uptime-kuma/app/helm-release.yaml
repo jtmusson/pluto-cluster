@@ -71,6 +71,6 @@ spec:
             credentials: backblaze
             type: restic
             dest:
-              enabled: false
-            src:
               enabled: true
+            src:
+              enabled: false
