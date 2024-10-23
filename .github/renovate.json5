@@ -9,18 +9,31 @@
     "after 4am",
     "before 5am"
   ],
+  "major": {
+    "enabled": true,
+    "automerge": false,
+    "dependencyDashboardApproval": true
+  },
   "packageRules": [
     {
       "matchUpdateTypes": [
-        "patch",
+        "patch"
+        ],
+        "automerge": true
+    },
+    {
+      "matchUpdateTypes": [
         "minor"
-      ],
-      "automerge": true
-    }
+        ],
+        "automerge": false,
+        "labels": [
+          "type/minor"
+          ]
+    },
   ],
+  "separateMultipleMajor": true,
   "assignees": [
     "jtmusson"
   ],
-  "assignAutomerge": true,
   "timezone": "Europe/London"
 }
