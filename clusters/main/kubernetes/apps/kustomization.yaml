@@ -13,3 +13,4 @@ resources:
   - ext-pluto/ks.yaml
   - collabora/ks.yaml
   - paperless-ngx/ks.yaml
+  - nextcloud/ks.yaml

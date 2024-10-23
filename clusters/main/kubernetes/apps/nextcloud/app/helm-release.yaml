@@ -1,0 +1,141 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: nextcloud
+  namespace: nextcloud
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: nextcloud
+      version: 30.1.24
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 30m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    TZ: "Europe/London"
+    credentials:
+      backblaze:
+        accessKey: "${B2_ACCESSKEY}"
+        bucket: "${B2_BUCKET}"
+        encrKey: "${B2_ENCRKEY}"
+        name: backblaze
+        secretKey: "${B2_SECRETKEY}"
+        type: s3
+        url: "${B2_URL}"
+    cnpg:
+      main: 
+        mode: recovery
+        backups:
+          credentials: backblaze
+          revision: "1"
+        recovery:
+          method: object_store
+          revision: 
+          credentials: backblaze
+        database: "nextcloud"
+        password: "${NEXTCLOUD_CNPG_PASSWORD}"
+        pgVersion: 16
+        user: "nextcloud"
+    ingress:
+      main:
+        enabled: true
+        hosts:
+          - host: nc.${BASE_DOMAIN_EXT}
+            paths:
+              - path: /
+                pathType: Prefix
+        integrations:
+          certManager:
+            certificateIssuer: cloudflare-prod
+            enabled: true
+          homepage:
+            enabled: true
+            group: Productivity
+            widget:
+              custom:
+                key: "${NEXTCLOUD_API_KEY}"
+              enabled: true
+          traefik:
+            enabled: true
+            entrypoints:
+              - websecure
+    nextcloud:
+      clamav:
+        enabled: true
+        infected_action: only_log
+      credentials:
+        initialAdminPassword: "${NEXTCLOUD_INITIAL_ADMIN_PASSWORD}"
+        initialAdminUser: admin
+      general:
+        accessIP: "${TRAEFIK_IP}"
+        default_phone_region: GB
+      notify_push:
+        enabled: true
+      php:
+        memory_limit: 2G
+    persistence:
+      config:
+        enabled: true
+        volsync:
+          - name: config
+            credentials: backblaze
+            type: restic
+            dest:
+              enabled: true
+            src:
+              enabled: false
+      data:
+        enabled: true
+        path: "/mnt/pool0/nextcloud/nextcloud-data"
+        server: "${PLUTO_IP}"
+        type: nfs
+      html:
+        enabled: true
+        volsync:
+          - name: html            
+            credentials: backblaze
+            type: restic
+            dest:
+              enabled: true
+            src:
+              enabled: false
+    securityContext:
+      container:
+        UMASK: "0022"
+        runAsGroup: 568
+        runAsUser: 568
+      pod:
+        fsGroupChangePolicy: OnRootMismatch
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              enabled: true
+              primary: true
+              env:
+                OVERWRITEHOST:
+                  name: OVERWRITEHOST
+                  value: "nc.${BASE_DOMAIN_EXT}"
+                OVERWRITEPROTOCOL:
+                  name: OVERWRITEPROTOCOL
+                  value: https
+              envFrom:
+                - configMapRef:
+                  name: nextcloud-config
