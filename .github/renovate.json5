@@ -16,14 +16,6 @@
   },
   "packageRules": [
     {
-      "matchVersion": "^\\d{4}\\.\\d{1,2}(\\.\\d{1,2})?$",
-      "excludePackagePatterns": ["*"],
-      "enabled": false,
-      "matchUpdateTypes": ["major"]
-    }
-  ],
-  "packageRules": [
-    {
       "matchUpdateTypes": [
         "patch"
         ],
