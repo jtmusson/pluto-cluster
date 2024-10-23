@@ -41,12 +41,17 @@ spec:
 #            enabled: true
 #            certificateIssuer: cloudflare-prod
 #        hosts:
-#          - host: traefik.musson-lan.uk
+#          - host: traefik.${BASE_DOMAIN}
 #            paths:
 #              - path: /
 #                pathType: Prefix 
 
     middlewares:
+      basicAuth:
+        - name: authKubernetesDashboard
+          users:
+            - username: ${EMAIL1}
+              password: ${KS_DASHBOARD_PASSWORD}
       ipWhiteList:
         - name: allowlist-private
           ipStrategy:
