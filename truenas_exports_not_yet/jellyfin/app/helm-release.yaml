@@ -78,6 +78,11 @@ spec:
               enabled: true
             src:
               enabled: false
-    resources:
-      limits:
+      movies:
+        mountPath: "/mnt/movies"
+        path: "/mnt/pool0/movies"
+        server: "${PLUTO_IP}"
+        type: nfs      
+#    resources:
+#      limits:
 #       gpu.intel.com/i915: 1
