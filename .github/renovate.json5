@@ -11,7 +11,7 @@
   ],
   "major": {
     "enabled": true,
-    "autoApprove": false,
+    "automerge": false,
     "dependencyDashboardApproval": true
   },
   "packageRules": [
