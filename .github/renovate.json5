@@ -1,26 +1,26 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-      "mergeConfidence:all-badges",
-      "config:recommended",
-      "github>truecharts/public//.github/renovate/main.json5"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",   
+  "extends": [
+    "mergeConfidence:all-badges",
+    "config:recommended",
+    "github>truecharts/public//.github/renovate/main.json5"
     ],
-    "automergeSchedule": [
-      "after 4am",
-      "before 5am"
-    ],
-    "packageRules": [
-      {
-        "matchUpdateTypes": [
-          "patch",
-          "minor"
-        ],
-        "automerge": true
-      }
-    ],
-    "assignees": [
-      "jtmusson"
-    ],
-    "assignAutomerge": true,
-    "timezone": "Europe/London"
+  "automergeSchedule": [
+    "after 4am",
+    "before 5am"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
+      "automerge": true
+    }
+  ],
+  "assignees": [
+    "jtmusson"
+  ],
+  "assignAutomerge": true,
+  "timezone": "Europe/London"
 }
