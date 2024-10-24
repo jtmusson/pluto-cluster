@@ -1,5 +1,0 @@
-- op: add
-  path: /machine/udev
-  value:
-    # Intel GPU
-    - SUBSYSTEM=="drm", KERNEL=="renderD*", GROUP="44", MODE="0660"
