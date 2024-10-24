@@ -17,3 +17,4 @@ resources:
   - minecraft-bedrock/ks.yaml
   - uptime-kuma/ks.yaml
   - mosquitto/ks.yaml
+  - makemkv/ks.yaml
