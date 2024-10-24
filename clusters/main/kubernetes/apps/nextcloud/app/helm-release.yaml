@@ -127,5 +127,6 @@ spec:
         podSpec:
           containers:              
               env:
+                enabled: true
                 OVERWRITEHOST: "nc.${BASE_DOMAIN_EXT}"
                 OVERWRITEPROTOCOL: https
