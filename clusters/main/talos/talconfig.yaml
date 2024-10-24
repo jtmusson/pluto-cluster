@@ -85,4 +85,4 @@ worker:
                     # - siderolabs/gasket-driver
                     - siderolabs/i915-ucode
                     - siderolabs/intel-ucode
-                    # - siderolabs/thunderbolt
+                    - siderolabs/mei
