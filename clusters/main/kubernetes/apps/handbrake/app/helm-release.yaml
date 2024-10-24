@@ -74,8 +74,8 @@ spec:
         UMASK: "0022"
         runAsUser: 0
         runAsGroup: 0
-#       allowPrivilegeEscalation: true
-#       privileged: true
+        allowPrivilegeEscalation: true
+        privileged: true
       pod:
         fsGroup: 3010
         fsGroupChangePolicy: OnRootMismatch
@@ -118,3 +118,11 @@ spec:
             group: "Ripping"
             widget:
               enabled: false
+    workload:
+      main:
+        podSpec:      
+          containers:
+            main:
+              resources:
+                limits:
+                  gpu.intel.com/i915: 1
