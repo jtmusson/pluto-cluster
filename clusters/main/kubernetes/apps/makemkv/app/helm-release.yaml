@@ -95,6 +95,12 @@ spec:
         path: "/mnt/pool0/movies/"
         server: "${PLUTO_IP}"
         type: nfs
+      bd-mlt:
+        enabled: true
+        type: device
+        hostPath: "/dev/sr1"
+        hostPathType: BlockDevice
+        mountPath: "/dev/sr1"
     securityContext:
       containers:
         PUID: 0
