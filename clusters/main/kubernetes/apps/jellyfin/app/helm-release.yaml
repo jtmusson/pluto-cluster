@@ -84,13 +84,12 @@ spec:
         path: "/mnt/pool0/movies"
         server: "${PLUTO_IP}"
         type: nfs     
-    securityContext:
-      privileged: true 
-    workload:
-      main:
-        podSpec:      
-          containers:
-            main:
-              resources:
-                limits:
-                  gpu.intel.com/i915: 1
+#    securityContext:
+#    workload:
+#      main:
+#        podSpec:      
+#          containers:
+#            main:
+#              resources:
+#                limits:
+#                  gpu.intel.com/i915: 1
