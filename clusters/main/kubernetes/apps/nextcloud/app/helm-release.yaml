@@ -122,20 +122,10 @@ spec:
         runAsUser: 568
       pod:
         fsGroupChangePolicy: OnRootMismatch
-#    workload:
-#      main:
-#        podSpec:
-#          containers:
-#            main:
-#              enabled: true
-#              primary: true
-#              envFrom:
-#                - configMapRef:
-#                  name: nextcloud-config              
-#              env:
-#                OVERWRITEHOST:
-#                  name: OVERWRITEHOST
-#                  value: "nc.${BASE_DOMAIN_EXT}"
-#                OVERWRITEPROTOCOL:
-#                  name: OVERWRITEPROTOCOL
-#                  value: https
+    workload:
+      main:
+        podSpec:
+          containers:              
+              env:
+                OVERWRITEHOST: "nc.${BASE_DOMAIN_EXT}"
+                OVERWRITEPROTOCOL: https
