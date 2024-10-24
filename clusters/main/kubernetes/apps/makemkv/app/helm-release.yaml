@@ -101,13 +101,6 @@ spec:
         hostPath: "/dev/sr1"
         hostPathType: BlockDevice
         mountPath: "/dev/sr1"
-    volumes:
-      - name: device-dir
-        hostPath:
-          path: /dev
-    volumeMounts:
-      - name: device-dir
-        mountPath: /dev
     securityContext:
       containers:
         PUID: 0
