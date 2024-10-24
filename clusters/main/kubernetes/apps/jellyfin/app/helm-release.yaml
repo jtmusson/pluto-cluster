@@ -84,6 +84,6 @@ spec:
         path: "/mnt/pool0/movies"
         server: "${PLUTO_IP}"
         type: nfs      
-    resources:
-      limits:
-        gpu.intel.com/i915: 1
+#    resources:
+#      limits:
+#        gpu.intel.com/i915: 1
