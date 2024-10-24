@@ -61,13 +61,13 @@
     vm.nr_hugepages: "2048"
 
 ## TODO: Check how we can have this pass checks
-# - op: add
-#   path: /machine/udev
-#   value:
+- op: add
+  path: /machine/udev
+  value:
 #     # Thunderbolt
 #     - ACTION=="add", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="0", ATTR{authorized}="1"
-#     # Intel GPU
-#     - SUBSYSTEM=="drm", KERNEL=="renderD*", GROUP="44", MODE="0660"
+     # Intel GPU
+    - SUBSYSTEM=="drm", KERNEL=="renderD*", GROUP="44", MODE="0660"
 #     # Google Coral USB Accelerator
 #     - SUBSYSTEMS=="usb", ATTRS{idVendor}=="1a6e", ATTRS{idProduct}=="089a", GROUP="20", MODE="0660"
 #     - SUBSYSTEMS=="usb", ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="9302", GROUP="20", MODE="0660"
