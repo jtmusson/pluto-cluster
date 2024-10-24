@@ -95,7 +95,10 @@ spec:
         path: "/mnt/pool0/movies/"
         server: "${PLUTO_IP}"
         type: nfs
-
-# USB DEVICE
+    securityContext:
+      containers:
+        PUID: 0
+        privileged: true
+# SATA DEVICE
 # Host Device Path: /dev/disk/by-id/ata-MATSHITABD-MLT_UJ265_WR54_035519
 # Container Device Path: /dev/dvd
