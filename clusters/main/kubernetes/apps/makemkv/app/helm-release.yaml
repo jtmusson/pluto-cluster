@@ -102,3 +102,12 @@ spec:
 # SATA DEVICE
 # Host Device Path: /dev/disk/by-id/ata-MATSHITABD-MLT_UJ265_WR54_035519
 # Container Device Path: /dev/dvd
+#     "deviceList": [
+#      {
+#        "enabled": true,
+#        "hostPath": "/dev/disk/by-id/ata-MATSHITABD-MLT_UJ265_WR54_035519",
+#        "mountPath": "/dev/dvd",
+#        "readOnly": false,
+#        "type": "device"
+#      }
+#    ],
