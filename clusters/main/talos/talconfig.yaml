@@ -43,6 +43,8 @@ nodes:
           routes:
             - network: 10.242.10.0/24
               gateway: 10.242.10.5
+      nodeLabels:
+        "intel.feature.node.kubernetes.io/gpu": "true"
 controlPlane:
     patches:
         - '@./patches/controlplane.yaml'
