@@ -97,7 +97,7 @@ spec:
       main:
         enabled: true
         hosts:
-          - host: handbrake-hydra.${BASE_DOMAIN}
+          - host: handbrake.${BASE_DOMAIN}
             paths:
               - path: /
                 pathType: Prefix
