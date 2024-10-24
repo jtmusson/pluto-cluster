@@ -77,7 +77,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
       movies:
         enabled: true
         mountPath: "/mnt/movies"
