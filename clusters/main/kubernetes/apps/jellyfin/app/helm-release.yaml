@@ -83,14 +83,12 @@ spec:
         mountPath: "/mnt/movies"
         path: "/mnt/pool0/movies"
         server: "${PLUTO_IP}"
-        type: nfs      
+        type: nfs     
+    securityContext:
+      privileged: true 
     workload:
       main:
         podSpec:      
-#          securityContext:
-#            supplementalGroups:
-#              - 44
-#              - 993
           containers:
             main:
               resources:
