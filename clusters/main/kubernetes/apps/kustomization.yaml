@@ -16,4 +16,3 @@ resources:
   - minecraft-bedrock/ks.yaml
   - uptime-kuma/ks.yaml
   - mosquitto/ks.yaml  
-  - handbrake/ks.yaml
