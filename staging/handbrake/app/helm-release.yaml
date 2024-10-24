@@ -46,8 +46,6 @@ spec:
       ENABLE_CJK_FONT: false
       KEEP_APP_RUNNING: true
       SECURE_CONNECTION: false
-      autoconv: true
-      gui: false
     persistence:
       config:
         volsync:
@@ -68,31 +66,6 @@ spec:
 #        server: 10.242.1.242
 #        type: nfs
 #        mountPath: "/watch"
-    securityContext:
-      container:
-        PUID: 568
-        UMASK: "0022"
-        runAsUser: 0
-        runAsGroup: 0
-        allowPrivilegeEscalation: true
-        privileged: true
-      pod:
-        fsGroup: 3010
-        fsGroupChangePolicy: OnRootMismatch
-        supplementalGroups: []
-    service:
-      main:
-        ports:
-          main:
-            port: 10053
-            targetPort: 5800
-        type: ClusterIP
-#      vnc:
-#        ports:
-#          vnc:
-#            port: 10055
-#            targetPort: 5900
-#        type: ClusterIP
     ingress:
       main:
         enabled: true
