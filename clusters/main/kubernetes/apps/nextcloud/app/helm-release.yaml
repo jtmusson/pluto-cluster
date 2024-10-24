@@ -114,7 +114,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
     securityContext:
       container:
         UMASK: "0022"
