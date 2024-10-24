@@ -16,3 +16,4 @@ resources:
   - topolvm/ks.yaml
   - traefik-crds/ks.yaml
   - volsync/ks.yaml
+  - intel-gpu-plugin/ks.yaml
