@@ -66,6 +66,7 @@ controlPlane:
                     - siderolabs/i915-ucode
                     - siderolabs/intel-ucode
                     # - siderolabs/thunderbolt
+                    - siderolabs/mei
 worker:
     patches:
         - '@./patches/worker.yaml'
