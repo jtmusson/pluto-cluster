@@ -90,6 +90,7 @@ spec:
             src:
               enabled: false
       movies:
+        enabled: true
         mountPath: /mnt/movies
         path: "/mnt/pool0/movies/"
         server: "${PLUTO_IP}"
