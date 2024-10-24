@@ -104,7 +104,16 @@ spec:
     securityContext:
       containers:
         PUID: 0
+        UMASK: "0022"
+        runAsNonRoot: false
+        runAsUser: 0
+        runAsGroup: 0
+        allowPrivilegeEscalation: true
         privileged: true
+#      pod:
+#        supplementalGroups:
+#          - 44
+#          - 993
 # SATA DEVICE
 # Host Device Path: /dev/disk/by-id/ata-MATSHITABD-MLT_UJ265_WR54_035519
 # Container Device Path: /dev/dvd
