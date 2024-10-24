@@ -122,11 +122,11 @@ spec:
         runAsUser: 568
       pod:
         fsGroupChangePolicy: OnRootMismatch
-    workload:
-      main:
-        podSpec:
-          containers:              
-              env:
-                enabled: true
-                OVERWRITEHOST: "nc.${BASE_DOMAIN_EXT}"
-                OVERWRITEPROTOCOL: https
+#    workload:
+#      main:
+#        podSpec:
+#          containers:              
+#              env:
+#                enabled: true
+#                OVERWRITEHOST: "nc.${BASE_DOMAIN_EXT}"
+#                OVERWRITEPROTOCOL: https
