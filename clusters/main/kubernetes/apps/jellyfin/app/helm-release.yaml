@@ -87,10 +87,10 @@ spec:
     workload:
       main:
         podSpec:      
-          securityContext:
-            supplementalGroups:
-              - 44
-              - 993
+#          securityContext:
+#            supplementalGroups:
+#              - 44
+#              - 993
           containers:
             main:
               resources:
