@@ -5,4 +5,3 @@ kind: Kustomization
 resources:
   - this-repo.yaml
   - truecharts.yaml
-  - intel.yaml
