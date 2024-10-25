@@ -17,4 +17,3 @@ resources:
   - uptime-kuma/ks.yaml
   - mosquitto/ks.yaml  
   - jellyfin/ks.yaml
-  - handbrake/ks.yaml
