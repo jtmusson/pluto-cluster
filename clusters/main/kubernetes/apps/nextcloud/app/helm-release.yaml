@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: nextcloud
-      version: 31.5.18
+      version: 32.2.6
       sourceRef:
         kind: HelmRepository
         name: truecharts
