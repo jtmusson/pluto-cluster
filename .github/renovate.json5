@@ -6,8 +6,7 @@
     "github>truecharts/public//.github/renovate/main.json5"
   ],
   "automergeSchedule": [
-    "after 2am",
-    "before 5am"
+    "* 2-5 * * *"
   ],
   "major": {
     "enabled": true,
