@@ -91,6 +91,8 @@ spec:
             group: "Ripping"
             widget:
               enabled: false
+    securityContext:
+      privileged: true
     workload:
       main:
         podSpec:      
