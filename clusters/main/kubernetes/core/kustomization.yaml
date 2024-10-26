@@ -6,3 +6,4 @@ resources:
   - metallb-config/ks.yaml
   - clusterissuer/ks.yaml
   - traefik/ks.yaml
+  - intel-gpu-plugin-operator/ks.yaml
