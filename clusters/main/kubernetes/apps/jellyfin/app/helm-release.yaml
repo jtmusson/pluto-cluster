@@ -86,11 +86,11 @@ spec:
         type: nfs
     securityContext:
       privileged: true     
-#    workload:
-#      main:
-#        podSpec:      
-#          containers:
-#            main:
-#              resources:
-#                limits:
-#                  gpu.intel.com/i915: 1
+    workload:
+      main:
+        podSpec:      
+          containers:
+            main:
+              resources:
+                limits:
+                  gpu.intel.com/i915: 1
