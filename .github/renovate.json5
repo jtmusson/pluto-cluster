@@ -8,11 +8,6 @@
   "automergeSchedule": [
     "* 2-5 * * *"
   ],
-  "major": {
-    "enabled": true,
-    "automerge": false,
-    "dependencyDashboardApproval": true
-  },
   "packageRules": [
     {
       "matchUpdateTypes": [
