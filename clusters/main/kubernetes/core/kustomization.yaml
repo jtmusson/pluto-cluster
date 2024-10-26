@@ -7,3 +7,4 @@ resources:
   - clusterissuer/ks.yaml
   - traefik/ks.yaml
   - intel-gpu-plugin-operator/ks.yaml
+  - intel-device-plugins-gpu/ks.yaml
