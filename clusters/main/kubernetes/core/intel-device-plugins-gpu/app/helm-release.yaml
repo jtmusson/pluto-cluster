@@ -8,7 +8,7 @@ spec:
   interval: 15m
   chart:
     spec:
-      chart: gpu-device-plugin
+      chart: intel-device-plugins-gpu
       version: 0.31.1
       sourceRef:
         kind: HelmRepository
