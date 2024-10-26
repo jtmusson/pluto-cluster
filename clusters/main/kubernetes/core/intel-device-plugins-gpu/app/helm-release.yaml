@@ -27,3 +27,5 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
+values:
+  sharedDevNum: 2
