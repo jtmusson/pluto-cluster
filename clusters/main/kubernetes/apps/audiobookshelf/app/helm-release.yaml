@@ -81,7 +81,7 @@ spec:
             type: restic
             credentials: backblaze
             dest:
-              enabled: true
+              enabled: false
             src:
               enabled: true
       metadata:
@@ -95,18 +95,18 @@ spec:
               enabled: true
             src:
               enabled: true
-    securityContext:
-      container:
-        PID: 568
-        UMASK: "0022"
-        runAsGroup: 0
-        runAsUser: 0
-      pod:
-        fsGroupChangePolicy: OnRootMismatch
-    service:
-      main:
-        enabled: true
-        ports:
-          main:
-            port: 10223
-        type: ClusterIP
+#    securityContext:
+#      container:
+#        PID: 568
+#        UMASK: "0022"
+#        runAsGroup: 0
+#        runAsUser: 0
+#      pod:
+#        fsGroupChangePolicy: OnRootMismatch
+#    service:
+#      main:
+#        enabled: true
+#        ports:
+#          main:
+#            port: 10223
+#        type: ClusterIP
