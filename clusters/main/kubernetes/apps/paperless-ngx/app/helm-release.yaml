@@ -40,11 +40,11 @@ spec:
         url: "${B2_URL}"
     cnpg:
       main:
-        mode: default
+        mode: recovery
         backups:
           enabled: true
           credentials: backblaze
-          revision: "1"
+          revision: "2"
         recovery:
           method: object_store
           revision:
