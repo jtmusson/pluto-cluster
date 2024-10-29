@@ -40,8 +40,8 @@ spec:
         url: "${B2_URL}"
     cnpg:
       main:
-        mode: recovery
         backups:
+          enabled: true
           credentials: backblaze
           revision: "1"
         recovery:
