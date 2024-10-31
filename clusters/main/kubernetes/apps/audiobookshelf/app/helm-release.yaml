@@ -95,10 +95,3 @@ spec:
               enabled: true
             src:
               enabled: true
-#    service:
-#      main:
-#        enabled: true
-#        ports:
-#          main:
-#            port: 10223
-#        type: ClusterIP
