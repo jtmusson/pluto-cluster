@@ -83,7 +83,7 @@ spec:
         enabled: true
         mountPath: /config
         volsync:
-          - name: config
+          - name: app-config
             credentials: backblaze
             type: restic
             dest:
@@ -93,7 +93,7 @@ spec:
     service:
       main:
         enabled: true
-        loadBalancerIP: "10.242.10.45"
+        loadBalancerIP: "10.242.10.45" ## TODO - replace with ${HASS_IP}
         type: LoadBalancer
  
 
