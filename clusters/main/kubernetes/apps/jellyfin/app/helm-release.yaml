@@ -84,9 +84,7 @@ spec:
         path: "/mnt/pool0/movies"
         server: "${PLUTO_IP}"
         readOnly: true
-        type: nfs
-    securityContext:
-      privileged: true     
+        type: nfs 
     workload:
       main:
         podSpec:      

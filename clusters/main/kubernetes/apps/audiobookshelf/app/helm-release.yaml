@@ -95,14 +95,6 @@ spec:
               enabled: true
             src:
               enabled: true
-#    securityContext:
-#      container:
-#        PID: 568
-#        UMASK: "0022"
-#        runAsGroup: 0
-#        runAsUser: 0
-#      pod:
-#        fsGroupChangePolicy: OnRootMismatch
 #    service:
 #      main:
 #        enabled: true

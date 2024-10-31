@@ -115,13 +115,6 @@ spec:
               enabled: true
             src:
               enabled: true
-    securityContext:
-      container:
-        UMASK: "0022"
-        runAsGroup: 568
-        runAsUser: 568
-      pod:
-        fsGroupChangePolicy: OnRootMismatch
 #    workload:
 #      main:
 #        podSpec:
