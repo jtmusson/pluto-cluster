@@ -96,6 +96,7 @@ spec:
       pod:
         fsGroup: 568
         fsGroupChangePolicy: OnRootMismatch
+## TODO #107 - speedtest-tracker: remove service if set in tc/values.yaml
     service:
       main:
         type: ClusterIP
