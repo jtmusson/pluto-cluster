@@ -85,6 +85,7 @@ spec:
               enabled: true
             src:
               enabled: true
+## TODO #107 - speedtest-tracker: remove service if set in tc/values.yaml
     service:
       main:
         type: ClusterIP
