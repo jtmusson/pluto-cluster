@@ -73,15 +73,6 @@ spec:
               enabled: true
             src:
               enabled: true
-    securityContext:
-      container:
-        PUID: 568
-        UMASK: "0022"
-        runAsUser: 568
-        runAsGroup: 568
-      pod:
-        fsGroup: 568
-        fsGroupChangePolicy: OnRootMismatch
     service:
       main:
         type: ClusterIP
