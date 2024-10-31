@@ -55,12 +55,12 @@ spec:
               enabled: true
       output:
         path: /mnt/pool0/movies/_Pending
-        server: 10.242.1.242
+        server: "${PLUTO_IP}"
         type: nfs
       watch:
         enabled: true
         path: /mnt/pool0/movies/_MKV
-        server: 10.242.1.242
+        server: "${PLUTO_IP}"
         type: nfs
         mountPath: "/watch"
     ingress:
