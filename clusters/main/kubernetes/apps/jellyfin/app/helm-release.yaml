@@ -83,6 +83,7 @@ spec:
         mountPath: "/mnt/movies"
         path: "/mnt/pool0/movies"
         server: "${PLUTO_IP}"
+        readOnly: true
         type: nfs
     securityContext:
       privileged: true     
