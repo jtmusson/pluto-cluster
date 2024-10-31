@@ -93,7 +93,7 @@ spec:
     service:
       main:
         enabled: true
-        loadBalancerIP: "10.242.10.45" ## TODO - replace with ${HASS_IP}
+        loadBalancerIP: "${HASS_IP}"
         type: LoadBalancer
  
 
