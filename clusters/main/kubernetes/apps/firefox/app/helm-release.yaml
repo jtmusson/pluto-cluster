@@ -33,3 +33,7 @@ spec:
         type: ExternalIP
 #        loadBalancerIP: 10.242.10.51
         externalIP: 10.242.10.52
+    workload:
+      main:
+        podSpec:
+          hostNetwork: true
