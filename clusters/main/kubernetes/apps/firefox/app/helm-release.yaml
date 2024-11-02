@@ -31,4 +31,4 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: 10.242.10.49
+        loadBalancerIP: 10.242.10.51
