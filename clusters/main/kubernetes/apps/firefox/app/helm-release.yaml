@@ -32,5 +32,4 @@ spec:
       main:
         type: ExternalIP
 #        loadBalancerIP: 10.242.10.51
-        externalIPs: 
-          - 10.242.10.52
+        externalIP: 10.242.10.52
