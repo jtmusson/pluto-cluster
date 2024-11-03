@@ -76,9 +76,6 @@ spec:
     service:
       main:
         type: ClusterIP
-        ports:
-          main:
-            port: 80
     ingress:
       main:
         enabled: true
