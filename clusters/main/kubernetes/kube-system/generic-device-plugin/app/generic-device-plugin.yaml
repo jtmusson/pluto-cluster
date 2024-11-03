@@ -27,12 +27,10 @@ spec:
         - |
           name: optical
           groups:
-            - count: 5
-              paths:
-                - path: /dev/sr*    
-            - count: 5
-              paths:
-                - path: /dev/sg*   
+            - paths:
+                - path: /dev/sr0
+            - paths:
+                - path: /dev/sr1
         name: generic-device-plugin
         resources:
           requests:
