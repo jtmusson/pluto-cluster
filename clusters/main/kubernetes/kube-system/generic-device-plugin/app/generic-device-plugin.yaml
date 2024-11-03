@@ -28,9 +28,9 @@ spec:
           name: optical
           groups:
             - paths:
-                - path: /dev/sr0
+                - path: /dev/sr*
             - paths:
-                - path: /dev/sr1
+                - path: /dev/sg*
         name: generic-device-plugin
         resources:
           requests:
