@@ -114,7 +114,7 @@ spec:
             dest:
               enabled: true
             src:
-              enabled: false
+              enabled: true
     service:
       main:
         enabled: true
