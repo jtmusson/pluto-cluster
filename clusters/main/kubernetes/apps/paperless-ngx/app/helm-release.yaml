@@ -105,11 +105,6 @@ spec:
         type: nfs
     service:
       main:
-        enabled: true
-        ports:
-          main:
-            port: 10140
-            targetPort: 8000
         type: ClusterIP
     workload:
       main:
