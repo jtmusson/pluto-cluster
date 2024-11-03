@@ -29,7 +29,10 @@ spec:
           groups:
             - count: 5
               paths:
-                - path: /dev/sr*       
+                - path: /dev/sr*    
+            - count: 5
+              paths:
+                - path: /dev/sg*   
         name: generic-device-plugin
         resources:
           requests:
