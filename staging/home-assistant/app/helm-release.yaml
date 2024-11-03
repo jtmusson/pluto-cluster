@@ -44,7 +44,7 @@ spec:
         service:
           ports:
             codeserver:
-              port: 12321
+              port: 36107
           type: ClusterIP
         ingress:
           enabled: true
@@ -52,7 +52,18 @@ spec:
             - host: hass-vs.${BASE_DOMAIN}
               path:
                 - path: /
-                  pathType: Prefix    
+                  pathType: Prefix
+          integrations:
+            certManager:
+              enabled: true
+              certificateIssuer: cloudflare-prod
+            traefik:
+              enabled: true
+              entrypoints:
+                - websecure
+              middlewares:
+                - name: "allowlist-private"
+                  namespace: "traefik"
     cnpg:
       main:
         mode: recovery
@@ -96,7 +107,6 @@ spec:
     persistence:
       config:
         enabled: true
-        mountPath: /config
         volsync:
           - name: app-config
             credentials: backblaze
