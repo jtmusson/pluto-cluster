@@ -87,12 +87,12 @@ spec:
         hostPath: "/dev/sr0"
         hostPathType: BlockDevice
         mountPath: "/dev/sr0"
-      optical-sr1:
-        enabled: true
-        type: device
-        hostPath: "/dev/sr1"
-        hostPathType: BlockDevice
-        mountPath: "/dev/sr1"
+#      optical-sr1:
+#        enabled: true
+#        type: device
+#        hostPath: "/dev/sr1"
+#        hostPathType: BlockDevice
+#        mountPath: "/dev/sr1"
     workload:
       main:
         podSpec:      
