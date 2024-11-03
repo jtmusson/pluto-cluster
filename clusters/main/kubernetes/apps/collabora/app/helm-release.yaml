@@ -56,9 +56,4 @@ spec:
     service:
       main:
         enabled: true
-        ports:
-          main:
-            port: 9980
-            protocol: http
-            targetPort: 9980
         type: ClusterIP
