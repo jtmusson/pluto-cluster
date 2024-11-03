@@ -120,3 +120,7 @@ spec:
         enabled: true
         loadBalancerIP: "${HASS_IP}"
         type: LoadBalancer
+    homeassistant:
+      trusted_proxies:
+        - 172.16.0.0/16
+        - 172.17.0.0/16
