@@ -56,9 +56,6 @@ spec:
                 namespace: "traefik"
     service:
       main:
-        ports:
-          main:
-            port: 10688
         type: ClusterIP
     workload:
       main:
