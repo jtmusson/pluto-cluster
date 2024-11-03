@@ -55,5 +55,4 @@ spec:
               - websecure
     service:
       main:
-        enabled: true
         type: ClusterIP
