@@ -89,15 +89,15 @@ spec:
               resources:
                 limits:
                   squat.ai/optical: 1
-    securityContext:
-      containers:
-        PUID: 0
+#    securityContext:
+#      containers:
+#        PUID: 0
 #       UMASK: "0022"
 #       runAsNonRoot: false
 #       runAsUser: 0
 #       runAsGroup: 0
-        allowPrivilegeEscalation: true
-        privileged: true
+#        allowPrivilegeEscalation: true
+#        privileged: true
 #      pod:
 #        supplementalGroups:
 #          - 44
