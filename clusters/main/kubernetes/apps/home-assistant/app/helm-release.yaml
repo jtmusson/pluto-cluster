@@ -118,5 +118,5 @@ spec:
     service:
       main:
         enabled: true
-        loadBalancerIP: "${HASS_IP}"
-        type: LoadBalancer
+#        loadBalancerIP: "${HASS_IP}"
+        type: ClusterIP
