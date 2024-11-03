@@ -20,3 +20,4 @@ resources:
   - handbrake/ks.yaml
   - firefox/ks.yaml
   - home-assistant/ks.yaml
+  - makemkv/ks.yaml
