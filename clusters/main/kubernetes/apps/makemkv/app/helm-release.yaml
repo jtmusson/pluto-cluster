@@ -89,9 +89,9 @@ spec:
               resources:
                 limits:
                   squat.ai/optical: 1
-#    securityContext:
-#      containers:
-#        PUID: 0
+    securityContext:
+      container:
+        PUID: 0
 #       UMASK: "0022"
 #       runAsNonRoot: false
 #       runAsUser: 0
