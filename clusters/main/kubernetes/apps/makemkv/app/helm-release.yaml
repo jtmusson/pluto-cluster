@@ -88,7 +88,7 @@ spec:
             main:
               resources:
                 limits:
-                  squat.ai/optical: 2
+                  squat.ai/optical: 4
 #    securityContext:
 #      containers:
 #        PUID: 0
