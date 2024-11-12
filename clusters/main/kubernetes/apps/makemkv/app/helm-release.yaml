@@ -92,6 +92,7 @@ spec:
     securityContext:
       container:
         PUID: 0
+# TODO #167 makemkv: remove unnecessary lines
 #       UMASK: "0022"
 #       runAsNonRoot: false
 #       runAsUser: 0
