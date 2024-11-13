@@ -16,6 +16,5 @@ resources:
   - mosquitto/ks.yaml  
   - jellyfin/ks.yaml  
   - handbrake/ks.yaml
-  - firefox/ks.yaml
   - home-assistant/ks.yaml
   - makemkv/ks.yaml
