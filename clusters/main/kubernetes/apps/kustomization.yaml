@@ -8,7 +8,6 @@ resources:
   - audiobookshelf/ks.yaml
   - peanut-downstairs/ks.yaml
   - peanut-upstairs/ks.yaml
-  - ext-kestra/ks.yaml
   - collabora/ks.yaml
   - paperless-ngx/ks.yaml
   - nextcloud/ks.yaml
