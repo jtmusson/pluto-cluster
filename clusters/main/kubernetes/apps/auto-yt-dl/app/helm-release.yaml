@@ -1,0 +1,82 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: auto-yt-dl
+  namespace: auto-yt-dl
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: auto-yt-dl
+      version: 7.2.2
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 30m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    TZ: Europe/London
+    credentials:
+      backblaze:
+        accessKey: "${B2_ACCESSKEY}"
+        bucket: "${B2_BUCKET}"
+        encrKey: "${B2_ENCRKEY}"
+        name: backblaze
+        secretKey: "${B2_SECRETKEY}"
+        type: s3
+        url: "${B2_URL}"
+    ingress:
+      main:
+        enabled: true
+        hosts:
+          - host: auto-yt-dl.${BASE_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
+        integrations:
+          certManager:
+            certificateIssuer: cloudflare-prod
+            enabled: true
+          homepage:
+            enabled: true
+            group: Ripping
+            widget:
+              enabled: false
+          traefik:
+            enabled: true
+            entrypoints:
+              - websecure
+    persistence:
+      data:
+        enabled: true
+        volsync:
+          - name: data
+            credentials: backblaze
+            type: restic
+            dest:
+              enabled: true
+            src:
+              enabled: true
+      hostpath1:
+        enabled: true
+        volsync:
+          - name: hostpath1
+            credentials: backblaze
+            type: restic
+            dest:
+              enabled: true
+            src:
+              enabled: true
