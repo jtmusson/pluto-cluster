@@ -37,12 +37,6 @@ nodes:
               gateway: ${GATEWAY}
           vip:
             ip: ${VIP}
-        - interface: eth1
-          addresses:
-            - 10.242.10.41/24
-          routes:
-            - network: 10.242.10.0/24
-              gateway: 10.242.10.5
       nodeLabels:
         "intel.feature.node.kubernetes.io/gpu": "true"
 controlPlane:
