@@ -72,11 +72,3 @@ spec:
               enabled: true
       hostpath1:
         enabled: true
-        volsync:
-          - name: hostpath1
-            credentials: backblaze
-            type: restic
-            dest:
-              enabled: true
-            src:
-              enabled: true
