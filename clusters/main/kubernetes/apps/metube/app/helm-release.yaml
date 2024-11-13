@@ -75,3 +75,11 @@ spec:
         path: /mnt/pool0/movies/_MakeMKV_Out
         server: "${PLUTO_IP}"
         type: nfs
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                DEFAULT_THEME: "dark"
+                YTDL_OPTIONS: '{"writesubtitles":true,"subtitleslangs":["en","-live_chat"],"updatetime":false,"postprocessors":[{"key":"FFmpegEmbedSubtitle","already_have_subtitle":false},{"key":"FFmpegMetadata","add_chapters":true}]}'
