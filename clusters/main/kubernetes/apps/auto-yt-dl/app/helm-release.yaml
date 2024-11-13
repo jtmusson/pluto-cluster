@@ -72,3 +72,6 @@ spec:
               enabled: true
       hostpath1:
         enabled: true
+        path: /mnt/pool0/movies/_MakeMKV_Out
+        server: "${PLUTO_IP}"
+        type: nfs
