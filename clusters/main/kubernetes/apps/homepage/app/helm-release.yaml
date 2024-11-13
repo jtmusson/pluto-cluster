@@ -28,32 +28,32 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    addons:
-      codeserver:
-        enabled: true
-        service:
-          ports:
-            codeserver:
-              port: 12321
-          type: ClusterIP
-        ingress:
-          enabled: true
-          hosts:
-            - host: homepage-vs.${BASE_DOMAIN}
-              path:
-                - path: /
-                  pathType: Prefix
-          integrations:
-            certManager:
-              enabled: true
-              certificateIssuer: cloudflare-prod
-            traefik:
-              enabled: true
-              entrypoints:
-                - websecure
-              middlewares:
-                - name: "allowlist-private"
-                  namespace: "traefik"
+#    addons:
+#      codeserver:
+#        enabled: true
+#        service:
+#          ports:
+#            codeserver:
+#              port: 12321
+#          type: ClusterIP
+#        ingress:
+#          enabled: true
+#          hosts:
+#            - host: homepage-vs.${BASE_DOMAIN}
+#              path:
+#                - path: /
+#                  pathType: Prefix
+#          integrations:
+#            certManager:
+#              enabled: true
+#              certificateIssuer: cloudflare-prod
+#            traefik:
+#              enabled: true
+#              entrypoints:
+#                - websecure
+#              middlewares:
+#                - name: "allowlist-private"
+#                  namespace: "traefik"
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
