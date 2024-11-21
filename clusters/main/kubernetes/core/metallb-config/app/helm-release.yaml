@@ -41,9 +41,3 @@ spec:
         avoidBuggyIPs: true
         addresses:
           - ${METALLB_RANGE}
-      - name: fam
-        interface: eth1
-        autoAssign: false
-        avoidBuggyIPs: true
-        addresses:
-          - 10.242.10.44-10.242.10.52
