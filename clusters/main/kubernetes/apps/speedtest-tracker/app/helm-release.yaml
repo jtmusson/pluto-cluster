@@ -95,7 +95,7 @@ spec:
             main:
               env:
                 APP_NAME: "71YC"
-                PUBLIC_DASHBOARD: "false"
+                PUBLIC_DASHBOARD: "true"
                 SPEEDTEST_SCHEDULE: "27 */2 * * *"
                 PRUNE_RESULTS_OLDER_THAN: "14"
                 DISPLAY_TIMEZONE: "Europe/London"
