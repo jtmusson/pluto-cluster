@@ -76,7 +76,6 @@ spec:
           credentials: backblaze
         database: "home-assistant"
         password: "PLACEHOLDERPASSWORD"
-        pgVersion: 16
         user: "home-assistant"
     ingress:
       main:
