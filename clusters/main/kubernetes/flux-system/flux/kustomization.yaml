@@ -8,3 +8,5 @@ resources:
   - ./flux.yaml
   - ./upgradesettings.yaml
   - ./namespace.yaml
+  - ./webhook-receiver-cluster.yaml
+  - ./webhook-receiver-ingress.yaml
