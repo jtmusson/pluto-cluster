@@ -6,7 +6,7 @@
     "github>truecharts/public//.github/renovate/main.json5"
   ],
   "automergeSchedule": [
-    "* 1-4 * * *"
+    "* 0-6 * * *"
   ],
   "packageRules": [
     {
