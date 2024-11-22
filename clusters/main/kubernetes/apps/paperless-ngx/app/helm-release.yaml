@@ -28,7 +28,7 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    TZ: "Europe/London"
+    TZ: "${TIMEZONE}"
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
