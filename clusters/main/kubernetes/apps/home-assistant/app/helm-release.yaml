@@ -38,32 +38,32 @@ spec:
         secretKey: "${B2_SECRETKEY}"
         type: s3
         url: "${B2_URL}"
-#    addons:
-#      codeserver:
-#        enabled: true
-#        service:
-#          ports:
-#            codeserver:
-#              port: 12321
-#          type: ClusterIP
-#        ingress:
-#          enabled: true
-#          hosts:
-#            - host: hass-vs.${BASE_DOMAIN}
-#              path:
-#                - path: /
-#                  pathType: Prefix
-#          integrations:
-#            certManager:
-#              enabled: true
-#              certificateIssuer: cloudflare-prod
-#            traefik:
-#              enabled: true
-#              entrypoints:
-#                - websecure
-#              middlewares:
-#                - name: "allowlist-private"
-#                  namespace: "traefik"
+    addons:
+      codeserver:
+        enabled: false
+        service:
+          ports:
+            codeserver:
+              port: 12321
+          type: ClusterIP
+        ingress:
+          enabled: true
+          hosts:
+            - host: hass-vs.${BASE_DOMAIN}
+              path:
+                - path: /
+                  pathType: Prefix
+          integrations:
+            certManager:
+              enabled: true
+              certificateIssuer: cloudflare-prod
+            traefik:
+              enabled: true
+              entrypoints:
+                - websecure
+              middlewares:
+                - name: "allowlist-private"
+                  namespace: "traefik"
     cnpg:
       main:
         cluster:
