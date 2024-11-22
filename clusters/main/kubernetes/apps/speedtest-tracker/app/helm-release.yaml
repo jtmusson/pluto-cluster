@@ -87,9 +87,6 @@ spec:
               enabled: true
             src:
               enabled: true
-    service:
-      main:
-        type: ClusterIP
     workload:
       main:
         podSpec:
