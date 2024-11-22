@@ -54,9 +54,6 @@ spec:
             middlewares:
               - name: allowlist-private
                 namespace: "traefik"
-    service:
-      main:
-        type: ClusterIP
     workload:
       main:
         podSpec:
