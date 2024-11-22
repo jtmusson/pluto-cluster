@@ -95,5 +95,5 @@ spec:
                 TICK_DISTANCE: 4
                 VERSION: 1.21.42.01
                 VIEW_DISTANCE: 64
-                WHITE_LIST: true
-                WHITE_LIST_USERS: jtmusson:2535459371911077,DuckiestRacer73:2535438270490294,PopulousZoo1938:2535416055063734,Stovora:2535449515083727,Captain Bezalel:2535423942775632
+                ALLOW_LIST: true
+#                 ALLOW_LIST_USERS: jtmusson:2535459371911077,DuckiestRacer73:2535438270490294,PopulousZoo1938:2535416055063734,Stovora:2535449515083727,Captain Bezalel:2535423942775632
