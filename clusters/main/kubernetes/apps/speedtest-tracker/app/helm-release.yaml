@@ -39,6 +39,8 @@ spec:
         url: "${B2_URL}"
     cnpg:
       main:
+        cluster:
+          singleNode: true
         mode: recovery
         backups:
           credentials: backblaze
@@ -49,7 +51,6 @@ spec:
           credentials: backblaze
         database: "speedtest-tracker"
         password: "PLACEHOLDERPASSWORD"
-        pgVersion: 16
         user: "speedtest-tracker"
     ingress:
       main:

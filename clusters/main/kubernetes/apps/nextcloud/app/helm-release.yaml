@@ -39,7 +39,9 @@ spec:
         type: s3
         url: "${B2_URL}"
     cnpg:
-      main: 
+      main:
+        cluster:
+          singleNode: true
         mode: recovery
         backups:
           credentials: backblaze
@@ -50,7 +52,6 @@ spec:
           credentials: backblaze
         database: "nextcloud"
         password: "${NEXTCLOUD_CNPG_PASSWORD}"
-        pgVersion: 16
         user: "nextcloud"
     ingress:
       main:

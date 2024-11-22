@@ -66,6 +66,8 @@ spec:
 #                  namespace: "traefik"
     cnpg:
       main:
+        cluster:
+          singleNode: true
         mode: recovery
         backups:
           credentials: backblaze

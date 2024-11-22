@@ -40,6 +40,8 @@ spec:
         url: "${B2_URL}"
     cnpg:
       main:
+        cluster:
+          singleNode: true
         mode: recovery
         backups:
           enabled: true
@@ -51,7 +53,6 @@ spec:
           credentials: backblaze
         database: "paperless-ng"
         password: "PLACEHOLDERPASSWORD"
-        pgVersion: 16
         user: paperless-ng
     ingress:
       main:
