@@ -40,7 +40,7 @@ spec:
         url: "${B2_URL}"
     addons:
       codeserver:
-        enabled: false
+        enabled: false # change to 'true' when codeserver needed
         service:
           ports:
             codeserver:
