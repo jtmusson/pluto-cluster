@@ -68,28 +68,12 @@ spec:
               env:
                 VERSION: 1.21.42.01
                 ALLOW_CHEATS: true
-                CORRECT_PLAYER_MOVEMENT: false
-                DEFAULT_PLAYER_PERMISSION_LEVEL: member
                 DIFFICULTY: peaceful
-                ENABLE_LAN_VISIBILITY: true
-                EULA: true
                 GAMEMODE: creative
                 LEVEL_NAME: 71YC-Server
-                LEVEL_SEED: ""
-                LEVEL_TYPE: DEFAULT
-                MAX_PLAYERS: 10
-                MAX_THREADS: 8
                 ONLINE_MODE: true
                 OPS: "${MINECRAFT_OPS}"
-                PLAYER_IDLE_TIMEOUT: 30
-                PLAYER_MOVEMENT_DISTANCE_THRESHOLD: "0.3"
-                PLAYER_MOVEMENT_DURATION_THRESHOLD_IN_MS: 500
-                PLAYER_MOVEMENT_SCORE_THRESHOLD: 20
-                SERVER_AUTHORITATIVE_MOVEMENT: server-auth
                 SERVER_NAME: 71YC Server
-                SERVER_PORT: '{{ .Values.service.main.ports.main.port }}'
-                SERVER_PORT_V6: 19133
                 TEXTUREPACK_REQUIRED: true
-                TICK_DISTANCE: 4
                 VIEW_DISTANCE: 64
                 ALLOW_LIST: true
