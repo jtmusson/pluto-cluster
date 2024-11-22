@@ -53,6 +53,3 @@ spec:
             enabled: true
             entrypoints:
               - websecure
-    service:
-      main:
-        type: ClusterIP
