@@ -70,6 +70,7 @@ spec:
           singleNode: true
         mode: recovery
         backups:
+          enabled: true
           credentials: backblaze
           revision: "1"
         recovery:
