@@ -87,10 +87,6 @@ spec:
       general:
         accessIP: "${TRAEFIK_IP}"
         default_phone_region: GB
-      notify_push:
-        enabled: true
-      php:
-        memory_limit: 2G
     persistence:
       config:
         enabled: true
@@ -117,11 +113,3 @@ spec:
               enabled: true
             src:
               enabled: true
-#    workload:
-#      main:
-#        podSpec:
-#          containers:              
-#              env:
-#                enabled: true
-#                OVERWRITEHOST: "nc.${BASE_DOMAIN_EXT}"
-#                OVERWRITEPROTOCOL: https
