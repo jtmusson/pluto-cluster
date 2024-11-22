@@ -55,9 +55,6 @@ spec:
         server: "${PLUTO_IP}"
         type: nfs
         mountPath: "/data/worlds"
-    resources:
-      limits:
-        memory: 15Gi
     service:
       main:
         enabled: true
@@ -69,6 +66,7 @@ spec:
           containers:
             main:
               env:
+                VERSION: 1.21.42.01
                 ALLOW_CHEATS: true
                 CORRECT_PLAYER_MOVEMENT: false
                 DEFAULT_PLAYER_PERMISSION_LEVEL: member
@@ -93,6 +91,5 @@ spec:
                 SERVER_PORT_V6: 19133
                 TEXTUREPACK_REQUIRED: true
                 TICK_DISTANCE: 4
-                VERSION: 1.21.42.01
                 VIEW_DISTANCE: 64
                 ALLOW_LIST: true
