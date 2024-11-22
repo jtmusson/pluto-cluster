@@ -28,23 +28,23 @@ spec:
   uninstall:
     keepHistory: false
   values:
-#    ingress:
-#      main:
-#        enabled: true
-#        integrations:
-#          traefik:
-#            enabled: true
-#            middlewares:
-#              - name: allowlist-private
-#                namespace: traefik
-#          certManager:
-#            enabled: true
-#            certificateIssuer: cloudflare-prod
-#        hosts:
-#          - host: traefik.${BASE_DOMAIN}
-#            paths:
-#              - path: /
-#                pathType: Prefix
+    ingress:
+      main:
+        enabled: false # TODO traefik: confirm ingress attached to correct service
+        integrations:
+          traefik:
+            enabled: true
+            middlewares:
+              - name: allowlist-private
+                namespace: traefik
+          certManager:
+            enabled: true
+            certificateIssuer: cloudflare-prod
+        hosts:
+          - host: traefik.${BASE_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
     middlewares:
       basicAuth:
         - name: auth-kubernetes-dashboard
