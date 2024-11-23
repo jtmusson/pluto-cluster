@@ -24,6 +24,12 @@
           "type/minor"
           ]
     },
+    {
+      "matchDatasources": [
+        "custom.minecraft-bedrock"
+        ],
+        "extractVersion": "/bedrockdedicatedserver/bin-linux/bedrock-server-(?<version>.+)\\.zip$"
+    }
   ],
   "separateMultipleMajor": true,
   "assignees": [
@@ -35,11 +41,5 @@
       "defaultRegistryUrlTemplate": "https://www.minecraft.net/en-us/download/server/bedrock",
       "format": "html"
     }
-  },
-  "packageRules": [
-    {
-      "matchDatasources": ["custom.minecraft-bedrock"],
-      "extractVersion": "/bedrockdedicatedserver/bin-linux/bedrock-server-(?<version>.+)\\.zip$"
-    }
-  ]
+  }
 }
