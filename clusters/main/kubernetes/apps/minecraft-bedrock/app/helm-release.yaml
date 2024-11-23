@@ -66,6 +66,7 @@ spec:
           containers:
             main:
               env:
+                # renovate: datasource=custom.minecraft-bedrock versioning=semver
                 VERSION: 1.21.44.01
                 ALLOW_CHEATS: true
                 DIFFICULTY: peaceful
