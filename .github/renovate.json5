@@ -22,7 +22,7 @@
         "datasource=custom.minecraft-bedrock depName=minecraft-bedrock\\n.+VERSION: (?<currentValue>\\S+)"
       ],
       "depNameTemplate": "minecraft-bedrock",
-      "dataSourceTemplate": "custom.minecraft-bedrock"
+      "datasourceTemplate": "custom.minecraft-bedrock"
     }
   ],
   "packageRules": [
