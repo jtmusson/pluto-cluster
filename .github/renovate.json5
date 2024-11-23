@@ -18,22 +18,22 @@
     {
       "matchUpdateTypes": [
         "patch"
-        ],
-        "automerge": true
+      ],
+      "automerge": true
     },
     {
       "matchUpdateTypes": [
         "minor"
-        ],
-        "automerge": false,
-        "labels": [
-          "type/minor"
-          ]
+      ],
+      "automerge": false,
+      "labels": [
+        "type/minor"
+      ]
     },
     {
       "matchDatasources": [
         "custom.minecraft-bedrock"
-        ],
+      ],
       "extractVersion": "/bedrockdedicatedserver/bin-linux/bedrock-server-(?<version>.+)\\.zip$"
     }
   ],
