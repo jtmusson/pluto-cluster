@@ -8,6 +8,12 @@
   "automergeSchedule": [
     "* 0-6 * * *"
   ],
+  "customDatasources": {
+    "minecraft-bedrock": {
+      "defaultRegistryUrlTemplate": "https://www.minecraft.net/en-us/download/server/bedrock.html",
+      "format": "html"
+    }
+  },
   "packageRules": [
     {
       "matchUpdateTypes": [
@@ -35,11 +41,5 @@
   "assignees": [
     "jtmusson"
   ],
-  "timezone": "Europe/London",
-  "customDatasources": {
-    "minecraft-bedrock": {
-      "defaultRegistryUrlTemplate": "https://www.minecraft.net/en-us/download/server/bedrock.html",
-      "format": "html"
-    }
-  }
+  "timezone": "Europe/London"
 }
