@@ -8,38 +8,38 @@
   "automergeSchedule": [
     "* 0-6 * * *"
   ],
+  "customDatasources": {
+    "minecraft-bedrock": {
+      "defaultRegistryUrlTemplate": "https://www.minecraft.net/en-us/download/server/bedrock",
+      "format": "html"
+    }
+  },
   "packageRules": [
     {
       "matchUpdateTypes": [
         "patch"
-        ],
-        "automerge": true
+      ],
+      "automerge": true
     },
     {
       "matchUpdateTypes": [
         "minor"
-        ],
-        "automerge": false,
-        "labels": [
-          "type/minor"
-          ]
+      ],
+      "automerge": false,
+      "labels": [
+        "type/minor"
+      ]
     },
     {
       "matchDatasources": [
         "custom.minecraft-bedrock"
-        ],
-        "extractVersion": "/bedrockdedicatedserver/bin-linux/bedrock-server-(?<version>.+)\\.zip$"
+      ],
+      "extractVersion": "/bedrockdedicatedserver/bin-linux/bedrock-server-(?<version>.+)\\.zip$"
     }
   ],
   "separateMultipleMajor": true,
   "assignees": [
     "jtmusson"
   ],
-  "timezone": "Europe/London",
-  "customDatasources": {
-    "minecraft-bedrock": {
-      "defaultRegistryUrlTemplate": "https://www.minecraft.net/en-us/download/server/bedrock.html",
-      "format": "html"
-    }
-  }
+  "timezone": "Europe/London"
 }
