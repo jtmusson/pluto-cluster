@@ -10,7 +10,7 @@
   ],
   "customDatasources": {
     "minecraft-bedrock": {
-      "defaultRegistryUrlTemplate": "https://www.minecraft.net/en-us/download/server/bedrock.html",
+      "defaultRegistryUrlTemplate": "https://www.minecraft.net/en-us/download/server/bedrock",
       "format": "html"
     }
   },
