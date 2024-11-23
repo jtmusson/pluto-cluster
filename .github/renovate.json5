@@ -38,7 +38,7 @@
   "timezone": "Europe/London",
   "customDatasources": {
     "minecraft-bedrock": {
-      "defaultRegistryUrlTemplate": "https://www.minecraft.net/en-us/download/server/bedrock",
+      "defaultRegistryUrlTemplate": "https://www.minecraft.net/en-us/download/server/bedrock.html",
       "format": "html"
     }
   }
