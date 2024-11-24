@@ -84,9 +84,9 @@ spec:
             type: restic
             credentials: backblaze
             dest:
-              enabled: true
+              enabled: false
             src:
-              enabled: true
+              enabled: false
     workload:
       main:
         podSpec:

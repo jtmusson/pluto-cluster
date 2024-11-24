@@ -95,9 +95,9 @@ spec:
             credentials: backblaze
             type: restic
             src:
-              enabled: true
+              enabled: false
             dest:
-              enabled: true
+              enabled: false
       media:
         enabled: true
         mountPath: "/media"

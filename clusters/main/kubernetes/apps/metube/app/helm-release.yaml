@@ -68,9 +68,9 @@ spec:
             credentials: backblaze
             type: restic
             dest:
-              enabled: true
+              enabled: false
             src:
-              enabled: true
+              enabled: false
       downloads:
         path: /mnt/pool0/movies/_MakeMKV_Out
         server: "${PLUTO_IP}"

@@ -50,9 +50,9 @@ spec:
             type: restic
             credentials: backblaze
             dest:
-              enabled: true
+              enabled: false
             src:
-              enabled: true
+              enabled: false
       output:
         path: /mnt/pool0/movies/_Pending
         server: "${PLUTO_IP}"

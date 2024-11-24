@@ -72,9 +72,9 @@ spec:
             credentials: backblaze
             type: restic
             dest:
-              enabled: true
+              enabled: false
             src:
-              enabled: true
+              enabled: false
       movies:
         enabled: true
         mountPath: /mnt/movies

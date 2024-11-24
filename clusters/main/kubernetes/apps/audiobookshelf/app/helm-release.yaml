@@ -83,7 +83,7 @@ spec:
             dest:
               enabled: false
             src:
-              enabled: true
+              enabled: false
       metadata:
         enabled: true
         mountPath: /metadata
@@ -92,6 +92,6 @@ spec:
             type: restic
             credentials: backblaze
             dest:
-              enabled: true
+              enabled: false
             src:
-              enabled: true
+              enabled: false

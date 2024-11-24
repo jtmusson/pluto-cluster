@@ -46,9 +46,9 @@ spec:
             credentials: backblaze
             type: restic
             dest:
-              enabled: true
+              enabled: false
             src:
-              enabled: true
+              enabled: false
       worlds:
         enabled: true
         path: "/mnt/pool1/minecraft-bedrock/minecraft-bedrock-worlds"
