@@ -79,7 +79,7 @@ spec:
               - websecure
     nextcloud:
       clamav:
-        enabled: true
+        enabled: false
         infected_action: only_log
       credentials:
         initialAdminPassword: "${NEXTCLOUD_INITIAL_ADMIN_PASSWORD}"
