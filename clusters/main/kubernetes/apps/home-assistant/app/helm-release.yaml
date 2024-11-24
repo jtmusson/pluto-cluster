@@ -110,13 +110,13 @@ spec:
       config:
         enabled: true
         volsync:
-          - name: app-config
+          - name: app-config-1
             credentials: backblaze
             type: restic
             dest:
               enabled: false
             src:
-              enabled: false
+              enabled: true
     service:
       main:
         enabled: true

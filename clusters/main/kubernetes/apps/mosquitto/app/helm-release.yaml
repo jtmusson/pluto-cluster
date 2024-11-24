@@ -43,13 +43,13 @@ spec:
         enabled: true
         mountPath: "/mosquitto/data"
         volsync:
-          - name: config
+          - name: config-1
             credentials: backblaze
             type: restic
             dest:
               enabled: false
             src:
-              enabled: false
+              enabled: true
     websockets:
       enabled: false
     service:

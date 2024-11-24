@@ -91,13 +91,13 @@ spec:
         enabled: true
         mountPath: "/data"
         volsync:
-          - name: data
+          - name: data-1
             credentials: backblaze
             type: restic
-            src:
-              enabled: false
             dest:
               enabled: false
+            src:
+              enabled: true
       media:
         enabled: true
         mountPath: "/media"

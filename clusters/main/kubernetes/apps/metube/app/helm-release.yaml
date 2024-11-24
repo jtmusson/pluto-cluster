@@ -64,13 +64,13 @@ spec:
     persistence:
       config:
         volsync:
-          - name: config
+          - name: config-1
             credentials: backblaze
             type: restic
             dest:
               enabled: false
             src:
-              enabled: false
+              enabled: true
       downloads:
         path: /mnt/pool0/movies/_MakeMKV_Out
         server: "${PLUTO_IP}"

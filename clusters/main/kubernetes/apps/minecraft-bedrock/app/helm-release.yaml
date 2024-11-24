@@ -42,13 +42,13 @@ spec:
       config:
         enabled: true
         volsync:
-          - name: config
+          - name: config-1
             credentials: backblaze
             type: restic
             dest:
               enabled: false
             src:
-              enabled: false
+              enabled: true
       worlds:
         enabled: true
         path: "/mnt/pool1/minecraft-bedrock/minecraft-bedrock-worlds"
