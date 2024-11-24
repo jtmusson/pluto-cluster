@@ -95,9 +95,9 @@ spec:
             credentials: backblaze
             type: restic
             dest:
-              enabled: true
+              enabled: false
             src:
-              enabled: true
+              enabled: false
       data:
         enabled: true
         path: "/mnt/pool0/nextcloud/nextcloud-data"
@@ -110,6 +110,6 @@ spec:
             credentials: backblaze
             type: restic
             dest:
-              enabled: true
+              enabled: false
             src:
-              enabled: true
+              enabled: false
