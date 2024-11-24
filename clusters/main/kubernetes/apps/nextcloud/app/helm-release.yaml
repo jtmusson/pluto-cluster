@@ -91,7 +91,7 @@ spec:
       config:
         enabled: true
         volsync:
-          - name: config
+          - name: config-1
             credentials: backblaze
             type: restic
             dest:
@@ -106,7 +106,7 @@ spec:
       html:
         enabled: true
         volsync:
-          - name: html            
+          - name: html-1  
             credentials: backblaze
             type: restic
             dest:
