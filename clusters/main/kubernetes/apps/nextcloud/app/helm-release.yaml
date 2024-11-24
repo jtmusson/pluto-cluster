@@ -95,7 +95,7 @@ spec:
             credentials: backblaze
             type: restic
             dest:
-              enabled: true
+              enabled: false
             src:
               enabled: true
       data:
@@ -110,6 +110,6 @@ spec:
             credentials: backblaze
             type: restic
             dest:
-              enabled: true
+              enabled: false
             src:
               enabled: true
