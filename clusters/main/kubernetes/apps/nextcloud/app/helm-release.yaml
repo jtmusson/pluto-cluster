@@ -97,7 +97,7 @@ spec:
             dest:
               enabled: false
             src:
-              enabled: false
+              enabled: true
       data:
         enabled: true
         path: "/mnt/pool0/nextcloud/nextcloud-data"
@@ -112,4 +112,4 @@ spec:
             dest:
               enabled: false
             src:
-              enabled: false
+              enabled: true
