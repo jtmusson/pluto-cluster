@@ -87,6 +87,8 @@ spec:
       general:
         accessIP: "${TRAEFIK_IP}"
         default_phone_region: GB
+      php:
+        memory_limit: 5G
     persistence:
       config:
         enabled: true
