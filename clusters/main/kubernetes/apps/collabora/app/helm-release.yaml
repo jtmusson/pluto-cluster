@@ -30,11 +30,8 @@ spec:
   values:
     collabora:
       server_name: "collabora.${BASE_DOMAIN_EXT}"
-      username: admin
+      aliasgroup1: "https://collabora.${BASE_DOMAIN_EXT}"
       password: "${COLLABORA_ADMIN_PASS}"
-      no_gen_ssl: true
-      ssl_enable: false
-      ssl_termination: true
     ingress:
       main:
         enabled: true
