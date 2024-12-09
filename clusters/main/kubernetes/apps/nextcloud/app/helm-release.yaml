@@ -81,6 +81,9 @@ spec:
       clamav:
         enabled: false
         infected_action: only_log
+      collabora:
+        enabled: true
+        password: "${COLLABORA_ADMIN_PASS}"
       credentials:
         initialAdminPassword: "${NEXTCLOUD_INITIAL_ADMIN_PASSWORD}"
         initialAdminUser: admin
