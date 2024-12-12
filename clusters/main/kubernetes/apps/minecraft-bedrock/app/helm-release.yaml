@@ -30,7 +30,6 @@ spec:
   values:
     global:
       stopAll: false # change to 'true' to stop all pods whenever world maintenance is needed
-    TZ: "${TIMEZONE}"
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
