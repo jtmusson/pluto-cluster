@@ -75,5 +75,5 @@ spec:
       localRedirectPolicy: true
       operator:
         rollOutPods: true
-        replicas: 2
+        replicas: 1
       rollOutCiliumPods: true
