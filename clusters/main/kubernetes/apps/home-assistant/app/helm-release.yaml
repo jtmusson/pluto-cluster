@@ -28,9 +28,6 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    global:
-      stopAll: false
-    TZ: "${TIMEZONE}"
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
