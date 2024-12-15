@@ -78,7 +78,7 @@ spec:
         path: /mnt/pool0/audiobookshelf/audiobookshelf-podcasts-nicola
         server: "${PLUTO_IP}"
         type: nfs
-        mountPath: "/podcasts"
+        mountPath: "/podcasts-nicola"
       config:
         enabled: true
         mountPath: /config
