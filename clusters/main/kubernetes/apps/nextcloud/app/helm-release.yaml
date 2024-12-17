@@ -71,6 +71,9 @@ spec:
             widget:
               custom:
                 key: "${NEXTCLOUD_API_KEY}"
+              customkv:
+                - key: fields
+                  value: '["memoryusage", "freespace"]'
           traefik:
             enabled: true
             entrypoints:
