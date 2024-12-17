@@ -73,7 +73,7 @@ spec:
                 key: "${NEXTCLOUD_API_KEY}"
               customkv:
                 - key: fields
-                  value: '["memoryusage", "freespace"]'
+                  value: '["freespace", "activeusers"]'
           traefik:
             enabled: true
             entrypoints:
