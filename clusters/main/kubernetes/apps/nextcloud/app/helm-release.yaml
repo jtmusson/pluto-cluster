@@ -71,7 +71,6 @@ spec:
             widget:
               custom:
                 key: "${NEXTCLOUD_API_KEY}"
-              enabled: true
           traefik:
             enabled: true
             entrypoints:
