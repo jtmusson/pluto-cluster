@@ -9,4 +9,4 @@ customization:
       - siderolabs/mei
 
 # Schematic: bb720d031cc5c51594df021a2595d43c8081acd1880a17bd6f5622d57ccfa0d2
-# $ talosctl upgrade --image factory.talos.dev/installer/bb720d031cc5c51594df021a2595d43c8081acd1880a17bd6f5622d57ccfa0d2:v1.8.4
+# $ talosctl upgrade --image factory.talos.dev/installer/bb720d031cc5c51594df021a2595d43c8081acd1880a17bd6f5622d57ccfa0d2:v1.9.0
