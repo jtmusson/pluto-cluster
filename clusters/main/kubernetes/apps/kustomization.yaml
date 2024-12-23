@@ -18,3 +18,4 @@ resources:
   - home-assistant/ks.yaml
   - makemkv/ks.yaml
   - metube/ks.yaml
+  - ext-homebridge/ks.yaml

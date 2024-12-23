@@ -1,0 +1,54 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ext-homebridge
+  namespace: ext-homebridge
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: external-service
+      version: 15.2.2
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    service:
+      main: 
+        type: ExternalIP
+        externalIP: "10.242.10.222"
+        ports:
+          main:
+            protocol: http
+            port: 8581
+    ingress:
+      main:
+        enabled: true
+        hosts:
+          - host: "homebridge.${BASE_DOMAIN}"
+        integrations:
+          certManager:
+            certificateIssuer: cloudflare-prod
+            enabled: true
+          traefik:
+            enabled: true
+            entrypoints:
+              - websecure
+            middlewares:
+              - name: allowlist-private
+                namespace: "traefik"
