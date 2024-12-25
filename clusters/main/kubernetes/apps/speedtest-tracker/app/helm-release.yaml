@@ -85,8 +85,10 @@ spec:
             credentials: backblaze
             dest:
               enabled: false
+              cacheCapacity: 10Gi
             src:
               enabled: true
+              cacheCapacity: 10Gi
     workload:
       main:
         podSpec:
