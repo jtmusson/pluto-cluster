@@ -119,7 +119,7 @@ spec:
             type: restic
             dest:
               enabled: false
-              cacheCapacity: 2Gi
+              cacheCapacity: 10Gi
             src:
               enabled: true
-              cacheCapacity: 2Gi
+              cacheCapacity: 10Gi
