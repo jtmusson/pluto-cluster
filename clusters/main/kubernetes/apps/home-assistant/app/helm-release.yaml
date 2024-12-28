@@ -29,7 +29,7 @@ spec:
     keepHistory: false
   values:
     global:
-      stopAll: false
+      stopAll: true
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
@@ -42,11 +42,6 @@ spec:
     addons:
       codeserver:
         enabled: false # change to 'true' when codeserver needed
-        service:
-          ports:
-            codeserver:
-              port: 12321
-          type: ClusterIP
         ingress:
           enabled: true
           hosts:
