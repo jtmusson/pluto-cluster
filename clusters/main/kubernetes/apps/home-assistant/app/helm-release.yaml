@@ -28,6 +28,8 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    global:
+      stopAll: true
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
@@ -39,7 +41,7 @@ spec:
         url: "${B2_URL}"
     addons:
       codeserver:
-        enabled: true # change to 'true' when codeserver needed
+        enabled: false # change to 'true' when codeserver needed
         service:
           ports:
             codeserver:
