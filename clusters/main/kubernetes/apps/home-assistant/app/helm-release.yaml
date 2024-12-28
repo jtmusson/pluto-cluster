@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: home-assistant
-      version: 26.8.5
+      version: 26.10.0
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -28,6 +28,8 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    global:
+      stopAll: false
     credentials:
       backblaze:
         accessKey: "${B2_ACCESSKEY}"
@@ -40,11 +42,6 @@ spec:
     addons:
       codeserver:
         enabled: false # change to 'true' when codeserver needed
-        service:
-          ports:
-            codeserver:
-              port: 12321
-          type: ClusterIP
         ingress:
           enabled: true
           hosts:
