@@ -5,9 +5,6 @@
     "config:recommended",
     "github>truecharts/public//.github/renovate/main.json5"
   ],
-  "automergeSchedule": [
-    "* 0-6 * * *"
-  ],
   "customDatasources": {
     "minecraft-bedrock": {
       "defaultRegistryUrlTemplate": "https://web.archive.org/web/9999/https://www.minecraft.net/en-us/download/server/bedrock",
@@ -17,18 +14,9 @@
   "packageRules": [
     {
       "matchUpdateTypes": [
-        "patch"
-      ],
-      "automerge": true
-    },
-    {
-      "matchUpdateTypes": [
         "minor"
       ],
-      "automerge": false,
-      "labels": [
-        "type/minor"
-      ]
+      "automerge": false
     },
     {
       "matchDatasources": [
