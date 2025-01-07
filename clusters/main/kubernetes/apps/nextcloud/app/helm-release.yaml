@@ -46,6 +46,7 @@ spec:
           enabled: true
           credentials: backblaze
           revision: "1"
+          retentionPolicy: "14d"
         recovery:
           method: object_store
           revision: 
