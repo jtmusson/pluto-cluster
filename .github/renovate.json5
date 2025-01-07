@@ -14,18 +14,9 @@
   "packageRules": [
     {
       "matchUpdateTypes": [
-        "patch"
-      ],
-      "automerge": true
-    },
-    {
-      "matchUpdateTypes": [
         "minor"
       ],
-      "automerge": false,
-      "labels": [
-        "type/minor"
-      ]
+      "automerge": false
     },
     {
       "matchDatasources": [
