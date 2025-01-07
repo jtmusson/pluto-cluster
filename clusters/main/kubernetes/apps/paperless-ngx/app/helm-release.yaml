@@ -90,7 +90,7 @@ spec:
         enabled: true
         mountPath: "/data"
         volsync:
-          - name: data-1
+          - name: data-2
             credentials: backblaze
             type: restic
             dest:
