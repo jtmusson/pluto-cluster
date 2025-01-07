@@ -75,8 +75,10 @@ spec:
             type: restic
             dest:
               enabled: false
+              cacheCapacity: 10Gi
             src:
               enabled: true
+              cacheCapacity: 10Gi
       movies:
         enabled: true
         mountPath: "/mnt/movies"
