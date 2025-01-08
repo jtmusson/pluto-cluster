@@ -13,12 +13,6 @@
   },
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "minor"
-      ],
-      "automerge": false
-    },
-    {
       "matchDatasources": [
         "custom.minecraft-bedrock"
       ],
@@ -27,8 +21,5 @@
     }
   ],
   "separateMultipleMajor": true,
-  "assignees": [
-    "jtmusson"
-  ],
   "timezone": "Europe/London"
 }
