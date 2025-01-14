@@ -41,7 +41,7 @@ spec:
         url: "${B2_URL}"
     addons:
       codeserver:
-        enabled: false # change to 'true' when codeserver needed
+        enabled: true # change to 'true' when codeserver needed
         ingress:
           enabled: true
           hosts:
